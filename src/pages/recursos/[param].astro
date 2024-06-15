@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { RESOURSES } from "../../consts/resourses";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+if (!session) return Astro.redirect("/login");
+
+export const prerender = false;
+
+export async function getStaticPaths() {
+  return RESOURSES.map(({ param }) => ({
+    params: { param: param },
+  }));
+}
+
+const { param } = Astro.params;
+const page = RESOURSES.find((page) => page.param === param);
+if (!page) return Astro.redirect("/404");
+
+const { title } = page;
+---
+
+<Layout
+  title={`${title} - Essentia`}
+  description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
+  canonical="https://essentiadev.netlify.app/recursos"
+>
+  <h1 class="text-white text-3xl">{title}</h1>
+</Layout>
