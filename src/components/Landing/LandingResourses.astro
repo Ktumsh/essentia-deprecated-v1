@@ -1,0 +1,68 @@
+---
+import LandingResoursesItem from "./LandingResoursesItem.astro";
+---
+
+<div
+  class="max-w-4xl w-full mx-auto grid grid-cols-[repeat(26,minmax(0,1fr))] auto-rows-[4rem] lg:auto-rows-[8rem] gap-1 lg:gap-2"
+>
+  <LandingResoursesItem
+    class="[grid-column:span_16/span_16] lg:col-span-10 row-span-1"
+    title="Salud y bienestar"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/salud.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+  <LandingResoursesItem
+    class="col-span-10 lg:col-span-9 row-span-1"
+    title="Ejercicios y fitness"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/ejercicio.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+  <LandingResoursesItem
+    class="[grid-column:span_13/span_13] lg:col-span-7 row-span-1"
+    title="Nutrición"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/nutricion.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+  <LandingResoursesItem
+    class="[grid-column:span_13/span_13] lg:col-span-8 row-span-1"
+    title="Bienestar emocional"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/bienestar.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+  <LandingResoursesItem
+    class="col-span-10 lg:col-span-10 row-span-1"
+    title="Salud sexual"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/sexualidad.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+  <LandingResoursesItem
+    class="[grid-column:span_16/span_16] lg:col-span-8 row-span-1"
+    title="Salud para todas las edades"
+  >
+    <div
+      slot="image"
+      class="absolute inset-0 size-full bg-cover bg-center bg-no-repeat opacity-90 group-hover:lg:scale-110 group-hover:lg:saturate-150 transition-all duration-1000 ease-in-out bg-[url('/extras/edades.webp')]"
+    >
+    </div>
+  </LandingResoursesItem>
+</div>

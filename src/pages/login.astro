@@ -1,7 +1,6 @@
 ---
-import LandingHeader from "@/components/Landing/LandingHeader";
-import LandingLayout from "@/layouts/LandingLayout.astro";
-import Landing from "@/sections/Landing.astro";
+import LandingLayout from "../layouts/LandingLayout.astro";
+import LoginForm from "@/components/LoginForm.astro";
 import { getSession } from "auth-astro/server";
 
 const session = await getSession(Astro.request);
@@ -12,8 +11,9 @@ if (session) return Astro.redirect("/recursos");
 <LandingLayout
   title="Essentia - Bienvenida"
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
-  canonical="https://essentiadev.netlify.app/"
+  canonical="https://astonishing-custard-5b6c62.netlify.app/login"
 >
-  <LandingHeader client:only="react" />
-  <Landing />
+  <main>
+    <LoginForm />
+  </main>
 </LandingLayout>

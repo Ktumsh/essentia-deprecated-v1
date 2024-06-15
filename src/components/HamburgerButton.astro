@@ -1,0 +1,154 @@
+---
+import { MOBILE_MENU_CONTENT_ID } from "@/consts/mobile-menu";
+
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<button
+  id={id}
+  aria-expanded="false"
+  aria-controls={MOBILE_MENU_CONTENT_ID}
+  class:list={["hamburgerButton relative group", className]}
+>
+  <div
+    class="relative flex overflow-hidden items-center justify-center rounded-xl -mr-3 w-[46px] h-[46px] transform bg-transparent dark:bg-wash-dark group-[.open]:bg-gray-100 dark:group-[.open]:bg-wash-dark transition-colors duration-200"
+  >
+    <div
+      class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+    >
+      <div
+        class="bg-black dark:bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-[.open]:translate-x-10"
+      >
+      </div>
+      <div
+        class="bg-black dark:bg-white h-[2px] w-7 rounded transform transition-all duration-300 group-[.open]:translate-x-10 delay-75"
+      >
+      </div>
+      <div
+        class="bg-black dark:bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-[.open]:translate-x-10 delay-150"
+      >
+      </div>
+
+      <div
+        class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-[.open]:translate-x-0 flex w-0 group-[.open]:w-12"
+      >
+        <div
+          class="absolute bg-black dark:bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-[.open]:rotate-45"
+        >
+        </div>
+        <div
+          class="absolute bg-black dark:bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-[.open]:-rotate-45"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</button>
+<script>
+  import { $, $$ } from "@/lib/dom-selector";
+
+  const DISPLAY = {
+    hamburgerMenuClass: ".hamburgerButton",
+    open: "open",
+    hamburgerButtonClicked: "hamburgerButtonClicked",
+  };
+
+  document.addEventListener("astro:page-load", () => {
+    const hamburgerButton = $(DISPLAY.hamburgerMenuClass) as HTMLElement | null;
+    const overlay = document.querySelector(
+      "#overlayModal"
+    ) as HTMLDivElement | null;
+
+    let startX = 0;
+    let startY = 0;
+    const touchMargin = 50;
+
+    function handleTouchStart(e: TouchEvent) {
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        if (
+          startX > window.innerWidth - touchMargin &&
+          deltaX < 0 &&
+          !hamburgerButton?.classList.contains(DISPLAY.open)
+        ) {
+          hamburgerButton?.click();
+        } else if (
+          deltaX > 0 &&
+          hamburgerButton?.classList.contains(DISPLAY.open)
+        ) {
+          hamburgerButton?.click();
+        }
+      }
+    }
+
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    $$(DISPLAY.hamburgerMenuClass).forEach((button) => {
+      button.addEventListener("click", () => {
+        const hamburgerButton = $(
+          DISPLAY.hamburgerMenuClass
+        ) as HTMLElement | null;
+        if (hamburgerButton) {
+          hamburgerButton.classList.toggle(DISPLAY.open);
+          const isMenuOpen = hamburgerButton.classList.contains(DISPLAY.open);
+          hamburgerButton.setAttribute("aria-expanded", String(isMenuOpen));
+          hamburgerButton.setAttribute(
+            "aria-label",
+            isMenuOpen
+              ? "Cerrar menú de navegación"
+              : "Abrir menú de navegación"
+          );
+          const hamburgerButtonClick = new CustomEvent(
+            DISPLAY.hamburgerButtonClicked
+          );
+          hamburgerButton.dispatchEvent(hamburgerButtonClick);
+
+          if (isMenuOpen) {
+            overlay?.classList.remove("opacity-0", "invisible");
+            overlay?.classList.add("opacity-100", "visible");
+          } else {
+            overlay?.classList.add("opacity-0", "invisible");
+            overlay?.classList.remove("opacity-100", "visible");
+          }
+        }
+      });
+    });
+
+    if (hamburgerButton?.classList.contains(DISPLAY.open)) {
+      hamburgerButton.classList.remove(DISPLAY.open);
+    }
+
+    overlay?.addEventListener("click", () => {
+      if (hamburgerButton?.classList.contains(DISPLAY.open)) {
+        hamburgerButton.classList.remove(DISPLAY.open);
+        hamburgerButton.setAttribute("aria-expanded", "false");
+        hamburgerButton.setAttribute("aria-label", "Abrir menú de navegación");
+
+        const hamburgerButtonClick = new CustomEvent(
+          DISPLAY.hamburgerButtonClicked
+        );
+        hamburgerButton.dispatchEvent(hamburgerButtonClick);
+
+        overlay?.classList.add("opacity-0", "invisible");
+        overlay?.classList.remove("opacity-100", "visible");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,186 @@
+---
+import RecomCarousel from "./RecomCarousel.astro";
+import Resourses from "./Resourses.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+const getFirstName = (fullName: any) => {
+  if (!fullName) return "Usuario";
+  const nameParts = fullName.toLowerCase().split(" ");
+  return capitalize(nameParts[0]);
+};
+
+const capitalize = (word: string) => {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+};
+
+const normalizeName = getFirstName(session?.user?.name);
+---
+
+<main
+  class="flex flex-col min-h-dvh w-full max-w-[1250px] py-5 px-5 shrink items-stretch grow"
+>
+  <div class="w-full h-80 max-h-80 mb-5">
+    <div class="overflow-hidden h-80 w-full">
+      <div
+        class="flex justify-center items-center size-full py-20 px-5 bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,_rgb(0,_40,_70)_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)]"
+      >
+        <div
+          class="flex flex-col size-full items-center justify-center relative"
+        >
+          <h2
+            class="absolute top-2 text-2xl sm:text-3xl font-bold text-white dark:text-gray-200"
+          >
+            Bienvenido, {normalizeName || "Usuario"}
+          </h2>
+          <form
+            id="search-form"
+            role="search"
+            class="flex items-center justify-center w-full rounded-[4px]"
+          >
+            <div
+              class="relative flex flex-row text-link-m/50 max-w-[480px] w-full lg:w-[480px] h-10"
+            >
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Busca cualquier cosa que desees..."
+                class="group/item w-full outline-none pl-4 pr-10 text-sm rounded-[4px] shadow-md border-none text-link-h placeholder-link-m/50 bg-white dark:bg-gray-200 focus:shadow-lg focus:ring-0 transition-shadow"
+              />
+              <button
+                type="button"
+                id="search-button"
+                class="flex justify-center items-center absolute w-10 h-10 right-0"
+              >
+                <i
+                  id="search-icon"
+                  class="fa-solid fa-magnifying-glass text-link-m text-lg"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row flex-1 relative w-full gap-5">
+    <section
+      class="flex flex-col flex-1 mb-5 w-full bg-white dark:bg-wash-dark text-link-h dark:text-link-dark-f rounded-xl shadow-md p-4"
+    >
+      <h3 class="text-2xl font-bold mb-4">Recomendaciones</h3>
+      <RecomCarousel />
+    </section>
+    <aside class="hidden lg:flex">
+      <section
+        class="mb-5 w-80 bg-white dark:bg-wash-dark text-link-h dark:text-link-dark-f rounded-xl shadow-md p-4 pb-14"
+      >
+        <h3 class="text-2xl font-bold mb-4">Últimas Noticias</h3>
+        <div class="flex">
+          <!-- Noticias individuales -->
+          <article
+            class="bg-gray-100 dark:bg-midnight-900/20 rounded-xl overflow-hidden"
+          >
+            <a href="#">
+              <img
+                class="h-40 w-full object-cover"
+                src="https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/226e/live/16694e30-1ea2-11ef-822b-27ee4a290614.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-5">
+              <a href="#">
+                <h5
+                  class="mb-2 text-xl font-bold tracking-tight text-link-h dark:text-link-dark-f"
+                >
+                  Título de la noticia
+                </h5>
+              </a>
+              <div class="flex overflow-hidden">
+                <p
+                  class="mb-3 text-sm font-normal line-clamp-3 text-ellipsis overflow-hidden text-gray-500 dark:text-link-dark-m"
+                >
+                  Pequeña descripción de la noticia para mostrar al usuario como
+                  se ve la noticia y como se ve la noticia para mostrar al
+                  usuario.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="inline-flex items-center px-3 py-1 text-sm font-medium text-center text-bittersweet-400 dark:text-cerise-red-500 border-2 border-bittersweet-400 dark:border-cerise-red-500 hover:bg-bittersweet-100 dark:hover:bg-cerise-red-950 rounded-full transition-colors duration-200"
+              >
+                Leer más
+                <svg
+                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </aside>
+  </div>
+  <div class="flex flex-col flex-1 relative w-full select-none">
+    <section
+      class="flex flex-col flex-1 mb-5 w-full bg-white dark:bg-wash-dark text-link-h dark:text-link-dark-f rounded-xl shadow-md p-4"
+    >
+      <div
+        class="flex justify-center items-center h-10 px-4 mb-4 text-white bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,_rgb(0,_40,_70)_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)] shadow-md rounded-xl"
+      >
+        <h3 class="text-2xl font-bold">Recursos Principales</h3>
+      </div>
+      <Resourses />
+    </section>
+  </div>
+  <script>
+    document.addEventListener("astro:page-load", function () {
+      const searchInput = document.getElementById(
+        "search-input"
+      ) as HTMLInputElement;
+      const searchButton = document.getElementById(
+        "search-button"
+      ) as HTMLInputElement;
+      const searchIcon = document.getElementById(
+        "search-icon"
+      ) as HTMLInputElement;
+
+      searchInput?.addEventListener("input", function () {
+        if (searchInput.value.length > 0) {
+          searchIcon?.classList.remove("fa-magnifying-glass");
+          searchIcon?.classList.add("fa-times");
+        } else {
+          searchIcon?.classList.remove("fa-times");
+          searchIcon?.classList.add("fa-magnifying-glass");
+        }
+      });
+
+      searchButton?.addEventListener("click", function () {
+        if (searchInput.value.length > 0) {
+          searchInput.value = "";
+          searchIcon?.classList.remove("fa-times");
+          searchIcon?.classList.add("fa-magnifying-glass");
+        }
+      });
+    });
+  </script>
+</main>
+<div
+  id="focus_modal"
+  class="z-40 invisible backdrop-blur-md backdrop-saturate-150 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-[visibility,_opacity]"
+>
+</div>
+<div
+  id="overlayModal"
+  class="z-50 invisible bg-overlay/70 w-screen h-dvh fixed inset-0 opacity-0 transition-[visibility,_opacity]"
+>
+</div>

@@ -1,0 +1,819 @@
+---
+import LandingResourses from "@/components/Landing/LandingResourses.astro";
+---
+
+<article class="size-full break-words font-normal text-link z-40">
+  <div class="relative flex px-5 pt-24 sm:pt-52 container-xl">
+    <div
+      class="w-11 sm:w-[8.33333%] flex flex-col pointer-events-none relative"
+    >
+      <div class="mx-auto">
+        <div
+          class="inline-block rounded-full p-[4.5px] border-2 border-bittersweet-400/30"
+        >
+        </div>
+      </div>
+      <div
+        class="w-[3px] h-[50%] mx-auto rounded-full bg-[linear-gradient(transparent,#fa8072_30%)]"
+      >
+      </div>
+      <div class="mx-auto my-4">
+        <div class="relative inline-block">
+          <img
+            class="inline-block w-5 align-text-bottom z-[1]"
+            src="/surface-01.svg"
+            alt=""
+          />
+          <span
+            id="circle-1"
+            class="absolute -left-[11px] -top-[1px] sm:-left-2 sm:-top-1 size-9 border-2 border-green-700/70 -radical-red-300 rounded-full"
+          ></span>
+          <span
+            id="circle-2"
+            class="absolute -left-[19px] -top-[9px] sm:-left-4 sm:-top-[12px] size-[52px] border-2 border-broom-600/70 -radical-red-300 rounded-full"
+          ></span>
+        </div>
+      </div>
+      <div
+        id="line-1"
+        class="mx-auto -mb-48 mt-1 z-20 w-[3px] h-[54%] bg-[linear-gradient(#fa8072,_#0096b5_80%,transparent)] rounded-full"
+      >
+      </div>
+    </div>
+    <div class="flex flex-col pl-6 sm:pl-0">
+      <div class="text-start">
+        <h1
+          class="text-5xl sm:text-[72px] sm:leading-[76px] lg:text-[80px] lg:leading-[80px] tracking-tight font-medium mb-4 lg:-ml-[7px] max-w-4xl"
+        >
+          <span class="text-4xl sm:text-5xl md:text-7xl"
+            >La Información de Salud Esencial para tu Bienestar</span
+          >
+        </h1>
+        <p class="text-lg sm:text-2xl mb-4 sm:mb-24">
+          Todo lo que necesitas para una vida <span class="text-orient-700"
+            >más saludable</span
+          > y equilibrada
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row">
+        <a
+          href="/signup"
+          type="button"
+          aria-label="Registrar usuario"
+          class="btn_mktg relative inline-block py-4 px-6 text-[17px] leading-4 align-middle text-center whitespace-nowrap rounded-xl font-extrabold text-cerise-red-600 hover:text-cerise-red-800 shadow-[0_0_0_1px_rgb(201,53,96)] hover:shadow-[0_0_0_2px_rgb(142,35,73)] transition-shadow duration-200"
+        >
+          Únete a Essentia
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="inline-block arrow-symbol-mktg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            ><path
+              fill="currentColor"
+              d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
+            ></path><path
+              class="octicon-chevrow-stem"
+              stroke="currentColor"
+              d="M1.75 8H11"
+              stroke-width="1.5"
+              stroke-linecap="round"></path></svg
+          >
+        </a>
+      </div>
+      <div class="h-48"></div>
+    </div>
+  </div>
+
+  <article
+    class="size-full break-words font-normal text-link dark:text-link-dark-h bg-violet-100"
+  >
+    <div class="abolute w-full top-0 left-0">
+      <svg
+        class="absolute block w-full h-28 z-10"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          opacity=".25"
+          class="fill-gray-100"></path>
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          opacity=".5"
+          class="fill-gray-100"></path>
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          class="fill-gray-100"></path>
+      </svg>
+      <section
+        id="nuestros_recursos"
+        class="relative flex flex-col mx-auto w-full min-h-dvh pt-10 bg-[url('/bg-landing3.svg');] bg-center bg-cover bg-no-repeat overflow-clip"
+      >
+        <div
+          class="absolute -left-[30%] sm:-left-[10%] lg:left-[11%] top-[12%] opacity-90"
+        >
+          <img class="w-[250px]" src="/surface-01.svg" alt="" />
+        </div>
+        <div class="absolute -left-[5%] lg:left-[14%] bottom-[4%]">
+          <img class="w-[200px]" src="/surface-02.svg" alt="" />
+        </div>
+        <div
+          class="absolute -right-[30%] sm:-right-[15%] lg:right-[9%] bottom-[35%]"
+        >
+          <img class="w-[300px]" src="/surface-03.svg" alt="" />
+        </div>
+        <div
+          class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5"
+        >
+        </div>
+        <div
+          id="slideleft"
+          class="relative flex flex-col w-auto lg:w-[80rem] gap-2 grow mx-5 lg:mx-auto my-20 px-5 md:px-12 py-5 md:py-12 items-center bg-black/5 backdrop-blur-2xl border-2 border-white/30 rounded-2xl shadow-2xl shadow-black/30"
+        >
+          <div
+            class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-2xl z-10"
+          >
+          </div>
+          <div
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+          >
+            <div
+              class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
+            >
+              <h1>Nuestros recursos</h1>
+              <div
+                class="animate-shine-infinite absolute inset-0 -top-[20px] flex h-[calc(100%+40px)] w-full justify-center blur-[12px]"
+              >
+                <div class="relative h-full w-8 bg-white/30"></div>
+              </div>
+            </div>
+            <h2
+              class="font-grotesk font-semibold text-2xl sm:text-5xl mb-7 w-full lg:max-w-3xl p-5 bg-white/30 rounded-2xl shadow-[0_0_20px_0_rgba(0,0,0,0.1)]"
+            >
+              Infórmate, aprende y descubre todo sobre tu salud y la de otros en
+              un sólo lugar <span class="text-2xl sm:text-4xl">🌿</span>
+            </h2>
+            <p
+              class="max-full lg:max-w-3xl mx-auto text-base sm:text-xl mb-7 leading-normal font-medium"
+            >
+              Descubre cómo tener una vida saludable, visualiza tutoriales para
+              ejercicios, información de nutrición, consejos sobre el bienestar
+              emocional, tu salud sexual y aborda las necesidades específicas
+              según tú edad o la de otros.
+            </p>
+          </div>
+          <LandingResourses />
+        </div>
+      </section>
+      <section
+        id="nuestro_metodo"
+        class="flex flex-col mx-auto w-full min-h-dvh bg-white/50 border-y-4 border-white"
+      >
+        <div
+          class="flex flex-col gap-2 grow w-full mx-auto my-20 lg:my-32 px-5 md:px-24 items-center justify-center"
+        >
+          <div
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+          >
+            <div
+              class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
+            >
+              <h1>Nuestro método</h1>
+              <div
+                class="animate-shine-infinite absolute inset-0 -top-[20px] flex h-[calc(100%+40px)] w-full justify-center blur-[12px]"
+              >
+                <div class="relative h-full w-8 bg-white/30"></div>
+              </div>
+            </div>
+            <h2
+              class="font-grotesk font-semibold text-3xl sm:text-5xl mb-7 w-full lg:max-w-3xl"
+            >
+              Buscamos promover la salud y el bienestar de forma amigable,
+              entretenida y rápida <span class="text-2xl sm:text-4xl">💕</span>
+            </h2>
+            <p
+              class="w-full lg:max-w-3xl mx-auto text-lg sm:text-xl mb-7 leading-normal font-medium"
+            >
+              Creemos que la salud es invaluable y todos, sin importar la edad,
+              género o situación, merecen disfrutar de una vida plena. Es por
+              eso que nos enfocamos en proporcionarte información basándonos en
+              lo fundamental, lo relevante y lo esencial. ¡Y todo a la palma de
+              tu mano! ¡No te arrepentirás!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="noticias_al_dia"
+        class="relative flex flex-col mx-auto w-full min-h-dvh justify-center bg-[url('/bg-landing3.svg');] bg-center bg-cover bg-no-repeat overflow-clip"
+      >
+        <div
+          class="absolute -right-[30%] sm:-right-[15%] lg:right-[17%] top-[15%] opacity-90"
+        >
+          <img class="w-[300px]" src="/surface-01.svg" alt="" />
+        </div>
+        <div
+          class="absolute -left-[35%] sm:-left-[15%] lg:left-[19%] top-[25%]"
+        >
+          <img class="w-[250px]" src="/surface-02.svg" alt="" />
+        </div>
+        <div
+          class="absolute left-[30%] sm:left-[55%] lg:left-[55%] bottom-[1%]"
+        >
+          <img class="w-[200px]" src="/surface-03.svg" alt="" />
+        </div>
+        <div
+          class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5"
+        >
+        </div>
+        <div class="mx-5 lg:mx-auto">
+          <div
+            id="slideright"
+            class="relative flex flex-col gap-2 grow size-full px-5 md:px-12 py-5 md:py-12 items-center justify-center bg-black/5 backdrop-blur-2xl border-2 border-white/30 rounded-2xl shadow-2xl shadow-black/30"
+          >
+            <div
+              class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-2xl z-10"
+            >
+            </div>
+            <div
+              class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+            >
+              <div
+                class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
+              >
+                <h1>Noticias al día</h1>
+                <div
+                  class="animate-shine-infinite absolute inset-0 -top-[20px] flex h-[calc(100%+40px)] w-full justify-center blur-[12px]"
+                >
+                  <div class="relative h-full w-8 bg-white/30"></div>
+                </div>
+              </div>
+              <h2
+                class="font-grotesk font-semibold text-3xl sm:text-5xl mb-7 w-full lg:max-w-3xl p-5 bg-white/30 rounded-2xl shadow-[0_0_20px_0_rgba(0,0,0,0.1)]"
+              >
+                Mantente al tanto de las actualizaciones sobre salud en el mundo <span
+                  class="text-2xl sm:text-4xl">🌎</span
+                >
+              </h2>
+              <p
+                class="w-full lg:max-w-3xl mx-auto text-lg sm:text-xl mb-7 leading-normal font-medium"
+              >
+                Descubre avances médicos, consejos de expertos y descubrimientos
+                en salud. Desde consejos prácticos sobre el bienestar e
+                innovaciones hasta reportajes sobre el tema, encuentra artículos
+                actualizados que te ayudarán a comprender los desafíos y
+                soluciones en salud a nivel nacional e internacional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="essentia_ai"
+        class="flex flex-col mx-auto w-full min-h-dvh bg-white/50 border-y-4 border-white"
+      >
+        <div
+          class="flex flex-col gap-2 grow w-full mx-auto my-20 lg:my-32 px-5 md:px-24 items-center justify-center"
+        >
+          <div
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+          >
+            <div
+              class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
+            >
+              <h1>Essentia AI ⭐</h1>
+              <div
+                class="animate-shine-infinite absolute inset-0 -top-[20px] flex h-[calc(100%+40px)] w-full justify-center blur-[12px]"
+              >
+                <div class="relative h-full w-8 bg-white/30"></div>
+              </div>
+            </div>
+            <h2
+              class="font-grotesk font-semibold text-3xl sm:text-5xl mb-7 w-full lg:max-w-3xl"
+            >
+              Descubre nuestra asistencia automatizada <span
+                class="text-2xl sm:text-4xl">☝️🤓</span
+              >
+            </h2>
+            <p
+              class="w-full lg:max-w-3xl mx-auto text-lg sm:text-xl mb-7 leading-normal font-medium"
+            >
+              ¡Obtén respuestas rápidas y precisas sobre salud y bienestar!
+              Nuestra inteligencia artificial especializada te ofrece
+              orientación personalizada al instante. Accede a información
+              confiable sobre diversos temas de salud, respaldada por evidencia
+              científica, para tomar decisiones informadas. Descubre soluciones
+              precisas y confiables para todas tus dudas.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="todo_y_mas"
+        class="relative flex flex-col mx-auto w-full bg-[url('/bg-landing3.svg');] bg-cover bg-center bg-no-repeat"
+      >
+        <div
+          class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5"
+        >
+        </div>
+        <div class="w-max max-w-full mx-auto mt-20 md:mt-32">
+          <div class="mx-auto">
+            <div class="flex justify-start lg:justify-center px-5 md:px-24">
+              <div>
+                <h2
+                  class="font-grotesk font-semibold text-3xl sm:text-5xl w-full"
+                >
+                  ¡Descúbrelo todo y mucho más!
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="box-border max-w-full overflow-x-auto">
+            <div
+              class="flex flex-nowrap flex-col sm:flex-row items-start justify-center h-full mx-auto pt-8 px-5 md:px-24 pb-20 md:pb-28 mb-20 md:mb-28 gap-6"
+            >
+              <div
+                class="relative shrink w-[416px] max-w-full sm:min-h-full p-6 backdrop-blur-2xl bg-black/5 border-2 border-white/30 rounded-2xl shadow-2xl shadow-black/30"
+              >
+                <div
+                  class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-2xl z-10"
+                >
+                </div>
+                <article class="flex flex-col h-full">
+                  <header class="pb-6">
+                    <h3 class="text-start text-3xl font-semibold leading-10">
+                      Essentia gratis
+                    </h3>
+                  </header>
+                  <div class="relative flex-grow self-stretch overflow-hidden">
+                    <div>
+                      <span class="text-base font-medium leading-9"
+                        >Accede a todas estas funciones:</span
+                      >
+                      <ul class="grid justify-items-start gap-2">
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span
+                              >Recursos principales: <span
+                                class="text-orient-800"
+                              >
+                                Vida saludable, Ejercicios y fitness, Nutrición,
+                                Bienestar emocional, Salud sexual y Salud para
+                                todas las edades</span
+                              ></span
+                            >
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span>Sección de noticias</span>
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span
+                              >Experiencia personalizada y adaptable, decide qué
+                              quieres ver, acomodada a tus necesidades</span
+                            >
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span
+                              >Inteligencia artificial especializada Essentia AI</span
+                            >
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span
+                              >Recursos adicionales como guías, recomendaciones,
+                              tutoriales y más</span
+                            >
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span>Contenido descargable</span>
+                          </div>
+                        </li>
+                        <li class="flex text-start text-base">
+                          <div class="flex-[0_0_auto] min-w-0 box-border">
+                            <span
+                              aria-hidden="true"
+                              class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="icon icon-tabler icons-tabler-filled icon-tabler-star"
+                                ><path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"></path><path
+                                  d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                                ></path></svg
+                              ></span
+                            >
+                          </div>
+                          <div class="flex-[1_1] min-w-0 pl-4 box-border">
+                            <span>Personalización de tu perfil</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+                <div class="relative flex flex-col -mx-6 px-6">
+                  <div class="w-full mt-6">
+                    <a
+                      type="button"
+                      aria-label="Registrar usuario"
+                      class="relative inline-flex items-center justify-center overflow-hidden h-10 w-full py-3 px-4 sm:px-8 font-medium text-lg shadow-lg text-white rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 hover:brightness-90 active:scale-[.98] transition-all"
+                      href="/signup">Comenzar</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="gradient_border relative shrink w-[416px] max-w-full min-h-full p-6 rounded-2xl shadow-2xl shadow-black/30 opacity-60"
+              >
+                <article class="relative flex flex-col h-full">
+                  <header class="pb-6">
+                    <h3
+                      class="text-start text-3xl font-semibold leading-10 z-20"
+                    >
+                      Essentia premium
+                    </h3>
+                  </header>
+                  <div class="relative flex-grow self-stretch overflow-hidden">
+                    <div>
+                      <ul class="grid justify-items-start gap-2">
+                        <li class="flex text-start text-base">
+                          <div class="flex-[1_1] min-w-0 box-border">
+                            <span class="font-medium">Próximamente...</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <svg
+          class="absolute block w-full h-28 bottom-0 rotate-180"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="fill-gray-100"></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="fill-gray-100"></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="fill-white"></path>
+        </svg>
+      </section>
+    </div>
+  </article>
+</article>
+
+<style is:global>
+  #slideup {
+    animation: slide-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 20%;
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+      scale: 0.7;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      scale: 1;
+    }
+  }
+
+  #slideleft {
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  #slideright {
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  .build-in-animate {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  #fadeup {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 20%;
+  }
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      translate: 0 50px;
+      scale: 0.7;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+      scale: 1;
+    }
+  }
+
+  #circle-1 {
+    animation: circle-1 1.5s linear infinite;
+  }
+
+  @keyframes circle-1 {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  #circle-2 {
+    opacity: 0;
+    animation: circle-2 1.5s linear infinite;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes circle-2 {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .gradient_border {
+    background: linear-gradient(
+      45deg,
+      rgba(250, 128, 114, 1) 0%,
+      rgba(0, 191, 227, 1) 100%
+    );
+  }
+
+  .gradient_border::before {
+    content: "";
+    position: absolute;
+    top: 3.4px;
+    left: 3px;
+    width: 98.5%;
+    height: 95%;
+    background: #fff;
+    border-radius: 0.85rem;
+  }
+
+  .octicon-chevrow-stem {
+    width: 1em;
+    height: 1em;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    transition: stroke-dashoffset 0.2s;
+  }
+
+  .btn_mktg:hover .octicon-chevrow-stem {
+    stroke-dashoffset: 20;
+  }
+
+  .btn_mktg:active .octicon-chevrow-stem {
+    stroke-dashoffset: 20;
+  }
+
+  .arrow-symbol-mktg {
+    transition: transform 0.2s;
+    transform: translateX(0);
+  }
+
+  .btn_mktg:hover .arrow-symbol-mktg {
+    transform: translateX(4px);
+  }
+
+  .btn_mktg:active .arrow-symbol-mktg {
+    transform: translateX(4px);
+  }
+
+  .build-in-animate-line {
+    transform: scaleY(1) !important;
+  }
+
+  #line-1 {
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scaleY(0);
+    transform-origin: 0 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const line2 = document.getElementById("line-1") as HTMLElement;
+
+    if (line2) {
+      setTimeout(() => {
+        line2.classList.add("build-in-animate-line");
+      }, 1500);
+    }
+
+    const slideLeft = document.getElementById("slideleft") as HTMLElement;
+    const slideRight = document.getElementById("slideright") as HTMLElement;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    };
+
+    const observerCallback = (
+      entries: IntersectionObserverEntry[],
+      observer: IntersectionObserver
+    ): void => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio >= 0.3) {
+          entry.target.classList.add("build-in-animate");
+        } else {
+          entry.target.classList.remove("build-in-animate");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    if (slideLeft && slideRight) {
+      observer.observe(slideLeft);
+      observer.observe(slideRight);
+    }
+  });
+</script>

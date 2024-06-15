@@ -1,10 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import ButtonUp from "../components/ButtonUp.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import SEO from "../components/SEO.astro";
-import type { Preload } from "../types/Preload";
+import ButtonUp from "@/components/ButtonUp.astro";
+import SEO from "@/components/SEO.astro";
+import type { Preload } from "@/types/Preload";
+import LandingFooter from "@/components/Landing/LandingFooter.astro";
 
 interface Props {
   title: string;
@@ -29,13 +28,10 @@ const { title, description, preload, canonical, image } = Astro.props;
     />
     <ViewTransitions />
   </head>
-  <body class="size-auto bg-gray-100 dark:bg-wash-full-dark isolate">
+  <body class="overflow-x-hidden anitaliased font-medium text-lg bg-gray-100">
     <div id="root">
-      <div id="main" role="main" class="flex flex-col items-center w-full">
-        <Header />
-        <slot />
-        <Footer />
-      </div>
+      <slot />
+      <LandingFooter />
       <ButtonUp />
     </div>
     <style is:global>
@@ -100,6 +96,7 @@ const { title, description, preload, canonical, image } = Astro.props;
       @supports selector(::-webkit-scrollbar) {
         ::-webkit-scrollbar {
           width: 10px;
+          height: 10px;
           border-radius: 10px;
         }
 
@@ -128,10 +125,54 @@ const { title, description, preload, canonical, image } = Astro.props;
           }
         }
       }
+      .container-xl {
+        max-width: 1280px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .nav_link {
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      .nav_link::after {
+        content: "";
+        position: absolute;
+        left: 15%;
+        bottom: 0;
+        height: 2px;
+        width: 70%;
+        background-color: rgb(33, 47, 61);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition:
+          transform 0.25s ease-in-out,
+          background-color 0.25s ease-in-out;
+      }
+
+      .nav_link.active::after {
+        transition: transform 0.25s ease-in-out 0.25s;
+        transform: scaleX(1);
+      }
+
+      .nav_link:hover::after {
+        transform: scaleX(1);
+      }
+
+      .translate_nav {
+        animation: slide-down 0.5s;
+      }
+
+      @keyframes slide-down {
+        0% {
+          transform: translateY(-100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
     </style>
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
-    ></script>
   </body>
 </html>

@@ -1,0 +1,40 @@
+---
+import SigninEntry from "./SignupEntry.astro";
+---
+
+<div class="page_content relative size-full">
+  <div class="z-40 w-100 min-h-dvh sm:min-h-[calc(100dvh-72px)]">
+    <div
+      class="flex justify-center items-center w-full min-h-dvh sm:min-h-[calc(100dvh-72px)] backdrop-blur-[2px] dark:bg-gray-950/90"
+    >
+      <div
+        class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 z-10 opacity-5"
+      >
+      </div>
+      <div class="z-10 flex flex-col h-full w-full sm:w-auto overflow-hidden">
+        <a
+          class="flex items-center justify-center size-full mt-8 mb-0 sm:mb-5"
+          href="/"
+        >
+          <img
+            class="w-32 active:scale-[.97] transition-transform"
+            src="/logo-essentia-on-dark.webp"
+            alt="Volver a la página de bienvenida"
+          />
+        </a>
+        <SigninEntry />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .page_content {
+    background:
+      radial-gradient(#04122500 0%, #041225 90%) fixed no-repeat,
+      url(/extras/landing-img.webp) center top no-repeat,
+      #041225;
+
+    background-size: cover;
+  }
+</style>
