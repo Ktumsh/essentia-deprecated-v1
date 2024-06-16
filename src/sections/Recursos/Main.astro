@@ -1,7 +1,9 @@
 ---
+import NewsCard from "@/components/NewsCard.astro";
 import RecomCarousel from "./RecomCarousel.astro";
 import Resourses from "./Resourses.astro";
 import { getSession } from "auth-astro/server";
+import { DATA_NEWS } from "@/consts/data-news";
 
 const session = await getSession(Astro.request);
 
@@ -16,6 +18,8 @@ const capitalize = (word: string) => {
 };
 
 const normalizeName = getFirstName(session?.user?.name);
+
+const noticia = DATA_NEWS?.articles?.slice(0, 1);
 ---
 
 <main
@@ -74,58 +78,21 @@ const normalizeName = getFirstName(session?.user?.name);
       <section
         class="mb-5 w-80 bg-white dark:bg-wash-dark text-link-h dark:text-link-dark-f rounded-xl shadow-md p-4 pb-14"
       >
-        <h3 class="text-2xl font-bold mb-4">Últimas Noticias</h3>
+        <h3 class="text-2xl font-bold mb-4">Último mes</h3>
         <div class="flex">
           <!-- Noticias individuales -->
-          <article
-            class="bg-gray-100 dark:bg-midnight-900/20 rounded-xl overflow-hidden"
-          >
-            <a href="#">
-              <img
-                class="h-40 w-full object-cover"
-                src="https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/226e/live/16694e30-1ea2-11ef-822b-27ee4a290614.jpg"
-                alt=""
+          {
+            noticia?.map((item: any) => (
+              <NewsCard
+                author={item.author}
+                title={item.title}
+                description={item.description}
+                url={item.url}
+                image={item.urlToImage}
+                date={item.publishedAt}
               />
-            </a>
-            <div class="p-5">
-              <a href="#">
-                <h5
-                  class="mb-2 text-xl font-bold tracking-tight text-link-h dark:text-link-dark-f"
-                >
-                  Título de la noticia
-                </h5>
-              </a>
-              <div class="flex overflow-hidden">
-                <p
-                  class="mb-3 text-sm font-normal line-clamp-3 text-ellipsis overflow-hidden text-gray-500 dark:text-link-dark-m"
-                >
-                  Pequeña descripción de la noticia para mostrar al usuario como
-                  se ve la noticia y como se ve la noticia para mostrar al
-                  usuario.
-                </p>
-              </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-3 py-1 text-sm font-medium text-center text-bittersweet-400 dark:text-cerise-red-500 border-2 border-bittersweet-400 dark:border-cerise-red-500 hover:bg-bittersweet-100 dark:hover:bg-cerise-red-950 rounded-full transition-colors duration-200"
-              >
-                Leer más
-                <svg
-                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-                </svg>
-              </a>
-            </div>
-          </article>
+            )) || <NewsCard />
+          }
         </div>
       </section>
     </aside>
@@ -176,7 +143,7 @@ const normalizeName = getFirstName(session?.user?.name);
 </main>
 <div
   id="focus_modal"
-  class="z-40 invisible backdrop-blur-md backdrop-saturate-150 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-[visibility,_opacity]"
+  class="z-40 invisible backdrop-blur-0 saturate-100 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-all ease-linear"
 >
 </div>
 <div

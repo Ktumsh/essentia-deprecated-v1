@@ -144,12 +144,32 @@ const itemId = RESOURSES.map(({ param }) => {
     const modal = $("#focus_modal") as HTMLElement;
     resourceCard.forEach((card) => {
       card.addEventListener("mouseenter", () => {
-        modal.classList.remove("opacity-0", "invisible");
-        modal.classList.add("opacity-100", "visible");
+        modal.classList.remove(
+          "opacity-0",
+          "invisible",
+          "backdrop-blur-0",
+          "saturate-100"
+        );
+        modal.classList.add(
+          "opacity-100",
+          "visible",
+          "backdrop-blur-md",
+          "saturate-50"
+        );
       });
       card.addEventListener("mouseleave", () => {
-        modal.classList.remove("opacity-100", "visible");
-        modal.classList.add("opacity-0", "invisible");
+        modal.classList.remove(
+          "opacity-100",
+          "visible",
+          "backdrop-blur-md",
+          "saturate-50"
+        );
+        modal.classList.add(
+          "opacity-0",
+          "invisible",
+          "backdrop-blur-0",
+          "saturate-100"
+        );
       });
     });
   });

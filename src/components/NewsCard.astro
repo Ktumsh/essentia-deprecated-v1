@@ -1,0 +1,87 @@
+---
+import ArrowRight from "./Icons/ArrowRight.astro";
+
+interface Props {
+  author?: string;
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  date?: string;
+}
+
+const { author, title, description, url, image, date } = Astro.props;
+
+const defaultDate = "01 jun 2024";
+const defaultTitle =
+  "Cómo es el método de las 4 leyes para construir el bienestar mental";
+const defaultImage =
+  "https://www.infobae.com/new-resizer/3TtIMh7ENs_p9R1mebha-7BOaao=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/XYTAMRQQHBFPPOCNUCOSQPABRQ.jpg";
+const defaultDescription =
+  "Es posible abandonar malos hábitos, reeducar las emociones y diseñar el propio camino hacia la felicidad. Dos expertas cuentan cómo lograrlo mediante sencillas acciones.";
+const defaultLink =
+  "https://www.infobae.com/salud/2024/06/01/como-es-el-metodo-de-las-4-leyes-para-construir-el-bienestar-mental/";
+
+function formatDate(apiDate?: string): string {
+  if (!apiDate) return defaultDate;
+  const date = new Date(apiDate);
+  const options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  };
+  return date.toLocaleDateString("es-ES", options).replace(".", "");
+}
+
+const formattedDate = formatDate(date);
+---
+
+<article
+  class="relative h-[384px] w-full bg-gray-100 dark:bg-wash-full-dark rounded-xl overflow-hidden"
+>
+  <div class="relative flex flex-col h-auto overflow-hidden">
+    <div class="overflow-hidden">
+      <img
+        class="h-full w-full object-cover"
+        src={image || defaultImage}
+        alt={title || defaultTitle}
+      />
+    </div>
+    <div
+      class="p-3 h-auto flex items-center justify-between w-[calc(100%_-_8px)] subpixel-antialiased bg-white/30 dark:bg-black/40 backdrop-blur backdrop-saturate-150 border-white/20 border overflow-hidden py-1 absolute rounded-xl top-1 shadow-md ml-1 z-10"
+    >
+      <p class="text-xs text-link-h dark:text-white/80">
+        {formattedDate}
+      </p>
+      <span
+        class="z-0 relative inline-flex items-center justify-center min-w-16 max-w-40 h-8 px-3 rounded-xl appearance-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden text-sm text-link-h dark:text-white/80 bg-white/20 dark:bg-black/20"
+      >
+        {author || "Infobae"}
+      </span>
+    </div>
+  </div>
+  <div
+    class="absolute bottom-2 right-0 left-0 p-5 rounded-t-xl bg-gray-100 dark:bg-wash-full-dark"
+  >
+    <h5
+      class="mb-2 text-base font-bold text-link-h dark:text-link-dark-f text-ellipsis line-clamp-3"
+    >
+      {title || defaultTitle}
+    </h5>
+    <div class="flex overflow-hidden">
+      <p
+        class="mb-3 text-sm font-normal line-clamp-3 text-ellipsis overflow-hidden text-gray-500 dark:text-link-dark-m"
+      >
+        {description || defaultDescription}
+      </p>
+    </div>
+    <a
+      href={url || defaultLink}
+      target="_blank"
+      class="inline-flex items-center px-3 py-1 text-sm font-medium text-center text-bittersweet-400 dark:text-cerise-red-500 border-2 border-bittersweet-400 dark:border-cerise-red-500 hover:bg-bittersweet-100 dark:hover:bg-cerise-red-950 rounded-full transition-colors duration-200"
+    >
+      Leer más
+      <ArrowRight class="rtl:rotate-180 w-3.5 h-3.5 ms-2" />
+    </a>
+  </div>
+</article>
