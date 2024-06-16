@@ -7,7 +7,7 @@ export default {
     files: [
       "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
       "./node_modules/flowbite/**/*.js",
-      "./node_modules/@nextui-org/theme/dist/components/(dropdown|menu|divider|popover|button|ripple|spinner).js",
+      "./node_modules/@nextui-org/theme/dist/components/(avatar|dropdown|menu|divider|popover|button|ripple|spinner).js",
     ],
   },
   theme: {

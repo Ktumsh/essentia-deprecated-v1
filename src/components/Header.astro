@@ -12,6 +12,7 @@ import Logout from "./Icons/Logout.astro";
 
 import { getSession } from "auth-astro/server";
 import type { Session } from "auth-astro";
+import AvatarDropdown from "./AvatarDropdown";
 
 const session: Session | any = await getSession(Astro.request);
 
@@ -27,6 +28,9 @@ const capitalize = (word: string) => {
 };
 
 const normalizeName = getFirstNameAndLastName(session?.user?.name);
+const hasUsername = session?.user?.username
+  ? `@${session.user.username}`
+  : session?.user?.email;
 
 const { pathname } = Astro.url;
 const normalizedPathName =
@@ -135,13 +139,12 @@ const pages = [
       <div class="flex items-center justify-center size-full px-6">
         {
           session?.user?.image ? (
-            <button aria-label="Perfil de usuario">
-              <img
-                class="size-8 rounded-full"
-                src={session?.user?.image}
-                alt="Avatar del usuario"
-              />
-            </button>
+            <AvatarDropdown
+              avatarUrl={session?.user?.image}
+              name={normalizeName}
+              username={hasUsername}
+              client:visible
+            />
           ) : (
             <a
               class="relative flex justify-center items-center overflow-hidden align-middle size-8 z-0 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 active:brightness-90 active:scale-95 transition-[filter,_transform] duration-100"
@@ -202,12 +205,8 @@ const pages = [
               >
               <span
                 class="text-sm text-link-m dark:text-link-dark-d transition-none"
-                >{
-                  session?.user?.username
-                    ? `@${session.user.username}`
-                    : session?.user?.email
-                }</span
-              >
+                >{hasUsername}
+              </span>
             </a>
           </div>
         </div>
@@ -365,8 +364,10 @@ const pages = [
 
   const { signOut } = await import("auth-astro/client");
   const $logout = $("#logout");
+  const $avatarLogout = $("#avatar_logout");
 
   if ($logout) $logout.onclick = () => signOut();
+  if ($avatarLogout) $avatarLogout.onclick = () => signOut();
 </script>
 <script>
   import { $ } from "@/lib/dom-selector";

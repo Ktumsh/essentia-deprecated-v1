@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.7.0",
     "@auth/core": "^0.32.0",
+    "@nextui-org/avatar": "^2.0.30",
     "@nextui-org/dropdown": "^2.1.26",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",
