@@ -11,6 +11,9 @@
     }
   },
   "exclude": [
-    "public"
+    "public",
+    "node_modules",
+    "dist",
+    "build"
   ]
 }

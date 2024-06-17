@@ -1,12 +1,11 @@
 ---
-import { SignIn } from "auth-astro/components";
 import Google from "./Icons/Google.astro";
 import Facebook from "./Icons/Facebook.astro";
 import X from "./Icons/X.astro";
 ---
 
 <div
-  class="flex flex-col relative justify-center items-center p-8 size-full sm:min-w-[500px] rounded-xl bg-transparent sm:bg-white text-left sm:shadow-md shadow-black/20 font-normal text-link-m overflow-hidden"
+  class="flex flex-col relative justify-center items-center p-8 size-full sm:min-w-[500px] rounded-xl bg-transparent sm:bg-white text-left sm:shadow-md shadow-black/20 font-normal text-base-color-m overflow-hidden"
 >
   <form
     class="flex flex-col items-start justify-center size-full gap-6 mb-4 select-none"
@@ -124,9 +123,9 @@ import X from "./Icons/X.astro";
     <hr class="flex-1 h-[1px] border-gray-200" />
   </div>
   <div class="flex flex-col w-full gap-2">
-    <SignIn
-      provider="google"
-      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-link-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+    <button
+      id="loginWithGoogle"
+      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
     >
       <div class="flex justify-center items-center flex-shrink-0">
         <Google width="18" height="18" />
@@ -134,10 +133,10 @@ import X from "./Icons/X.astro";
       <span class="inline-block flex-1 mr-6 max-w-full whitespace-nowrap"
         >Continuar con Google
       </span>
-    </SignIn>
-    <SignIn
-      provider="facebook"
-      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-link-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+    </button>
+    <button
+      id="loginWithFacebook"
+      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
     >
       <div class="flex justify-center items-center flex-shrink-0">
         <Facebook width="18" height="18" />
@@ -145,10 +144,10 @@ import X from "./Icons/X.astro";
       <span class="inline-block flex-1 mr-6 max-w-full whitespace-nowrap"
         >Continuar con Facebook
       </span>
-    </SignIn>
-    <SignIn
-      provider="twitter"
-      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-link-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+    </button>
+    <button
+      id="loginWithX"
+      class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
     >
       <div class="flex justify-center items-center flex-shrink-0">
         <X width="16" height="16" />
@@ -156,15 +155,15 @@ import X from "./Icons/X.astro";
       <span class="inline-block flex-1 mr-6 max-w-full whitespace-nowrap"
         >Continuar con X
       </span>
-    </SignIn>
+    </button>
   </div>
   <div
     class="flex items-center justify-center text-[13px] text-center self-center mt-2 text-gray-200 sm:text-inherit"
   >
     <p>
       ¿No tienes una cuenta? <a
-        id="register-link"
-        class="register-link font-bold sm:font-medium text-orient-600 sm:text-orient-700"
+        id="register-base-color"
+        class="register-base-color font-bold sm:font-medium text-orient-600 sm:text-orient-700"
         href="/signup"
         aria-label="Regístrate"
         >Regístrate
@@ -199,6 +198,45 @@ import X from "./Icons/X.astro";
   </style>
 </div>
 
+<script>
+  import { $ } from "@/lib/dom-selector";
+
+  const width = 600;
+  const height = 700;
+  const left = window.innerWidth / 2 - width / 2;
+  const top = window.innerHeight / 2 - height / 2;
+
+  const $googleLogin = $("#loginWithGoogle");
+  const $facebookLogin = $("#loginWithFacebook");
+  const $xLogin = $("#loginWithX");
+
+  if ($googleLogin)
+    $googleLogin.onclick = () => {
+      window.open(
+        "/auth/google",
+        "Google login",
+        `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      );
+    };
+
+  if ($facebookLogin)
+    $facebookLogin.onclick = () => {
+      window.open(
+        "/auth/facebook",
+        "Facebook login",
+        `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      );
+    };
+
+  if ($xLogin)
+    $xLogin.onclick = () => {
+      window.open(
+        "/auth/twitter",
+        "Twitter login",
+        `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      );
+    };
+</script>
 <script>
   import { $ } from "@/lib/dom-selector";
   /*Acción de mostrar / ocultar la contraseña*/

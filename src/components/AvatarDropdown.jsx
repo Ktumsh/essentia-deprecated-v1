@@ -10,7 +10,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
   return (
     <div className="flex items-center gap-4">
       <Dropdown
-        className="bg-white dark:bg-wash-full-dark rounded-xl"
+        className="bg-white dark:bg-base-full-dark rounded-xl"
         placement="bottom-end"
       >
         <DropdownTrigger>
@@ -22,32 +22,32 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           </button>
         </DropdownTrigger>
         <DropdownMenu
-          className="bg-white dark:bg-wash-full-dark rounded-xl"
+          className="bg-white dark:bg-base-full-dark rounded-xl"
           aria-label="Acciones del perfil"
           variant="flat"
         >
           <DropdownItem
             key="profile"
-            className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-wash-dark text-link-m dark:text-link-dark-m data-[hover=true]:text-link-h dark:data-[hover=true]:text-link-dark-f"
+            className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
           >
-            <p className="font-medium dark:text-link-dark-f">{name}</p>
+            <p className="font-medium dark:text-base-color-dark">{name}</p>
             <p className="text-xs">{username}</p>
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-wash-dark text-link-m dark:text-link-dark-m data-[hover=true]:text-link-h dark:data-[hover=true]:text-link-dark-f"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             key="configurations"
           >
             Configuración
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-wash-dark text-link-m dark:text-link-dark-m data-[hover=true]:text-link-h dark:data-[hover=true]:text-link-dark-f"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             key="help_and_feedback"
           >
             Centro de Ayuda
           </DropdownItem>
           <DropdownItem
             id="avatar_logout"
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-wash-dark text-link-m dark:text-link-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
             key="logout"
             onClick={() => signOut()}
           >

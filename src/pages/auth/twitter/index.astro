@@ -1,0 +1,8 @@
+<main class="flex min-h-screen items-center justify-center text-center">
+  Redirigiendo a X...
+</main>
+
+<script>
+  const { signIn } = await import("auth-astro/client");
+  signIn("twitter", { callbackUrl: "/auth/callback" });
+</script>

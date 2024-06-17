@@ -70,11 +70,11 @@ const pages = [
   class="static flex justify-center top-0 left-0 right-0 gap-3 w-full z-50 shadow-md lg:shadow-none transition-transform duration-300 ease-in-out"
 >
   <nav
-    class="relative flex justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-wash-dark dark:lg:bg-transparent"
+    class="relative flex justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark dark:lg:bg-transparent"
   >
     <div class="flex align-center">
       <a
-        class="text-link dark:text-white/95 text-base font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
+        class="text-base-color dark:text-white/95 text-base font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
         href="/"
         aria-label="Página de inicio"
       >
@@ -93,7 +93,7 @@ const pages = [
     </div>
     <HamburgerButton class:list={"block lg:hidden"} id="menuButton" />
     <div
-      class="hidden lg:flex justify-around flex-1 items-center shadow-md px-4 md:px-8 rounded-xl text-sm font-normal text-link-h dark:text-link-dark-h bg-white dark:bg-wash-dark"
+      class="hidden lg:flex justify-around flex-1 items-center shadow-md px-4 md:px-8 rounded-xl text-sm font-normal text-base-color-h dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       {
         pages.map(({ name, href, active }, key) => (
@@ -118,7 +118,7 @@ const pages = [
       }
     </div>
     <div
-      class="hidden lg:flex justify-around items-center shadow-md rounded-xl text-sm font-normal text-gray-500 dark:text-link-dark-h bg-white dark:bg-wash-dark"
+      class="hidden lg:flex justify-around items-center shadow-md rounded-xl text-sm font-normal text-gray-500 dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       <a
         class="flex flex-row text-nowrap relative size-auto px-6 pointer-events-none"
@@ -133,7 +133,7 @@ const pages = [
       </a>
       <div
         role="separator"
-        class="h-14 border-r border-shark-100 dark:border-wash-full-dark"
+        class="h-14 border-r border-gray-200 dark:border-base-full-dark"
       >
       </div>
       <div class="flex items-center justify-center size-full px-6">
@@ -159,7 +159,7 @@ const pages = [
       </div>
     </div>
     <div
-      class="hidden lg:flex justify-between items-center px-6 shadow-md rounded-xl text-link dark:text-link-dark-h bg-white dark:bg-wash-dark"
+      class="hidden lg:flex justify-between items-center px-6 shadow-md rounded-xl text-base-color dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       <ThemeToggle client:only="react" />
     </div>
@@ -167,13 +167,15 @@ const pages = [
 </header>
 <div
   id={MOBILE_MENU_CONTENT_ID}
-  class="fixed top-0 bottom-0 right-0 z-[999] flex w-screen max-w-[310px] h-full flex-col items-center overflow-x-auto bg-white dark:bg-wash-full-dark lg:hidden px-8"
+  class="fixed top-0 bottom-0 right-0 z-[999] flex w-screen max-w-[310px] h-full flex-col items-center overflow-x-auto bg-white dark:bg-base-full-dark lg:hidden px-8"
 >
   <nav class="navContent size-full opacity-0 transition-opacity">
     <div class="flex flex-col justify-between size-full max-h-dvh">
-      <div class="flex flex-col w-full text-link-h dark:text-link-dark-h">
+      <div
+        class="flex flex-col w-full text-base-color-h dark:text-base-color-dark-h"
+      >
         <div
-          class="flex w-full h-auto py-5 border-b-1 border-gray-200 dark:border-wash-dark"
+          class="flex w-full h-auto py-5 border-b-1 border-gray-200 dark:border-base-dark"
         >
           <div class="inline-flex flex-col items-start justify-center gap-2">
             {
@@ -197,14 +199,14 @@ const pages = [
               )
             }
             <a
-              class="inline-flex flex-col items-start active:bg-gray-200 dark:active:bg-wash-dark transition-colors duration-100"
+              class="inline-flex flex-col items-start active:bg-gray-200 dark:active:bg-base-dark transition-colors duration-100"
               href="javascript:void(0)"
             >
               <span class="font-medium text-inherit transition-none capitalize"
                 >{normalizeName || "Usuario"}</span
               >
               <span
-                class="text-sm text-link-m dark:text-link-dark-d transition-none"
+                class="text-sm text-base-color-m dark:text-base-color-dark-d transition-none"
                 >{hasUsername}
               </span>
             </a>
@@ -233,7 +235,7 @@ const pages = [
           ))
         }
         <hr
-          class="h-5 border-t-0 border-b-1 border-gray-200 dark:border-wash-dark"
+          class="h-5 border-t-0 border-b-1 border-gray-200 dark:border-base-dark"
         />
         <hr class="h-5 border-none" />
         <div class="subMenu group">
@@ -272,7 +274,9 @@ const pages = [
           </div>
         </div>
       </div>
-      <footer class="flex flex-col w-full text-link-m dark:text-link-dark-m">
+      <footer
+        class="flex flex-col w-full text-base-color-m dark:text-base-color-dark-m"
+      >
         <a class="relative flex items-center w-full py-5 text-sm" href="">
           <Settings class="mr-3" width="14" height="14" />
           Configuración
@@ -287,8 +291,8 @@ const pages = [
             <span class="text-sm">Tema</span>
           </div>
           <ThemeToggle
-            buttonClass="dark:bg-wash-dark"
-            spanClass="dark:bg-wash-full-dark"
+            buttonClass="dark:bg-base-dark"
+            spanClass="dark:bg-base-full-dark"
             client:only="react"
           />
         </div>

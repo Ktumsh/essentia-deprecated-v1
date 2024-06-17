@@ -2,7 +2,7 @@
 import LandingResourses from "@/components/Landing/LandingResourses.astro";
 ---
 
-<article class="size-full break-words font-normal text-link z-40">
+<article class="size-full break-words font-normal text-base-color z-40">
   <div class="relative flex px-5 pt-24 sm:pt-52 container-xl">
     <div
       class="w-11 sm:w-[8.33333%] flex flex-col pointer-events-none relative"
@@ -87,7 +87,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
   </div>
 
   <article
-    class="size-full break-words font-normal text-link dark:text-link-dark-h bg-violet-100"
+    class="size-full break-words font-normal text-base-color dark:text-base-color-dark-h bg-violet-100"
   >
     <div class="abolute w-full top-0 left-0">
       <svg
@@ -139,7 +139,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
           >
           </div>
           <div
-            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-base-color"
           >
             <div
               class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
@@ -177,7 +177,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
           class="flex flex-col gap-2 grow w-full mx-auto my-20 lg:my-32 px-5 md:px-24 items-center justify-center"
         >
           <div
-            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-base-color"
           >
             <div
               class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
@@ -240,7 +240,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
             >
             </div>
             <div
-              class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+              class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-base-color"
             >
               <div
                 class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
@@ -280,7 +280,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
           class="flex flex-col gap-2 grow w-full mx-auto my-20 lg:my-32 px-5 md:px-24 items-center justify-center"
         >
           <div
-            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-link"
+            class="flex flex-col items-center justify-center max-w-4xl lg:text-center text-base-color"
           >
             <div
               class="group relative inline-flex overflow-hidden text-sm uppercase self-start lg:self-center font-semibold mb-4 px-4 py-1 rounded-full text-white bg-bittersweet-400"
@@ -776,8 +776,9 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
 </style>
 
 <script>
+  import { $ } from "@/lib/dom-selector";
   document.addEventListener("astro:page-load", () => {
-    const line2 = document.getElementById("line-1") as HTMLElement;
+    const line2 = $("#line-1");
 
     if (line2) {
       setTimeout(() => {
@@ -785,8 +786,8 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
       }, 1500);
     }
 
-    const slideLeft = document.getElementById("slideleft") as HTMLElement;
-    const slideRight = document.getElementById("slideright") as HTMLElement;
+    const slideLeft = $("#slideleft");
+    const slideRight = $("#slideright");
 
     const observerOptions = {
       root: null,
@@ -794,10 +795,7 @@ import LandingResourses from "@/components/Landing/LandingResourses.astro";
       threshold: 0.3,
     };
 
-    const observerCallback = (
-      entries: IntersectionObserverEntry[],
-      observer: IntersectionObserver
-    ): void => {
+    const observerCallback = (entries: IntersectionObserverEntry[]): void => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio >= 0.3) {
           entry.target.classList.add("build-in-animate");

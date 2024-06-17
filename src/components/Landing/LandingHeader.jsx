@@ -113,7 +113,7 @@ const LandingHeader = () => {
         >
           <div
             id="nav_links"
-            className={`flex text-base font-light text-link whitespace-nowrap transition-opacity duration-150 ${
+            className={`flex text-base font-light text-base-color whitespace-nowrap transition-opacity duration-150 ${
               isChanging ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -132,7 +132,7 @@ const LandingHeader = () => {
               ))
             ) : (
               <a
-                className="text-link dark:text-white/95 font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
+                className="text-base-color dark:text-white/95 font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
                 href="/"
               >
                 <img
