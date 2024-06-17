@@ -34,6 +34,8 @@ export default {
         "base-dark-50": "var(--background-dark-50)",
         "base-dark-40": "var(--background-dark-40)",
         "base-dark-30": "var(--background-dark-30)",
+        "base-dark-20": "var(--background-dark-20)",
+        "base-dark-10": "var(--background-dark-10)",
         "base-full-dark": "var(--background-dark-f)",
         "base-full-dark-90": "var(--background-dark-f-90)",
         "base-full-dark-80": "var(--background-dark-f-80)",
@@ -41,6 +43,9 @@ export default {
         "base-full-dark-60": "var(--background-dark-f-60)",
         "base-full-dark-50": "var(--background-dark-f-50)",
         "base-full-dark-40": "var(--background-dark-f-40)",
+        "base-full-dark-30": "var(--background-dark-f-30)",
+        "base-full-dark-20": "var(--background-dark-f-20)",
+        "base-full-dark-10": "var(--background-dark-f-10)",
         "radical-red": {
           50: "#ffeff1",
           100: "#ffe0e6",

@@ -1,9 +1,9 @@
 ---
-import ResoursesItem from "./ResoursesItem.astro";
-import { RESOURSES } from "@/consts/resourses";
+import ResoursesItem from "./ResourcesItem.astro";
+import { RESOURCES } from "@/consts/resources";
 
-const itemId = RESOURSES.map(({ param }) => {
-  return { href: `/recursos/${param}` };
+const itemId = RESOURCES.map(({ resource }) => {
+  return { href: `/recursos/${resource}` };
 });
 ---
 

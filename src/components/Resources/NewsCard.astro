@@ -1,5 +1,5 @@
 ---
-import ArrowRight from "./Icons/ArrowRight.astro";
+import ArrowRight from "../Icons/ArrowRight.astro";
 
 interface Props {
   author?: string;
@@ -48,13 +48,13 @@ const formattedDate = formatDate(date);
       />
     </div>
     <div
-      class="p-3 h-auto flex items-center justify-between w-[calc(100%_-_8px)] subpixel-antialiased bg-white/30 dark:bg-black/40 backdrop-blur backdrop-saturate-150 border-white/20 border overflow-hidden py-1 absolute rounded-xl top-1 shadow-md ml-1 z-10"
+      class="p-3 h-auto flex items-center justify-between w-[calc(100%_-_8px)] subpixel-antialiased bg-white/30 dark:bg-base-full-dark-40 backdrop-blur backdrop-saturate-150 border-white/20 border overflow-hidden py-1 absolute rounded-xl top-1 shadow-md ml-1 z-10"
     >
       <p class="text-xs text-base-color-h dark:text-white/80">
         {formattedDate}
       </p>
       <span
-        class="z-0 relative inline-flex items-center justify-center min-w-16 max-w-40 h-8 px-3 rounded-xl appearance-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden text-sm text-base-color-h dark:text-white/80 bg-white/20 dark:bg-black/20"
+        class="z-0 relative inline-flex items-center justify-center min-w-16 max-w-40 h-8 px-3 rounded-xl appearance-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden text-sm text-base-color-h dark:text-white/80 bg-white/20 dark:bg-base-full-dark-20"
       >
         {author || "Infobae"}
       </span>

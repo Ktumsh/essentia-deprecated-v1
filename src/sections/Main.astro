@@ -1,10 +1,12 @@
 ---
-import NewsCard from "@/components/NewsCard.astro";
-import RecomCarousel from "./RecomCarousel.astro";
-import Resourses from "./Resourses.astro";
+import NewsCard from "@/components/Resources/NewsCard.astro";
+import RecomCarousel from "@/components/Resources/RecomCarousel.astro";
+import Resources from "@/components/Resources/Resources.astro";
 import { getSession } from "auth-astro/server";
 import { DATA_NEWS } from "@/consts/data-news";
-import Greeting from "@/components/Greeting.svelte";
+import Greeting from "@/components/Resources/Greeting.svelte";
+import Search from "@/components/Icons/Search.astro";
+import Clear from "@/components/Icons/Clear.astro";
 
 const session = await getSession(Astro.request);
 
@@ -51,17 +53,26 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
                 type="text"
                 id="search-input"
                 placeholder="Busca cualquier cosa que desees..."
-                class="group/item w-full outline-none pl-4 pr-10 text-sm rounded-[4px] shadow-md border-none text-base-color-h placeholder-base-color-m/50 bg-white dark:bg-gray-200 focus:shadow-lg focus:ring-0 transition-shadow"
+                class="group/item w-full outline-none pl-4 pr-10 text-sm rounded-[4px] shadow-md border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-white/50 dark:bg-base-full-dark-40 backdrop-blur backdrop-saturate-150 focus:shadow-lg focus:ring-0 transition-shadow"
               />
               <button
                 type="button"
                 id="search-button"
                 class="flex justify-center items-center absolute w-10 h-10 right-0"
+                aria-label="Buscar"
               >
-                <i
+                <Search
                   id="search-icon"
-                  class="fa-solid fa-magnifying-glass text-base-color-m text-lg"
-                ></i>
+                  width="24"
+                  height="24"
+                  class="text-base-color-m dark:text-base-color-dark-m"
+                />
+                <Clear
+                  id="clear-icon"
+                  width="16"
+                  height="16"
+                  class="text-base-color-m dark:text-base-color-dark-m hidden"
+                />
               </button>
             </div>
           </form>
@@ -108,37 +119,32 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
       >
         <h3 class="text-2xl font-bold">Recursos Principales</h3>
       </div>
-      <Resourses />
+      <Resources />
     </section>
   </div>
   <script>
+    import { $ } from "@/lib/dom-selector";
+
     document.addEventListener("astro:page-load", function () {
-      const searchInput = document.getElementById(
-        "search-input"
-      ) as HTMLInputElement;
-      const searchButton = document.getElementById(
-        "search-button"
-      ) as HTMLInputElement;
-      const searchIcon = document.getElementById(
-        "search-icon"
-      ) as HTMLInputElement;
+      const searchInput = $("#search-input") as HTMLInputElement;
+      const searchIcon = $("#search-icon");
+      const clearIcon = $("#clear-icon");
 
       searchInput?.addEventListener("input", function () {
-        if (searchInput.value.length > 0) {
-          searchIcon?.classList.remove("fa-magnifying-glass");
-          searchIcon?.classList.add("fa-times");
-        } else {
-          searchIcon?.classList.remove("fa-times");
-          searchIcon?.classList.add("fa-magnifying-glass");
-        }
+        searchInput.value.length > 0
+          ? (searchIcon?.classList.add("hidden"),
+            clearIcon?.classList.remove("hidden"))
+          : (searchIcon?.classList.remove("hidden"),
+            clearIcon?.classList.add("hidden"));
       });
 
+      const searchButton = $("#search-button");
+
       searchButton?.addEventListener("click", function () {
-        if (searchInput.value.length > 0) {
-          searchInput.value = "";
-          searchIcon?.classList.remove("fa-times");
-          searchIcon?.classList.add("fa-magnifying-glass");
-        }
+        searchInput.value.length > 0 &&
+          ((searchInput.value = ""),
+          searchIcon?.classList.remove("hidden"),
+          clearIcon?.classList.add("hidden"));
       });
     });
   </script>

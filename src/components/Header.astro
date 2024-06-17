@@ -148,7 +148,7 @@ const pages = [
           ) : (
             <a
               class="relative flex justify-center items-center overflow-hidden align-middle size-8 z-0 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 active:brightness-90 active:scale-95 transition-[filter,_transform] duration-100"
-              href="javascript:void(0)"
+              href="#"
             >
               <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center size-full text-white/80 dark:text-black/80">
                 <User width="80%" height="80%" />
@@ -180,7 +180,7 @@ const pages = [
           <div class="inline-flex flex-col items-start justify-center gap-2">
             {
               session?.user?.image ? (
-                <a href="javascript:void(0)" aria-label="Perfil de usuario">
+                <a href="#" aria-label="Perfil de usuario">
                   <img
                     class="size-8 rounded-full"
                     src={session?.user?.image}
@@ -190,7 +190,7 @@ const pages = [
               ) : (
                 <a
                   class="relative flex justify-center items-center overflow-hidden align-middle size-8 z-0 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 active:brightness-90 active:scale-95 transition-[filter,_transform] duration-100"
-                  href="javascript:void(0)"
+                  href="#"
                 >
                   <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center size-full text-white/80 dark:text-black/80">
                     <User width="80%" height="80%" />
@@ -200,7 +200,7 @@ const pages = [
             }
             <a
               class="inline-flex flex-col items-start active:bg-gray-200 dark:active:bg-base-dark transition-colors duration-100"
-              href="javascript:void(0)"
+              href="#"
             >
               <span class="font-medium text-inherit transition-none capitalize"
                 >{normalizeName || "Usuario"}</span
@@ -241,7 +241,7 @@ const pages = [
         <div class="subMenu group">
           <a
             class="relative flex items-center w-full py-3 font-medium"
-            href="javascript:void(0)"
+            href="#"
           >
             <Community class="mr-3" width="24" height="24" />
             Comunidad

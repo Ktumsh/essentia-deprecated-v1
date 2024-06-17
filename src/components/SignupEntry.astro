@@ -1,6 +1,8 @@
 ---
+import Eye from "./Icons/Eye.astro";
 import Facebook from "./Icons/Facebook.astro";
 import Google from "./Icons/Google.astro";
+import OffEye from "./Icons/OffEye.astro";
 import X from "./Icons/X.astro";
 ---
 
@@ -108,7 +110,7 @@ import X from "./Icons/X.astro";
           </svg>
         </span>
         <input
-          id="passInput2"
+          id="passInput"
           name="password"
           aria-label="Contraseña"
           type="password"
@@ -119,28 +121,12 @@ import X from "./Icons/X.astro";
           >Contraseña
         </label>
         <button
-          aria-label="Mostrar/ocultar contraseña"
           type="button"
           id="showButton2"
-          class="flex justify-center items-center h-full px-2 cursor-pointer hover:text-bittersweet-400"
+          class="flex justify-center items-center h-full px-2 cursor-pointer hover:text-bittersweet-400 bottom-2"
         >
-          <svg
-            id="eyeButton2"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off size-4"
-            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-              d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path><path
-              d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"
-            ></path><path d="M3 3l18 18"></path>
-          </svg>
+          <Eye id="eye2" width="20" height="20" class="hidden" />
+          <OffEye id="offEye2" width="20" height="20" />
         </button>
       </div>
       <div
@@ -165,7 +151,7 @@ import X from "./Icons/X.astro";
       </div>
       <button
         type="submit"
-        class="flex justify-center items-center h-10 w-full text-sm rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 hover:brightness-90 active:scale-[.98] text-white shadow-md transition-all"
+        class="flex justify-center items-center h-10 w-full text-base rounded-full bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] hover:brightness-90 active:scale-[.98] text-white shadow-md transition-all"
         >Crear cuenta
       </button>
       <div class="flex flex-row items-center justify-center w-full px-3 my-4">
@@ -291,21 +277,21 @@ import X from "./Icons/X.astro";
 </script>
 <script>
   import { $ } from "@/lib/dom-selector";
-  /*Acción de mostrar / ocultar la contraseña*/
+  //Acción de mostrar / ocultar la contraseña
   document.addEventListener("astro:page-load", () => {
-    const passField = $("#passInput2") as HTMLInputElement;
-    const icon = $("#eyeButton2") as HTMLInputElement;
+    const passField = $("#passInput") as HTMLInputElement;
     const showButton = $("#showButton2") as HTMLInputElement;
+    const eye = $("#eye2");
+    const offEye = $("#offEye2");
+
     showButton?.addEventListener("click", () => {
-      if (passField?.type === "password") {
-        passField.type = "text";
-        icon.innerHTML =
-          '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>';
-      } else {
-        passField.type = "password";
-        icon.innerHTML =
-          '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" /><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" /><path d="M3 3l18 18" /></svg>';
-      }
+      passField?.type === "password"
+        ? ((passField.type = "text"),
+          eye?.classList.remove("hidden"),
+          offEye?.classList.add("hidden"))
+        : ((passField.type = "password"),
+          eye?.classList.add("hidden"),
+          offEye?.classList.remove("hidden"));
     });
   });
 </script>

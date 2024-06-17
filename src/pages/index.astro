@@ -1,4 +1,5 @@
 ---
+import ButtonUp from "@/components/ButtonUp.astro";
 import LandingHeader from "@/components/Landing/LandingHeader";
 import LandingLayout from "@/layouts/LandingLayout.astro";
 import Landing from "@/sections/Landing.astro";
@@ -12,8 +13,9 @@ if (session) return Astro.redirect("/recursos");
 <LandingLayout
   title="Essentia - Bienvenida"
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
-  canonical="https://essentiadev.netlify.app/"
+  canonical="https://essentia-cl.vercel.app/"
 >
   <LandingHeader client:only="react" />
   <Landing />
+  <ButtonUp />
 </LandingLayout>

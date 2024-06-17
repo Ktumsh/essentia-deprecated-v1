@@ -1,9 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+if (!session) return Astro.redirect("/login");
 ---
 
 <Layout
   title="Essentia - Noticias"
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
-  canonical="https://essentiadev.netlify.app/noticias"
+  canonical="https://essentia-cl.vercel.app/noticias"
 />
