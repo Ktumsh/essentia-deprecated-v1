@@ -23,7 +23,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
         </DropdownTrigger>
         <DropdownMenu
           className="bg-white dark:bg-wash-full-dark rounded-xl"
-          aria-label="Profile Actions"
+          aria-label="Acciones del perfil"
           variant="flat"
         >
           <DropdownItem
