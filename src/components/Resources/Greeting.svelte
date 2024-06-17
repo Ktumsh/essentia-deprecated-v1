@@ -1,6 +1,7 @@
 <script lang="ts">
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
+  console.log(currentHour);
 
   let greeting = "";
 
