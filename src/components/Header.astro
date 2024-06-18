@@ -13,6 +13,8 @@ import Logout from "./Icons/Logout.astro";
 import { getSession } from "auth-astro/server";
 import type { Session } from "auth-astro";
 import AvatarDropdown from "./AvatarDropdown";
+import Clear from "./Icons/Clear.astro";
+import Search from "./Icons/Search.astro";
 
 const session: Session | any = await getSession(Astro.request);
 
@@ -70,11 +72,11 @@ const pages = [
   class="static flex justify-center top-0 left-0 right-0 gap-3 w-full z-50 shadow-md lg:shadow-none transition-transform duration-300 ease-in-out"
 >
   <nav
-    class="relative flex justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark dark:lg:bg-transparent"
+    class="relative flex items-center justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark dark:lg:bg-transparent"
   >
-    <div class="flex align-center">
+    <div class="flex align-center w-full sm:w-auto">
       <a
-        class="text-base-color dark:text-white/95 text-base font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
+        class="hidden sm:inline-flex text-base-color dark:text-white/95 text-base font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full gap-2"
         href="/"
         aria-label="Página de inicio"
       >
@@ -88,12 +90,62 @@ const pages = [
           src="/e-logomark-on-dark.webp"
           alt="Logo de Essentia"
         />
-        <span class="not-sr-only">Essentia®️</span>
+        <span class="hidden sm:block not-sr-only">Essentia®️</span>
       </a>
+      <form
+        id="search-form"
+        role="search"
+        class="flex sm:hidden items-center justify-center w-full mr-2"
+      >
+        <div
+          class="relative flex flex-row text-base-color-m/50 max-w-[480px] w-full lg:w-[480px] h-10"
+        >
+          <input
+            id="search-input2"
+            type="text"
+            class="group/item relative w-full outline-none pl-4 pr-10 text-sm border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-gray-200 dark:bg-base-full-dark focus:ring-0 rounded-full"
+          />
+          <div id="mobile-logomark" class="transition-opacity">
+            <img
+              class="absolute left-2 top-1/2 -translate-y-1/2 size-6 flex dark:hidden origin-center"
+              src="/m-logomark-light.png"
+              alt="Logo de Essentia"
+            />
+            <img
+              class="absolute left-2 top-1/2 -translate-y-1/2 size-6 hidden dark:flex origin-center"
+              src="/m-logomark-dark.png"
+              alt="Logo de Essentia"
+            />
+            <span
+              class="absolute left-9 top-1/2 -translate-y-1/2 not-sr-only text-sm font-grotesk font-extrabold text-white dark:text-base-dark"
+              >Essentia®️</span
+            >
+          </div>
+          <button
+            type="button"
+            id="search-button2"
+            class="flex justify-center items-center absolute w-10 h-10 right-0"
+            aria-label="Buscar"
+          >
+            <Search
+              id="search-icon2"
+              width="24"
+              height="24"
+              class="text-base-color-d dark:text-base-color-dark-d"
+            />
+            <Clear
+              id="clear-icon2"
+              width="16"
+              height="16"
+              class="text-base-color-d dark:text-base-color-dark-d hidden"
+            />
+          </button>
+        </div>
+      </form>
     </div>
     <HamburgerButton class:list={"block lg:hidden"} id="menuButton" />
     <div
-      class="hidden lg:flex justify-around flex-1 items-center shadow-md px-4 md:px-8 rounded-xl text-sm font-normal text-base-color-h dark:text-base-color-dark-h bg-white dark:bg-base-dark"
+      class="hidden lg:flex justify-around flex-1 items-center h-full shadow-md px-4 md:px-8 rounded-xl text-sm font-normal text-base-color-h dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       {
         pages.map(({ name, href, active }, key) => (
@@ -118,7 +170,7 @@ const pages = [
       }
     </div>
     <div
-      class="hidden lg:flex justify-around items-center shadow-md rounded-xl text-sm font-normal text-gray-500 dark:text-base-color-dark-h bg-white dark:bg-base-dark"
+      class="hidden lg:flex justify-around items-center h-full shadow-md rounded-xl text-sm font-normal text-gray-500 dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       <a
         class="flex flex-row text-nowrap relative size-auto px-6 pointer-events-none"
@@ -159,7 +211,7 @@ const pages = [
       </div>
     </div>
     <div
-      class="hidden lg:flex justify-between items-center px-6 shadow-md rounded-xl text-base-color dark:text-base-color-dark-h bg-white dark:bg-base-dark"
+      class="hidden lg:flex justify-between items-center h-full px-6 shadow-md rounded-xl text-base-color dark:text-base-color-dark-h bg-white dark:bg-base-dark"
     >
       <ThemeToggle client:only="react" />
     </div>
@@ -167,7 +219,7 @@ const pages = [
 </header>
 <div
   id={MOBILE_MENU_CONTENT_ID}
-  class="fixed top-0 bottom-0 right-0 z-[999] flex w-screen max-w-[310px] h-full flex-col items-center overflow-x-auto bg-white dark:bg-base-full-dark lg:hidden px-8"
+  class="fixed top-0 bottom-0 right-0 z-[999] flex w-screen max-w-[310px] h-full flex-col items-center overflow-x-auto bg-white dark:bg-base-full-dark lg:hidden px-8 no-scroll"
 >
   <nav class="navContent size-full opacity-0 transition-opacity">
     <div class="flex flex-col justify-between size-full max-h-dvh">
@@ -239,9 +291,10 @@ const pages = [
         />
         <hr class="h-5 border-none" />
         <div class="subMenu group">
-          <a
+          <button
+            type="button"
             class="relative flex items-center w-full py-3 font-medium"
-            href="#"
+            aria-label="Comunidad"
           >
             <Community class="mr-3" width="24" height="24" />
             Comunidad
@@ -249,7 +302,7 @@ const pages = [
               class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-2 bg-[url('/chevron.png')] bg-[size:100%_100%] transition-transform group-[.open]:rotate-180"
             >
             </div>
-          </a>
+          </button>
           <div
             class="opacity-0 group-[.open]:opacity-100 h-0 group-[.open]:h-[176px] overflow-hidden transition-all"
           >
@@ -313,6 +366,16 @@ const pages = [
 </div>
 
 <style>
+  .no-scroll {
+    overflow: auto; /* Permite el desplazamiento */
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+  }
+
   .active-bar.current-page {
     color: rgb(250, 128, 114);
     &::after {
@@ -362,7 +425,40 @@ const pages = [
     pointer-events: all;
   }
 </style>
+<script>
+  import { $ } from "@/lib/dom-selector";
 
+  document.addEventListener("astro:page-load", () => {
+    const $searchInput2 = $("#search-input2") as HTMLInputElement;
+    const $searchIcon2 = $("#search-icon2");
+    const $clearIcon2 = $("#clear-icon2");
+    const $mobileLogomark = $("#mobile-logomark");
+
+    $searchInput2.onfocus = () => {
+      $mobileLogomark?.classList.add("opacity-0");
+      $searchIcon2?.classList.add("hidden");
+      $clearIcon2?.classList.remove("hidden");
+    };
+
+    $searchInput2.onblur = () => {
+      if ($searchInput2.value.length === 0) {
+        $mobileLogomark?.classList.remove("opacity-0");
+        $searchIcon2?.classList.remove("hidden");
+        $clearIcon2?.classList.add("hidden");
+      }
+    };
+
+    const $searchButton2 = $("#search-button2") as HTMLButtonElement;
+
+    $searchButton2.onclick = () => {
+      $searchInput2.value.length > 0 &&
+        (($searchInput2.value = ""),
+        $searchIcon2?.classList.remove("hidden"),
+        $clearIcon2?.classList.add("hidden"),
+        $mobileLogomark?.classList.remove("opacity-0"));
+    };
+  });
+</script>
 <script>
   import { $ } from "@/lib/dom-selector";
 
@@ -425,8 +521,10 @@ const pages = [
       }
     }
 
-    document.addEventListener("touchstart", handleTouchStart);
-    document.addEventListener("touchend", handleTouchEnd);
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     menuButton?.addEventListener("hamburgerButtonClicked", () =>
       toggleMenu(nav, menuMobileContent, navContent)

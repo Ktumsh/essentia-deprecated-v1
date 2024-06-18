@@ -37,5 +37,8 @@
     "tailwindcss-animate": "^1.0.7",
     "taos": "^1.0.5",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "astro-compress": "2.2.28"
   }
 }

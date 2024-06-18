@@ -28,10 +28,10 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
 <main
   class="flex flex-col min-h-dvh w-full max-w-[1250px] py-5 px-5 shrink items-stretch grow"
 >
-  <div class="w-full h-80 max-h-80 mb-5">
+  <div class="hidden sm:block w-full h-80 max-h-80 mb-5">
     <div class="overflow-hidden h-80 w-full">
       <div
-        class="flex justify-center items-center size-full py-20 px-5 bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,_rgb(0,_40,_70)_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)]"
+        class="flex justify-center items-center size-full py-20 px-5 bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,#061b37_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)]"
       >
         <div
           class="flex flex-col size-full items-center justify-center relative"
@@ -44,7 +44,7 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
           <form
             id="search-form"
             role="search"
-            class="flex items-center justify-center w-full rounded-[4px]"
+            class="flex items-center justify-center w-full rounded-xl"
           >
             <div
               class="relative flex flex-row text-base-color-m/50 max-w-[480px] w-full lg:w-[480px] h-10"
@@ -53,7 +53,7 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
                 type="text"
                 id="search-input"
                 placeholder="Busca cualquier cosa que desees..."
-                class="group/item w-full outline-none pl-4 pr-10 text-sm rounded-[4px] shadow-md border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-white/50 dark:bg-base-full-dark-40 backdrop-blur backdrop-saturate-150 focus:shadow-lg focus:ring-0 transition-shadow"
+                class="group/item w-full outline-none pl-4 pr-10 text-sm rounded-xl shadow-md border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-white/50 dark:bg-base-full-dark-40 backdrop-blur backdrop-saturate-150 focus:shadow-lg focus:ring-0 transition-shadow"
               />
               <button
                 type="button"
@@ -115,40 +115,41 @@ const noticia = DATA_NEWS?.articles?.slice(0, 1);
       class="flex flex-col flex-1 mb-5 w-full bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
     >
       <div
-        class="flex justify-center items-center h-10 px-4 mb-4 text-white bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,_rgb(0,_40,_70)_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)] shadow-md rounded-xl"
+        class="flex justify-center items-center h-10 px-4 mb-4 text-white bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,#061b37_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)] shadow-md rounded-xl"
       >
         <h3 class="text-2xl font-bold">Recursos Principales</h3>
       </div>
       <Resources />
     </section>
   </div>
-  <script>
-    import { $ } from "@/lib/dom-selector";
-
-    document.addEventListener("astro:page-load", function () {
-      const searchInput = $("#search-input") as HTMLInputElement;
-      const searchIcon = $("#search-icon");
-      const clearIcon = $("#clear-icon");
-
-      searchInput?.addEventListener("input", function () {
-        searchInput.value.length > 0
-          ? (searchIcon?.classList.add("hidden"),
-            clearIcon?.classList.remove("hidden"))
-          : (searchIcon?.classList.remove("hidden"),
-            clearIcon?.classList.add("hidden"));
-      });
-
-      const searchButton = $("#search-button");
-
-      searchButton?.addEventListener("click", function () {
-        searchInput.value.length > 0 &&
-          ((searchInput.value = ""),
-          searchIcon?.classList.remove("hidden"),
-          clearIcon?.classList.add("hidden"));
-      });
-    });
-  </script>
 </main>
+<script>
+  import { $ } from "@/lib/dom-selector";
+
+  document.addEventListener("astro:page-load", () => {
+    const $searchInput = $("#search-input") as HTMLInputElement;
+    const $searchIcon = $("#search-icon");
+    const $clearIcon = $("#clear-icon");
+
+    $searchInput.oninput = () => {
+      $searchInput.value.length > 0
+        ? ($searchIcon?.classList.add("hidden"),
+          $clearIcon?.classList.remove("hidden"))
+        : ($searchIcon?.classList.remove("hidden"),
+          $clearIcon?.classList.add("hidden"));
+    };
+
+    const $searchButton = $("#search-button") as HTMLButtonElement;
+
+    $searchButton.onclick = () => {
+      $searchInput.value.length > 0 &&
+        (($searchInput.value = ""),
+        $searchIcon?.classList.remove("hidden"),
+        $clearIcon?.classList.add("hidden"));
+    };
+  });
+</script>
+
 <div
   id="focus_modal"
   class="z-40 invisible backdrop-blur-0 saturate-100 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-all ease-linear"
