@@ -5,8 +5,8 @@ import Resources from "@/components/Resources/Resources.astro";
 import { getSession } from "auth-astro/server";
 import { DATA_NEWS } from "@/consts/data-news";
 import Greeting from "@/components/Resources/Greeting.svelte";
-import Search from "@/components/Icons/Search.astro";
-import Clear from "@/components/Icons/Clear.astro";
+import Search from "@/icons/search.astro";
+import Clear from "@/icons/clear.astro";
 
 const session = await getSession(Astro.request);
 

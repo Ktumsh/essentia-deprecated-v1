@@ -3,18 +3,18 @@ import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle.jsx";
 import { MOBILE_MENU_CONTENT_ID } from "@/consts/mobile-menu";
 import HamburgerButton from "./HamburgerButton.astro";
 
-import Settings from "./Icons/Settings.astro";
-import Help from "./Icons/Help.astro";
-import User from "./Icons/User.astro";
-import Community from "./Icons/Community.astro";
-import Theme from "./Icons/Theme.astro";
-import Logout from "./Icons/Logout.astro";
+import Settings from "@/icons/settings.astro";
+import Help from "@/icons/help.astro";
+import User from "@/icons/user.astro";
+import Community from "@/icons/community.astro";
+import Theme from "@/icons/theme.astro";
+import Logout from "@/icons/logout.astro";
+import Clear from "@/icons/clear.astro";
+import Search from "@/icons/search.astro";
 
 import { getSession } from "auth-astro/server";
 import type { Session } from "auth-astro";
 import AvatarDropdown from "./AvatarDropdown";
-import Clear from "./Icons/Clear.astro";
-import Search from "./Icons/Search.astro";
 
 const session: Session | any = await getSession(Astro.request);
 
@@ -69,7 +69,7 @@ const pages = [
 
 <header
   id="header"
-  class="static flex justify-center top-0 left-0 right-0 gap-3 w-full z-50 shadow-md lg:shadow-none transition-transform duration-300 ease-in-out"
+  class="sticky sm:static flex justify-center top-0 left-0 right-0 gap-3 w-full z-[998] sm:z-50 shadow-md lg:shadow-none transform transition-transform duration-300 ease-in-out"
 >
   <nav
     class="relative flex items-center justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark dark:lg:bg-transparent"
@@ -425,6 +425,37 @@ const pages = [
     pointer-events: all;
   }
 </style>
+<script>
+  import { $ } from "@/lib/dom-selector";
+
+  document.addEventListener("astro:page-load", () => {
+    let lastScrollTop = 0;
+    const $header = $("#header");
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      $header?.classList.toggle("-translate-y-full", scrollTop > lastScrollTop);
+      $header?.classList.toggle("translate-y-0", scrollTop <= lastScrollTop);
+
+      lastScrollTop = Math.max(scrollTop, 0);
+    };
+
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+
+    const checkMediaQuery = (e: MediaQueryList) => {
+      e.matches
+        ? (window.onscroll = handleScroll)
+        : ((window.onscroll = null),
+          $header?.classList.remove("-translate-y-full"),
+          $header?.classList.add("translate-y-0"));
+    };
+
+    checkMediaQuery(mediaQuery);
+
+    mediaQuery.onchange = (e) => checkMediaQuery(e.target as MediaQueryList);
+  });
+</script>
 <script>
   import { $ } from "@/lib/dom-selector";
 

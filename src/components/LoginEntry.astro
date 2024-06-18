@@ -1,9 +1,9 @@
 ---
-import Google from "./Icons/Google.astro";
-import Facebook from "./Icons/Facebook.astro";
-import X from "./Icons/X.astro";
-import Eye from "./Icons/Eye.astro";
-import OffEye from "./Icons/OffEye.astro";
+import Google from "@/icons/google.astro";
+import Facebook from "@/icons/facebook.astro";
+import X from "@/icons/x.astro";
+import Eye from "@/icons/eye.astro";
+import OffEye from "@/icons/off-eye.astro";
 ---
 
 <div
@@ -226,14 +226,14 @@ import OffEye from "./Icons/OffEye.astro";
 </script>
 <script>
   import { $ } from "@/lib/dom-selector";
-  //Acción de mostrar / ocultar la contraseña
+
   document.addEventListener("astro:page-load", () => {
     const passField = $("#passInput") as HTMLInputElement;
     const showButton = $("#showButton") as HTMLInputElement;
     const eye = $("#eye");
     const offEye = $("#offEye");
 
-    showButton?.addEventListener("click", () => {
+    showButton.onclick = () => {
       passField?.type === "password"
         ? ((passField.type = "text"),
           eye?.classList.remove("hidden"),
@@ -241,6 +241,6 @@ import OffEye from "./Icons/OffEye.astro";
         : ((passField.type = "password"),
           eye?.classList.add("hidden"),
           offEye?.classList.remove("hidden"));
-    });
+    };
   });
 </script>

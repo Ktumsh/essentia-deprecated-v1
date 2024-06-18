@@ -39,6 +39,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "astro-compress": "2.2.28"
+    "astro-compress": "2.2.28",
+    "vite-plugin-pwa": "^0.20.0"
   }
 }

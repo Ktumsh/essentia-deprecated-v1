@@ -103,7 +103,7 @@ const LandingHeader = () => {
       <nav
         id="nav"
         className={`px-5 shadow-[0_2px_4px_0_rgba(0,0,0,.15)] items-center flex justify-between bg-white z-50 transition-all duration-300 ease-in-out ${
-          isChanged ? "" : "sm:mx-5 sm:my-2 sm:rounded-md"
+          isChanged ? "" : "sm:mx-5 sm:my-2 sm:rounded-xl"
         }`}
       >
         <div
