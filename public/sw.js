@@ -4,11 +4,8 @@ self.addEventListener("install", (event) => {
       return cache
         .addAll([
           "/",
-          "/index.html",
-          "/styles.css",
-          "/script.js",
-          "/icons/essentia-192x192.png",
-          "/icons/essentia-512x512.png",
+          "/essentia-192x192.png",
+          "/essentia-512x512.png",
           // Agrega aquí más recursos que quieras cachear y que sean válidos
         ])
         .catch((error) => {

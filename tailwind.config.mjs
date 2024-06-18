@@ -126,7 +126,19 @@ export default {
         },
       },
       fontFamily: {
-        grotesk: '"Space Grotesk", sans-serif',
+        grotesk: [
+          "Space Grotesk",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "Open Sans",
+          "Helvetica Neue",
+        ],
       },
       backgroundImage: {
         noise: "url(/extras/noise.webp)",
