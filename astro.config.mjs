@@ -9,7 +9,7 @@ import svelte from "@astrojs/svelte";
 import Compress from "astro-compress";
 
 import { VitePWA } from "vite-plugin-pwa";
-import { manifest, seoConfig } from "./src/seoConfig";
+import { manifest, seoConfig } from "./src/utils/seoConfig";
 
 // https://astro.build/config
 export default defineConfig({
