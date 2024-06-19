@@ -6,7 +6,7 @@ import Header from "@/components/Header.astro";
 import SEO from "@/components/SEO.astro";
 import type { Preload } from "@/types/Preload";
 
-import Footer from "@/components/Footer.astro";
+import Footer from "@/sections/Footer.astro";
 
 interface Props {
   title: string;
@@ -33,7 +33,11 @@ const { title, description, preload, canonical, image } = Astro.props;
   </head>
   <body class="size-auto bg-gray-100 dark:bg-base-full-dark isolate">
     <div id="root">
-      <div id="main" role="main" class="flex flex-col items-center w-full">
+      <div
+        id="main"
+        role="main"
+        class="min-h-dvh flex flex-col items-center w-full"
+      >
         <Header />
         <slot />
         <Footer />

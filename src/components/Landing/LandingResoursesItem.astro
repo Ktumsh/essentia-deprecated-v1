@@ -4,13 +4,13 @@ interface Props {
   title: string;
 }
 
-const { title } = Astro.props;
+const { class: className, title } = Astro.props;
 ---
 
 <div
   id="fadeup"
   class={`
-    ${Astro.props.class}
+    ${className}
     relative rounded-md 
     overflow-hidden border 
     border-black/10 group`}

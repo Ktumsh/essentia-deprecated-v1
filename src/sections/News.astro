@@ -1,0 +1,132 @@
+---
+import NewsGrid from "@/components/News/NewsGrid.astro";
+import Adjustments from "@/icons/adjustments.astro";
+---
+
+<div
+  class="relative flex items-center justify-center w-full h-80 max-h-80 my-5"
+>
+  <div
+    class="absolute bg-cover bg-no-repeat bg-center size-full bg-[url(/newsbg.jpg)]"
+  >
+  </div>
+  <div class="absolute inset-0 size-full bg-base-full-dark-60"></div>
+  <h1
+    class="text-6xl drop-shadow-md font-extrabold uppercase text-transparent bg-clip-text bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,#061b37_-100%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)]"
+  >
+    Noticias
+  </h1>
+</div>
+<main
+  class="flex flex-col min-h-dvh w-full max-w-[1250px] py-5 px-5 shrink items-stretch grow"
+>
+  <div
+    role="navigation"
+    class="relative flex items-center justify-center w-full h-10 bg-white dark:bg-base-dark rounded-xl shadow-md overflow-hidden"
+  >
+    <nav
+      class="flex flex-row items-center justify-between pl-2 pr-5 gap-5 w-full text-base-color-h dark:text-base-color-dark-h"
+    >
+      <div
+        class="flex flex-row items-center justify-center font-medium text-sm"
+      >
+        <button
+          type="button"
+          class="bg-gray-200 dark:bg-base-full-dark py-1 px-4 rounded-lg"
+          >Todo
+        </button>
+        <button type="button" class="py-1 px-4 rounded-lg">Internacional</button
+        >
+        <button type="button" class="py-1 px-4 rounded-lg">Nacional</button>
+      </div>
+      <div>
+        <button type="button" class="flex items-center justify-center">
+          <Adjustments width="24" height="24" />
+        </button>
+      </div>
+    </nav>
+  </div>
+  <NewsGrid />
+</main>
+<style>
+  .page-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: -104px;
+    inset: 0;
+    -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: source-in;
+    transition: background-image 0.1s ease-out;
+    animation-name: bg_anim;
+    animation-duration: 1s;
+    z-index: -1;
+  }
+
+  @keyframes bg_anim {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Copyright from "@/components/Footer/Copyright.astro";
+import LinkList from "@/components/Footer/LinkList.astro";
+import Logo from "@/components/Footer/Logo.astro";
+import SocialLinks from "@/components/Footer/SocialLinks.astro";
+
+const resources = [
+  { href: "", text: "Vida saludable" },
+  { href: "", text: "Ejercicios y Fitness" },
+  { href: "", text: "Nutrición" },
+  { href: "", text: "Bienestar emocional" },
+  { href: "", text: "Salud sexual" },
+  { href: "", text: "Salud para todas las edades" },
+];
+
+const additionalresources = [
+  { href: "", text: "Guías" },
+  { href: "", text: "Enlaces" },
+  { href: "", text: "Recomendaciones" },
+  { href: "", text: "Centros de salud" },
+  { href: "", text: "Fonos de emergencia" },
+];
+
+const community = [
+  { href: "", text: "Blog" },
+  { href: "", text: "Grupos de apoyo" },
+  { href: "", text: "Historias inspiradoras" },
+  { href: "", text: "Recursos comunitarios" },
+  { href: "", text: "Eventos y talleres" },
+];
+
+const more = [
+  { href: "", text: "Acerca de Essentia" },
+  { href: "", text: "Política de privacidad" },
+  { href: "", text: "Términos y condiciones" },
+  { href: "", text: "Cookies" },
+];
+---
+
+<div
+  id="footer"
+  class="w-full static bg-bittersweet-400 dark:bg-base-dark text-white font-light"
+>
+  <footer class="flex flex-col max-w-[1250px] py-10 px-5 mx-auto">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-x-12 gap-y-8 max-w-7xl mb-10"
+    >
+      <Logo />
+      <LinkList href="/recursos" title="Recursos" links={resources} />
+      <LinkList
+        href="/adicionales"
+        title="Recursos Adicionales"
+        links={additionalresources}
+      />
+      <LinkList href="/comunidad" title="Comunidad" links={community} />
+      <LinkList title="Más" links={more} />
+    </div>
+    <SocialLinks />
+  </footer>
+  <Copyright />
+</div>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import News from "@/sections/News.astro";
 import { getSession } from "auth-astro/server";
 
 const session = await getSession(Astro.request);
@@ -11,4 +12,6 @@ if (!session) return Astro.redirect("/login");
   title="Essentia - Noticias"
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical="https://essentia-cl.vercel.app/noticias"
-/>
+>
+  <News />
+</Layout>

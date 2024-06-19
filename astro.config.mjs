@@ -13,6 +13,9 @@ import { manifest, seoConfig } from "./src/utils/seoConfig";
 
 // https://astro.build/config
 export default defineConfig({
+  server: {
+    port: 4321,
+  },
   build: {
     inlineStylesheets: "always",
   },

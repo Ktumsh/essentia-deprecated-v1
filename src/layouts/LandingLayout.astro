@@ -33,8 +33,6 @@ const { title, description, preload, canonical, image } = Astro.props;
       <LandingFooter />
     </div>
     <style is:global>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
-
       :root {
         --color-base: #212f3d;
         --color-base-h: rgb(33 47 61 / 87%);
@@ -46,12 +44,12 @@ const { title, description, preload, canonical, image } = Astro.props;
         --color-base-dark-m: rgb(203 213 225 / 60%);
         --color-base-dark-d: rgb(203 213 225 / 38%);
       }
-
       @font-face {
-        font-family: "Space Grotesk", sans-serif;
+        font-family: "Space Grotesk";
         font-optical-sizing: auto;
-        font-weight: 400;
+        font-weight: 300 700;
         font-style: normal;
+        src: url(/fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.ttf);
       }
 
       @font-face {
