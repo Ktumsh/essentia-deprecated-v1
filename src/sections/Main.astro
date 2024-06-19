@@ -39,7 +39,7 @@ const noticia = DATA_NEWS?.slice(0, 1);
           <h2
             class="absolute top-2 text-2xl sm:text-3xl font-bold text-white dark:text-gray-200"
           >
-            <Greeting client:visible />, {nameFromUser || "Usuario"}
+            <Greeting client:only />, {nameFromUser || "Usuario"}
           </h2>
           <form
             id="search-form"
