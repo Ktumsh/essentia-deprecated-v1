@@ -62,15 +62,15 @@ const formattedDate = formatDate(date);
   relative flex flex-col 
   items-center justify-end 
   h-96 rounded-xl shadow-md 
-  overflow-hidden`}
+  dark:shadow-none overflow-hidden`}
 >
   <img
-    class="absolute inset-0 size-full object-cover group-hover:scale-105 transition"
+    class="absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(rgba(0,_0,_0,_1)_0%,_transparent_90%)] group-hover:scale-105 transition"
     src={image}
     alt=""
   />
   <div
-    class="absolute inset-0 size-full bg-cover bg-center bg-[linear-gradient(to_top,_rgba(0,_0,_0,_0.95)_0%,_transparent_100%)]"
+    class="absolute inset-0 size-full bg-cover bg-center bg-[linear-gradient(to_top,_rgba(0,_0,_0,_0.95)_0%,_transparent_100%)] dark:bg-none"
   >
   </div>
   <div class="flex flex-col content-center p-10">
