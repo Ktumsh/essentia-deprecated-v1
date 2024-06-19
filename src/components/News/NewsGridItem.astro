@@ -55,10 +55,11 @@ const formattedDate = formatDate(date);
 ---
 
 <a
+  id="fadeup"
   href={url}
   class={`
   ${className}
-  group col-span-7 
+  group
   relative flex flex-col 
   items-center justify-end 
   h-96 rounded-xl shadow-md 
@@ -73,16 +74,16 @@ const formattedDate = formatDate(date);
     class="absolute inset-0 size-full bg-cover bg-center bg-[linear-gradient(to_top,_rgba(0,_0,_0,_0.95)_0%,_transparent_100%)] dark:bg-none"
   >
   </div>
-  <div class="flex flex-col content-center p-10">
+  <div class="flex flex-col w-full content-center p-6 lg:p-10">
     <div
-      class="flex flex-col items-start justify-start w-full mb-8 gap-2 text-white/80 z-10"
+      class="flex flex-col items-start justify-start w-full mb-6 sm:mb-8 gap-2 text-white/80 z-10"
     >
       <span
-        class="text-white/80 text-xs uppercase px-3 py-1 bg-bittersweet-500/40 dark:bg-cerise-red-600/40 backdrop-blur backdrop-saturate-150 border border-bittersweet-400/30 dark:border-cerise-red-600/30 overflow-hidden rounded-full shadow-md"
+        class="text-white/80 text-[10px] sm:text-xs uppercase px-3 sm:py-1 bg-bittersweet-500/40 dark:bg-cerise-red-600/40 backdrop-blur backdrop-saturate-150 border border-bittersweet-400/30 dark:border-cerise-red-600/30 overflow-hidden rounded-full shadow-md"
         >{topic}
       </span>
       <h4
-        class="font-medium text-2xl group-hover:text-white text-ellipsis line-clamp-3 transition"
+        class="font-medium text-lg sm:text-xl lg:text-2xl group-hover:text-white text-ellipsis line-clamp-3 transition"
       >
         {title}
       </h4>
@@ -90,7 +91,9 @@ const formattedDate = formatDate(date);
     <div
       class="flex flex-row items-center w-full gap-5 text-base-color-dark z-10"
     >
-      <div class="flex flex-row items-center gap-5 h-full w-full">
+      <div
+        class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 h-full w-full"
+      >
         <div class="flex flex-row items-center justify-center h-full gap-2">
           <img class="size-6 rounded-full" src={imageAuthor} alt="" />
           <span class="text-xs text-nowrap">{author}</span>
@@ -115,3 +118,22 @@ const formattedDate = formatDate(date);
     </div>
   </div>
 </a>
+
+<style>
+  #fadeup {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 20%;
+  }
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      scale: 0.9;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+</style>
