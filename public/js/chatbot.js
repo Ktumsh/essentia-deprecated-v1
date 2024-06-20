@@ -1,4 +1,4 @@
-import { CreateWebWorkerMLCEngine } from "@mlc-ai/web-llm";
+import { CreateWebWorkerMLCEngine } from "../../node_modules/@mlc-ai/web-llm";
 
 document.addEventListener("astro:page-load", async () => {
   const $ = (el) => document.querySelector(el);
@@ -9,7 +9,7 @@ document.addEventListener("astro:page-load", async () => {
   const $messages = $("ul");
   const $container = $("main");
   const $button = $("#send-btn");
-  const $info = $("small");
+  const $info = $("#message-status");
   const $loading = $(".loading");
 
   let messages = [];
