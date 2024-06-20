@@ -1,5 +1,6 @@
 import { ClockIcon } from "./Clock";
 import { EyeIcon } from "./Eye";
+import "./fadein.css";
 
 const NewsGridItem = ({
   className,
@@ -26,11 +27,10 @@ const NewsGridItem = ({
 
   return (
     <a
-      id="fadeup"
       href={url}
       className={`
         ${className}
-        group
+        group fadein
         relative flex flex-col 
         items-center justify-end 
         h-96 rounded-xl shadow-md 
