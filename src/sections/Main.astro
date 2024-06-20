@@ -3,7 +3,7 @@ import NewsCard from "@/components/Resources/NewsCard.astro";
 import RecomCarousel from "@/components/Resources/RecomCarousel.astro";
 import Resources from "@/components/Resources/Resources.astro";
 import { getSession } from "auth-astro/server";
-import { DATA_NEWS } from "@/consts/data-news";
+import { fetchNews } from "@/consts/data-news";
 import Greeting from "@/components/Resources/Greeting.svelte";
 import Search from "@/icons/search.astro";
 import Clear from "@/icons/clear.astro";
@@ -22,7 +22,7 @@ const capitalize = (word: string) => {
 
 const nameFromUser = getFirstName(session?.user?.name);
 
-const noticia = DATA_NEWS?.slice(0, 1);
+const noticia = await fetchNews();
 ---
 
 <main
@@ -39,7 +39,7 @@ const noticia = DATA_NEWS?.slice(0, 1);
           <h2
             class="absolute top-2 text-2xl sm:text-3xl font-bold text-white dark:text-gray-200"
           >
-            <Greeting client:only />, {nameFromUser || "Usuario"}
+            <Greeting client:only="svelte" />, {nameFromUser || "Usuario"}
           </h2>
           <form
             id="search-form"
@@ -95,16 +95,18 @@ const noticia = DATA_NEWS?.slice(0, 1);
         <div class="flex">
           <!-- Noticias individuales -->
           {
-            noticia?.map((item: any) => (
-              <NewsCard
-                author={item.author}
-                title={item.title}
-                description={item.description}
-                url={item.url}
-                image={item.urlToImage}
-                date={item.publishedAt}
-              />
-            )) || <NewsCard />
+            noticia
+              ?.slice(0, 1)
+              ?.map((item: any) => (
+                <NewsCard
+                  author={item.author}
+                  title={item.title}
+                  description={item.description}
+                  url={item.url}
+                  image={item.urlToImage}
+                  date={item.publishedAt}
+                />
+              )) || <NewsCard />
           }
         </div>
       </section>

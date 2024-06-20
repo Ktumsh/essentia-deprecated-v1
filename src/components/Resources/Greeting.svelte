@@ -4,7 +4,6 @@
   let greeting = "";
 
   onMount(() => {
-    console.log("Component mounted");
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
 
@@ -15,8 +14,6 @@
     } else {
       greeting = "Buenas noches";
     }
-
-    console.log("Greeting set to:", greeting);
   });
 </script>
 

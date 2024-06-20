@@ -1,0 +1,126 @@
+---
+import ArrowUp from "@/icons/arrow-up.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+const userImageUrl = session?.user?.image || "";
+---
+
+<div
+  class="page-bg absolute inset-0 w-full h-[calc(100%+80px)] bg-cover bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] dark:bg-[linear-gradient(111.1deg,#061b37_-4.8%,_rgb(255,_115,_115)_82.7%,_rgb(255,_175,_123)_97.2%)]"
+>
+</div>
+<div class="flex flex-col items-center justify-center size-full my-20">
+  <main
+    class="w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] h-[68vh] max-w-full px-5"
+  >
+    <div class="size-full p-5 overflow-y-auto scroll-smooth">
+      <ul class="flex flex-col h-full">
+        <li
+          class="loading flex flex-col items-center justify-center h-full text-center"
+        >
+          <i
+            class="size-10 border-[0.4em] border-gray-200 dark:border-base-dark border-t-transparent dark:border-t-transparent rounded-full animate-spin"
+          ></i>
+          <h4 class="mb-2">Cargando...</h4>
+          <h5 class="text-[10px] opacity-40">
+            Esto puede tardar un poco. Paciencia.
+          </h5>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <div
+    class="relative flex flex-col items-center justify-center w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] px-5 gap-3"
+  >
+    <form id="message-form" class="flex h-14 w-full">
+      <div
+        class="flex items-center justify-center size-full shadow-md bg-white dark:bg-base-dark rounded-full"
+      >
+        <input
+          id="message-input"
+          class="flex-grow py-2 px-5 mr-2 border-none outline-none bg-transparent"
+          placeholder="Escribe tu mensaje aquí..."
+        />
+        <button
+          id="send-btn"
+          disabled
+          class="flex items-center justify-center size-9 mx-2 shadow-md disabled:opacity-60 disabled:pointer-events-none bg-bittersweet-400 dark:bg-cerise-red-600 text-white dark:text-base-dark dark:bg-base-dark rounded-full text-sm"
+        >
+          <ArrowUp width="21" height="21" />
+        </button>
+      </div>
+    </form>
+    <small
+      class="absolute -bottom-6 m-auto w-full text-center text-[10px] text-base-color-m dark:text-base-color-dark-m"
+      >&nbsp;
+    </small>
+  </div>
+  <template id="message-template">
+    <li class="group message flex flex-col mx-1 px-1 py-2">
+      <span
+        id="user-image"
+        data-user-image-url={userImageUrl}
+        class="flex items-center justify-center size-8 rounded-full bg-base-full-dark font-xs"
+      >
+      </span>
+      <p
+        class="px-5 py-2 mt-1 rounded-full bg-transparent group-[.user]:bg-white dark:group-[.user]:bg-base-dark"
+      >
+      </p>
+    </li>
+  </template>
+</div>
+
+<style>
+  .page-bg {
+    -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    mask: radial-gradient(
+      51.31% 143.89% at 49.99% 24.75%,
+      #000000 0%,
+      #000000 52.6%,
+      rgba(0, 0, 0, 0.18) 83.33%,
+      rgba(0, 0, 0, 0) 95.31%
+    );
+    -webkit-mask-composite: source-in;
+    mask-composite: source-in;
+    z-index: -1;
+  }
+
+  .message {
+    &.user {
+      align-self: flex-end;
+      align-items: flex-end;
+    }
+
+    &.bot {
+      align-self: flex-start;
+    }
+  }
+</style>
+<script is:inline type="module" src="/public/js/chatbot.js"></script>

@@ -1,5 +1,5 @@
 ---
-import NewsGrid from "@/components/News/NewsGrid.astro";
+import NewsGrid from "@/components/News/NewsGrid";
 import Adjustments from "@/icons/adjustments.astro";
 ---
 
@@ -46,7 +46,7 @@ import Adjustments from "@/icons/adjustments.astro";
       </div>
     </nav>
   </div>
-  <NewsGrid />
+  <NewsGrid client:only="react" />
 </main>
 <style>
   .page-bg {
@@ -128,5 +128,37 @@ import Adjustments from "@/icons/adjustments.astro";
     100% {
       opacity: 1;
     }
+  }
+
+  .loader {
+    display: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+
+  .loader::before,
+  .loader::after {
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+  }
+
+  .loader::after {
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    background-color: #030e1e;
+    transform: translate(-50%, -50%);
+  }
+
+  .loader::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #061b37 0%, #030e1e 100%);
   }
 </style>
