@@ -18,7 +18,7 @@ document.addEventListener("astro:page-load", async () => {
   const SELECTED_MODEL = "Llama-3-8B-Instruct-q4f32_1-MLC-1k";
 
   const engine = await CreateWebWorkerMLCEngine(
-    new Worker("/public/js/worker.js", { type: "module" }),
+    new Worker("/js/worker.js", { type: "module" }),
     SELECTED_MODEL,
     {
       initProgressCallback: (info) => {
