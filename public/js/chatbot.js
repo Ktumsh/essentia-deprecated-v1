@@ -1,4 +1,4 @@
-import { CreateWebWorkerMLCEngine } from "../../node_modules/@mlc-ai/web-llm";
+import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.46/+esm";
 
 document.addEventListener("astro:page-load", async () => {
   const $ = (el) => document.querySelector(el);
