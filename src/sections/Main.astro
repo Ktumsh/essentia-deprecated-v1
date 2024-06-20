@@ -22,7 +22,7 @@ const capitalize = (word: string) => {
 
 const nameFromUser = getFirstName(session?.user?.name);
 
-const noticia = await fetchNews();
+const news = await fetchNews();
 ---
 
 <main
@@ -95,7 +95,7 @@ const noticia = await fetchNews();
         <div class="flex">
           <!-- Noticias individuales -->
           {
-            noticia
+            news
               ?.slice(0, 1)
               ?.map((item: any) => (
                 <NewsCard
