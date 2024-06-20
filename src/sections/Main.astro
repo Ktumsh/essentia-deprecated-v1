@@ -133,14 +133,15 @@ const noticia = await fetchNews();
     const $searchIcon = $("#search-icon");
     const $clearIcon = $("#clear-icon");
 
-    $searchInput.oninput = () => {
-      $searchInput.value.length > 0
-        ? ($searchIcon?.classList.add("hidden"),
-          $clearIcon?.classList.remove("hidden"))
-        : ($searchIcon?.classList.remove("hidden"),
-          $clearIcon?.classList.add("hidden"));
-    };
-
+    if ($searchInput) {
+      $searchInput.oninput = () => {
+        $searchInput.value.length > 0
+          ? ($searchIcon?.classList.add("hidden"),
+            $clearIcon?.classList.remove("hidden"))
+          : ($searchIcon?.classList.remove("hidden"),
+            $clearIcon?.classList.add("hidden"));
+      };
+    }
     const $searchButton = $("#search-button") as HTMLButtonElement;
 
     $searchButton.onclick = () => {
