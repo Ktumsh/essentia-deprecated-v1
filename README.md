@@ -41,7 +41,7 @@ Essentia es una plataforma web que proporciona información y recursos sobre sal
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/essentia-web-oficial.git
+    git clone https://github.com/Ktumsh/essentia-web-oficial.git
     ```
 
 2. Navega al directorio del proyecto:
