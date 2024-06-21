@@ -2,7 +2,6 @@
 import type { Preload } from "@/types/Preload";
 import { ViewTransitions } from "astro:transitions";
 import SEO from "@/components/SEO.astro";
-import LandingFooter from "@/components/Landing/LandingFooter.astro";
 
 interface Props {
   title: string;
@@ -30,7 +29,6 @@ const { title, description, preload, canonical, image } = Astro.props;
   <body class="overflow-x-hidden anitaliased font-medium text-lg bg-gray-100">
     <div id="root">
       <slot />
-      <LandingFooter />
     </div>
     <style is:global>
       :root {

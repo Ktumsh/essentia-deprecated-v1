@@ -7,7 +7,7 @@ export default {
     files: [
       "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
       "./node_modules/flowbite/**/*.js",
-      "./node_modules/@nextui-org/theme/dist/components/(avatar|dropdown|popover|menu|divider|button|ripple|spinner).js",
+      "./node_modules/@nextui-org/theme/dist/components/(avatar|dropdown|popover|menu|divider|button|ripple|spinner|checkbox).js",
     ],
   },
   theme: {
@@ -154,5 +154,29 @@ export default {
       },
     },
   },
-  plugins: [require("flowbite/plugin"), nextui()],
+  plugins: [
+    require("flowbite/plugin"),
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            danger: {
+              50: "#fef3f2",
+              100: "#fee5e2",
+              200: "#ffcfc9",
+              300: "#fdada4",
+              400: "#fa8072",
+              500: "#f15442",
+              600: "#df3623",
+              700: "#bb2b1a",
+              800: "#9b2619",
+              900: "#80261c",
+              950: "#460f09",
+              DEFAULT: "#fa8072",
+            },
+          },
+        },
+      },
+    }),
+  ],
 };

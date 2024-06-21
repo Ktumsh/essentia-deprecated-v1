@@ -153,20 +153,13 @@ const LandingHeader = () => {
             }`}
           >
             <a
-              className={`btn-login-popup relative items-center justify-center overflow-hidden h-10 w-auto py-3 px-3 sm:pr-4 text-bittersweet-400 hover:brightness-90 active:scale-95 transition-all duration-300 ${
+              className={`btn-login-popup relative items-center justify-center overflow-hidden h-10 w-auto px-3 sm:px-4 rounded-xl text-bittersweet-400 sm:text-white sm:bg-bittersweet-400 hover:brightness-90 active:scale-95 transition ${
                 isChanged ? "hidden" : "inline-flex"
               }`}
               href="/login"
               aria-label="Iniciar sesión"
             >
               Iniciar sesión
-            </a>
-            <a
-              className="btn-register-popup relative md:inline-flex items-center justify-center overflow-hidden h-10 hidden w-auto px-4 rounded-xl text-white active:text-white lg:hover:text-white bg-bittersweet-400 hover:brightness-90 active:scale-95 transition-all duration-300"
-              href="/signup"
-              aria-label="Registrar usuario"
-            >
-              Registrarse
             </a>
           </div>
         </div>

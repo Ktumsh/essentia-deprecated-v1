@@ -1,7 +1,8 @@
 ---
 import LandingLayout from "@/layouts/LandingLayout.astro";
-import SigninForm from "@/components/SignupForm.astro";
+import SigninForm from "@/components/Sign/SignupForm.astro";
 import { getSession } from "auth-astro/server";
+import SignFooter from "@/components/Sign/SignFooter.astro";
 
 const session = await getSession(Astro.request);
 
@@ -13,7 +14,8 @@ if (session) return Astro.redirect("/recursos");
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical="https://essentia-cl.vercel.app/signup"
 >
-  <main>
+  <main class="relative">
     <SigninForm />
+    <SignFooter />
   </main>
 </LandingLayout>

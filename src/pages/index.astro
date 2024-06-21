@@ -1,5 +1,6 @@
 ---
 import ButtonUp from "@/components/ButtonUp.astro";
+import LandingFooter from "@/components/Landing/LandingFooter.astro";
 import LandingHeader from "@/components/Landing/LandingHeader";
 import LandingLayout from "@/layouts/LandingLayout.astro";
 import Landing from "@/sections/Landing.astro";
@@ -17,5 +18,6 @@ if (session) return Astro.redirect("/recursos");
 >
   <LandingHeader client:only="react" />
   <Landing />
+  <LandingFooter />
   <ButtonUp />
 </LandingLayout>

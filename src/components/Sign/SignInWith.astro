@@ -1,0 +1,32 @@
+---
+import Facebook from "@/icons/facebook.astro";
+import Google from "@/icons/google.astro";
+import X from "@/icons/x.astro";
+---
+
+<div class="flex w-full gap-2">
+  <button
+    id="loginWithGoogle"
+    class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+  >
+    <div class="flex justify-center items-center flex-shrink-0">
+      <Google width="18" height="18" />
+    </div>
+  </button>
+  <button
+    id="loginWithFacebook"
+    class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+  >
+    <div class="flex justify-center items-center flex-shrink-0">
+      <Facebook width="18" height="18" />
+    </div>
+  </button>
+  <button
+    id="loginWithX"
+    class="inline-flex justify-center items-center align-middle h-10 w-full px-5 text-sm rounded text-white sm:text-base-color-h border border-gray-200/30 sm:border-gray-200 bg-black/30 sm:bg-transparent sm:hover:bg-gray-100 active:scale-[.98] transition-all"
+  >
+    <div class="flex justify-center items-center flex-shrink-0">
+      <X width="16" height="16" />
+    </div>
+  </button>
+</div>

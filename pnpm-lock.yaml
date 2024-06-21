@@ -29,6 +29,9 @@ dependencies:
   '@nextui-org/button':
     specifier: ^2.0.34
     version: 2.0.34(@nextui-org/system@2.2.2)(@nextui-org/theme@2.2.6)(framer-motion@11.2.10)(react-dom@18.3.1)(react@18.3.1)
+  '@nextui-org/checkbox':
+    specifier: ^2.1.2
+    version: 2.1.2(@nextui-org/system@2.2.2)(@nextui-org/theme@2.2.6)(react-dom@18.3.1)(react@18.3.1)
   '@nextui-org/dropdown':
     specifier: ^2.1.26
     version: 2.1.26(@nextui-org/system@2.2.2)(@nextui-org/theme@2.2.6)(@types/react@18.3.3)(framer-motion@11.2.10)(react-dom@18.3.1)(react@18.3.1)
@@ -2255,6 +2258,33 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
+  /@nextui-org/checkbox@2.1.2(@nextui-org/system@2.2.2)(@nextui-org/theme@2.2.6)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-0C5xcYcBMM/iAva3/fFYIvUiy91guV+mehUwRcPIxEFLA9bIOdOdGTkoAXlVcGCLIuYvlPiqSH0gShXvscOlNQ==}
+    peerDependencies:
+      '@nextui-org/system': '>=2.0.0'
+      '@nextui-org/theme': '>=2.1.0'
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      '@nextui-org/react-utils': 2.0.14(react@18.3.1)
+      '@nextui-org/shared-utils': 2.0.5
+      '@nextui-org/system': 2.2.2(@nextui-org/theme@2.2.6)(framer-motion@11.2.10)(react-dom@18.3.1)(react@18.3.1)
+      '@nextui-org/theme': 2.2.6(tailwindcss@3.4.4)
+      '@nextui-org/use-callback-ref': 2.0.5(react@18.3.1)
+      '@nextui-org/use-safe-layout-effect': 2.0.5(react@18.3.1)
+      '@react-aria/checkbox': 3.14.3(react@18.3.1)
+      '@react-aria/focus': 3.17.1(react@18.3.1)
+      '@react-aria/interactions': 3.21.3(react@18.3.1)
+      '@react-aria/utils': 3.24.1(react@18.3.1)
+      '@react-aria/visually-hidden': 3.8.12(react@18.3.1)
+      '@react-stately/checkbox': 3.6.5(react@18.3.1)
+      '@react-stately/toggle': 3.7.4(react@18.3.1)
+      '@react-types/checkbox': 3.8.1(react@18.3.1)
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /@nextui-org/divider@2.0.28(@nextui-org/theme@2.2.6)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-IskKmDOO8qwmTO2WtDmrH8fZvnV2JebP3PFfwqpToAdDRbRUs78pls2e8/T9clbLLtNxjfCFAI/Yi9C+LPPEXw==}
     peerDependencies:
@@ -2543,6 +2573,15 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
+  /@nextui-org/use-callback-ref@2.0.5(react@18.3.1):
+    resolution: {integrity: sha512-lcjlV5yaDTiFSv06E5RtQNqy+O6XqH/Q/yz+ka1ZBlZF/FdzEPNRfJ0shN2D7Sh3DdbvV2lySbA2g/0d94geaw==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@nextui-org/use-safe-layout-effect': 2.0.5(react@18.3.1)
+      react: 18.3.1
+    dev: false
+
   /@nextui-org/use-image@2.0.5(react@18.3.1):
     resolution: {integrity: sha512-FAMyvZS9XSNLqHEmU6xykMgwIFJj/V9/JpTiZAQziz2wqMiUONIBpYpGOlI+pPBNlhCkw62KHm/19vHW49FWhA==}
     peerDependencies:
@@ -2633,6 +2672,25 @@ packages:
       react: 18.3.1
     dev: false
 
+  /@react-aria/checkbox@3.14.3(react@18.3.1):
+    resolution: {integrity: sha512-EtBJL6iu0gvrw3A4R7UeVLR6diaVk/mh4kFBc7c8hQjpEJweRr4hmJT3hrNg3MBcTWLxFiMEXPGgWEwXDBygtA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/form': 3.0.5(react@18.3.1)
+      '@react-aria/interactions': 3.21.3(react@18.3.1)
+      '@react-aria/label': 3.7.8(react@18.3.1)
+      '@react-aria/toggle': 3.10.4(react@18.3.1)
+      '@react-aria/utils': 3.24.1(react@18.3.1)
+      '@react-stately/checkbox': 3.6.5(react@18.3.1)
+      '@react-stately/form': 3.0.3(react@18.3.1)
+      '@react-stately/toggle': 3.7.4(react@18.3.1)
+      '@react-types/checkbox': 3.8.1(react@18.3.1)
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
   /@react-aria/dialog@3.5.14(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-oqDCjQ8hxe3GStf48XWBf2CliEnxlR9GgSYPHJPUc69WBj68D9rVcCW3kogJnLAnwIyf3FnzbX4wSjvUa88sAQ==}
     peerDependencies:
@@ -2662,6 +2720,19 @@ packages:
       react: 18.3.1
     dev: false
 
+  /@react-aria/form@3.0.5(react@18.3.1):
+    resolution: {integrity: sha512-n290jRwrrRXO3fS82MyWR+OKN7yznVesy5Q10IclSTVYHHI3VI53xtAPr/WzNjJR1um8aLhOcDNFKwnNIUUCsQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/interactions': 3.21.3(react@18.3.1)
+      '@react-aria/utils': 3.24.1(react@18.3.1)
+      '@react-stately/form': 3.0.3(react@18.3.1)
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
   /@react-aria/i18n@3.11.1(react@18.3.1):
     resolution: {integrity: sha512-vuiBHw1kZruNMYeKkTGGnmPyMnM5T+gT8bz97H1FqIq1hQ6OPzmtBZ6W6l6OIMjeHI5oJo4utTwfZl495GALFQ==}
     peerDependencies:
@@ -2684,6 +2755,17 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
       '@react-aria/ssr': 3.9.4(react@18.3.1)
+      '@react-aria/utils': 3.24.1(react@18.3.1)
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
+  /@react-aria/label@3.7.8(react@18.3.1):
+    resolution: {integrity: sha512-MzgTm5+suPA3KX7Ug6ZBK2NX9cin/RFLsv1BdafJ6CZpmUSpWnGE/yQfYUB7csN7j31OsZrD3/P56eShYWAQfg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
       '@react-aria/utils': 3.24.1(react@18.3.1)
       '@react-types/shared': 3.23.1(react@18.3.1)
       '@swc/helpers': 0.5.5
@@ -2761,6 +2843,20 @@ packages:
       react: 18.3.1
     dev: false
 
+  /@react-aria/toggle@3.10.4(react@18.3.1):
+    resolution: {integrity: sha512-bRk+CdB8QzrSyGNjENXiTWxfzYKRw753iwQXsEAU7agPCUdB8cZJyrhbaUoD0rwczzTp2zDbZ9rRbUPdsBE2YQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/focus': 3.17.1(react@18.3.1)
+      '@react-aria/interactions': 3.21.3(react@18.3.1)
+      '@react-aria/utils': 3.24.1(react@18.3.1)
+      '@react-stately/toggle': 3.7.4(react@18.3.1)
+      '@react-types/checkbox': 3.8.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
   /@react-aria/tooltip@3.7.4(react@18.3.1):
     resolution: {integrity: sha512-+XRx4HlLYqWY3fB8Z60bQi/rbWDIGlFUtXYbtoa1J+EyRWfhpvsYImP8qeeNO/vgjUtDy1j9oKa8p6App9mBMQ==}
     peerDependencies:
@@ -2801,8 +2897,31 @@ packages:
       react: 18.3.1
     dev: false
 
+  /@react-stately/checkbox@3.6.5(react@18.3.1):
+    resolution: {integrity: sha512-IXV3f9k+LtmfQLE+DKIN41Q5QB/YBLDCB1YVx5PEdRp52S9+EACD5683rjVm8NVRDwjMi2SP6RnFRk7fVb5Azg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-stately/form': 3.0.3(react@18.3.1)
+      '@react-stately/utils': 3.10.1(react@18.3.1)
+      '@react-types/checkbox': 3.8.1(react@18.3.1)
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
   /@react-stately/collections@3.10.7(react@18.3.1):
     resolution: {integrity: sha512-KRo5O2MWVL8n3aiqb+XR3vP6akmHLhLWYZEmPKjIv0ghQaEebBTrN3wiEjtd6dzllv0QqcWvDLM1LntNfJ2TsA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-types/shared': 3.23.1(react@18.3.1)
+      '@swc/helpers': 0.5.5
+      react: 18.3.1
+    dev: false
+
+  /@react-stately/form@3.0.3(react@18.3.1):
+    resolution: {integrity: sha512-92YYBvlHEWUGUpXgIaQ48J50jU9XrxfjYIN8BTvvhBHdD63oWgm8DzQnyT/NIAMzdLnhkg7vP+fjG8LjHeyIAg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
