@@ -3,7 +3,7 @@ import NewsCard from "@/components/Resources/NewsCard.astro";
 import RecomCarousel from "@/components/Resources/RecomCarousel.astro";
 import Resources from "@/components/Resources/Resources.astro";
 import { getSession } from "auth-astro/server";
-import { fetchNews } from "@/consts/data-news";
+import { NEWS } from "@/consts/data-news";
 import Greeting from "@/components/Resources/Greeting.svelte";
 import Search from "@/icons/search.astro";
 import Clear from "@/icons/clear.astro";
@@ -22,7 +22,7 @@ const capitalize = (word: string) => {
 
 const nameFromUser = getFirstName(session?.user?.name);
 
-const news = await fetchNews();
+const news = NEWS;
 ---
 
 <main
@@ -80,35 +80,19 @@ const news = await fetchNews();
       </div>
     </div>
   </div>
-  <div class="flex flex-row flex-1 relative w-full gap-5">
+  <div class="flex flex-row flex-1 relative w-full gap-5 mb-5">
     <section
-      class="flex flex-col flex-1 mb-5 w-full bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
+      class="flex flex-col flex-1 w-full bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
     >
       <h3 class="text-2xl font-bold mb-4">Recomendaciones</h3>
       <RecomCarousel />
     </section>
     <aside class="hidden lg:flex">
       <section
-        class="mb-5 w-80 bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4 pb-14"
+        class="flex flex-col mb-5 h-full w-80 bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
       >
-        <h3 class="text-2xl font-bold mb-4">Último mes</h3>
-        <div class="flex">
-          <!-- Noticias individuales -->
-          {
-            news
-              ?.slice(0, 1)
-              ?.map((item: any) => (
-                <NewsCard
-                  author={item.author}
-                  title={item.title}
-                  description={item.description}
-                  url={item.url}
-                  image={item.urlToImage}
-                  date={item.publishedAt}
-                />
-              )) || <NewsCard />
-          }
-        </div>
+        <!-- Noticias individuales -->
+        <NewsCard />
       </section>
     </aside>
   </div>
