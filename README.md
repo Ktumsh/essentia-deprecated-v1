@@ -5,7 +5,7 @@ Essentia es una plataforma web que proporciona información y recursos sobre sal
 ## ✨ Características
 
 - **Bienvenida Personalizada**: Un mensaje de bienvenida personalizado para cada usuario.
-- **Últimas Noticias**: Muestra noticias relacionadas con la salud de manera aleatoria cada vez que se carga la página.
+- **Últimas Noticias**: Muestra noticias relacionadas con la salud.
 - **Recursos Destacados**: Acceso rápido a recursos útiles sobre salud.
 - **Asistente de Salud**: Un asistente virtual para responder preguntas relacionadas con la salud.
 - **Foro de la Comunidad**: Un espacio para que los usuarios discutan temas de salud.
@@ -32,6 +32,7 @@ Essentia es una plataforma web que proporciona información y recursos sobre sal
 ## 🛠️ Tecnologías Utilizadas
 
 - **Astro**: Framework para la construcción de la interfaz de usuario.
+- **React JSX**: Utilizado para construir componentes interactivos.
 - **Tailwind CSS**: Framework de CSS para el diseño responsivo y personalizado.
 - **auth-astro**: Plugin para la gestión de la autenticación de usuarios.
 - **Scrum**: Metodología ágil utilizada para la gestión del proyecto.
@@ -61,7 +62,7 @@ Essentia es una plataforma web que proporciona información y recursos sobre sal
 ## 🗂️ Estructura del Proyecto
 
 ```text
-essentia/
+essentia-web-oficial/
 │
 ├── public/ # Archivos estáticos
 ├── src/ # Código fuente del proyecto
@@ -77,10 +78,17 @@ essentia/
 │ └── env.d.ts # Definiciones de tipos para variables de entorno
 │
 ├── .gitignore # Archivos y directorios ignorados por Git
+├── .npmrc # Configuración de npm
+├── astro.config.mjs # Configuración de Astro
+├── auth.config.mjs # Configuración de autenticación
+├── auth.d.ts # Definiciones de tipos para autenticación
 ├── package.json # Dependencias y scripts del proyecto
 ├── pnpm-lock.yaml # Archivo de bloqueo de dependencias para pnpm
-├── tailwind.config.js # Configuración de Tailwind CSS
-└── README.md # Documentación del proyecto
+├── README.md # Documentación del proyecto
+├── svelte.config.js # Configuración de Svelte
+├── tailwind.config.mjs # Configuración de Tailwind CSS
+├── tsconfig.json # Configuración de TypeScript
+└── vercel.json # Configuración para despliegue en Vercel
 ```
 
 ## 🤝 Contribuir
