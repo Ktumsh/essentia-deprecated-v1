@@ -1,54 +1,106 @@
-# Astro Starter Kit: Basics
+# 🌟 Essentia
 
-```sh
-npm create astro@latest -- --template basics
-```
+Essentia es una plataforma web que proporciona información y recursos sobre salud. Este proyecto tiene como objetivo ofrecer una experiencia personalizada y accesible para los usuarios interesados en mejorar su bienestar.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## ✨ Características
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Bienvenida Personalizada**: Un mensaje de bienvenida personalizado para cada usuario.
+- **Últimas Noticias**: Muestra noticias relacionadas con la salud de manera aleatoria cada vez que se carga la página.
+- **Recursos Destacados**: Acceso rápido a recursos útiles sobre salud.
+- **Asistente de Salud**: Un asistente virtual para responder preguntas relacionadas con la salud.
+- **Foro de la Comunidad**: Un espacio para que los usuarios discutan temas de salud.
+- **Panel de Control Personal**: Herramientas y recursos personalizados para cada usuario.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 📂 Secciones Principales
 
-## 🚀 Project Structure
+1. **Recursos**
+   - 🧘‍♀️ Salud y Bienestar
+   - 🏋️ Ejercicios y Fitness
+   - 🍎 Nutrición
+   - 🧠 Bienestar Emocional
+   - 👫 Salud y Educación Sexual
+   - 👨‍👩‍👧‍👦 Salud para Todas las Edades
 
-Inside of your Astro project, you'll see the following folders and files:
+2. **📰 Noticias**: Sección para mostrar noticias relacionadas con la salud.
+
+3. **🤖 Essentia AI**: Inteligencia artificial especializada en salud.
+
+4. **📚 Recursos Adicionales**: Sección para recursos adicionales sobre salud.
+
+5. **🌐 Comunidad**: Apartado para la comunidad de usuarios.
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Astro**: Framework para la construcción de la interfaz de usuario.
+- **Tailwind CSS**: Framework de CSS para el diseño responsivo y personalizado.
+- **auth-astro**: Plugin para la gestión de la autenticación de usuarios.
+- **Scrum**: Metodología ágil utilizada para la gestión del proyecto.
+
+## 🚀 Instalación
+
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/essentia-web-oficial.git
+    ```
+
+2. Navega al directorio del proyecto:
+    ```bash
+    cd essentia-web-oficial
+    ```
+
+3. Instala las dependencias:
+    ```bash
+    pnpm install
+    ```
+
+4. Inicia el servidor de desarrollo:
+    ```bash
+    pnpm run dev
+    ```
+
+## 🗂️ Estructura del Proyecto
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+essentia/
+│
+├── public/ # Archivos estáticos
+├── src/ # Código fuente del proyecto
+│ ├── components/ # Componentes reutilizables
+│ ├── consts/ # Constantes utilizadas en el proyecto
+│ ├── icons/ # Iconos utilizados en la interfaz
+│ ├── layouts/ # Layouts del proyecto
+│ ├── lib/ # Librerías y módulos personalizados
+│ ├── pages/ # Páginas del sitio
+│ ├── sections/ # Secciones reutilizables del sitio
+│ ├── types/ # Definiciones de tipos TypeScript
+│ ├── utils/ # Utilidades y funciones auxiliares
+│ └── env.d.ts # Definiciones de tipos para variables de entorno
+│
+├── .gitignore # Archivos y directorios ignorados por Git
+├── package.json # Dependencias y scripts del proyecto
+├── pnpm-lock.yaml # Archivo de bloqueo de dependencias para pnpm
+├── tailwind.config.js # Configuración de Tailwind CSS
+└── README.md # Documentación del proyecto
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🤝 Contribuir
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+¡Las contribuciones son bienvenidas! Para contribuir, sigue estos pasos:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Haz un fork del repositorio.
+2. Crea una rama nueva (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz un commit (`git commit -m 'Agrega nueva característica'`).
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
 
-## 🧞 Commands
+## 📄 Licencia
 
-All commands are run from the root of the project, from a terminal:
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📧 Contacto
 
-## 👀 Want to learn more?
+Para más información o preguntas, puedes contactarme en [jo.barrazav@gmail.com](mailto:jo.barrazav@gmail.com).
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+¡Gracias por utilizar Essentia! Esperamos que encuentres útil nuestra plataforma para mejorar tu salud y bienestar.
