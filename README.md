@@ -130,18 +130,12 @@ essentia-web-oficial/
 │ ├── utils/ # Utilidades y funciones auxiliares
 │ └── env.d.ts # Definiciones de tipos para variables de entorno
 │
-├── .gitignore # Archivos y directorios ignorados por Git
-├── .npmrc # Configuración de npm
 ├── astro.config.mjs # Configuración de Astro
 ├── auth.config.mjs # Configuración de autenticación
 ├── auth.d.ts # Definiciones de tipos para autenticación
-├── package.json # Dependencias y scripts del proyecto
-├── pnpm-lock.yaml # Archivo de bloqueo de dependencias para pnpm
-├── README.md # Documentación del proyecto
 ├── svelte.config.js # Configuración de Svelte
 ├── tailwind.config.mjs # Configuración de Tailwind CSS
-├── tsconfig.json # Configuración de TypeScript
-└── vercel.json # Configuración para despliegue en Vercel
+└── tsconfig.json # Configuración de TypeScript
 ```
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
