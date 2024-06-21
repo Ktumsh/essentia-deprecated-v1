@@ -47,7 +47,7 @@ const NewsGridItem = ({
         h-96 rounded-xl shadow-md 
         dark:shadow-none overflow-hidden`}
     >
-      <a href={url} className="before:absolute before:inset-0 before:z-10"></a>
+      <a href={url} className="before:absolute before:inset-0 before:z-20"></a>
       <img
         className="absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(rgba(0,_0,_0,_1)_0%,_transparent_90%)] group-hover:scale-105 transition"
         src={image}

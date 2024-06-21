@@ -1,7 +1,8 @@
 .fadein {
   animation: fade-in linear both;
   animation-timeline: view();
-  animation-range: entry 10% cover 20%;
+  animation-range-start: entry 10%;
+  animation-range-end: cover 20%;
 }
 
 @keyframes fade-in {

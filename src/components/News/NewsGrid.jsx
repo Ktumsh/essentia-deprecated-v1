@@ -58,7 +58,7 @@ const NewsGrid = () => {
   }
 
   return (
-    <div>
+    <>
       <div id="news-grid" className="grid grid-cols-12 gap-2 my-5">
         {newsData.slice(0, visibleCount).map((item, index) => (
           <NewsGridItem
@@ -99,7 +99,7 @@ const NewsGrid = () => {
           )}
         </>
       )}
-    </div>
+    </>
   );
 };
 

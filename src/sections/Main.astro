@@ -2,11 +2,11 @@
 import NewsCard from "@/components/Resources/NewsCard.astro";
 import RecomCarousel from "@/components/Resources/RecomCarousel.astro";
 import Resources from "@/components/Resources/Resources.astro";
-import { getSession } from "auth-astro/server";
-import { NEWS } from "@/consts/data-news";
 import Greeting from "@/components/Resources/Greeting.svelte";
 import Search from "@/icons/search.astro";
 import Clear from "@/icons/clear.astro";
+
+import { getSession } from "auth-astro/server";
 
 const session = await getSession(Astro.request);
 
@@ -21,8 +21,6 @@ const capitalize = (word: string) => {
 };
 
 const nameFromUser = getFirstName(session?.user?.name);
-
-const news = NEWS;
 ---
 
 <main
@@ -91,7 +89,6 @@ const news = NEWS;
       <section
         class="flex flex-col mb-5 h-full w-80 bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
       >
-        <!-- Noticias individuales -->
         <NewsCard />
       </section>
     </aside>
@@ -128,22 +125,19 @@ const news = NEWS;
     }
     const $searchButton = $("#search-button") as HTMLButtonElement;
 
-    $searchButton.onclick = () => {
-      $searchInput.value.length > 0 &&
-        (($searchInput.value = ""),
-        $searchIcon?.classList.remove("hidden"),
-        $clearIcon?.classList.add("hidden"));
-    };
+    if ($searchButton) {
+      $searchButton.onclick = () => {
+        $searchInput.value.length > 0 &&
+          (($searchInput.value = ""),
+          $searchIcon?.classList.remove("hidden"),
+          $clearIcon?.classList.add("hidden"));
+      };
+    }
   });
 </script>
 
 <div
   id="focus_modal"
   class="z-40 invisible backdrop-blur-0 saturate-100 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-all ease-linear"
->
-</div>
-<div
-  id="overlayModal"
-  class="z-50 invisible bg-overlay/70 w-screen h-dvh fixed inset-0 opacity-0 transition-[visibility,_opacity]"
 >
 </div>

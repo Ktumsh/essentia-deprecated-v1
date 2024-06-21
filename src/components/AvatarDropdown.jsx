@@ -28,6 +28,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
         >
           <DropdownItem
             key="profile"
+            textValue="Profile"
             className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
           >
             <p className="font-medium dark:text-base-color-dark">{name}</p>
@@ -36,12 +37,14 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           <DropdownItem
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             key="configurations"
+            textValue="Configurations"
           >
             Configuración
           </DropdownItem>
           <DropdownItem
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             key="help_and_feedback"
+            textValue="Help and Feedback"
           >
             Centro de Ayuda
           </DropdownItem>
@@ -49,6 +52,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
             id="avatar_logout"
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-m dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
             key="logout"
+            textValue="Logout"
             onClick={() => signOut()}
           >
             Cerrar sesión

@@ -44,6 +44,11 @@ const { title, description, preload, canonical, image } = Astro.props;
       </div>
       <ButtonUp />
     </div>
+    <div
+      id="overlayModal"
+      class="z-[998] invisible bg-overlay/70 w-screen h-dvh fixed inset-0 opacity-0 transition-[visibility,_opacity]"
+    >
+    </div>
     <style is:global>
       :root {
         --color-base: #212f3d;
