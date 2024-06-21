@@ -1,4 +1,5 @@
-# 🌟 Essentia
+# 🌟 Essentia®
+![Essentia Logo](./public/essentia-1200x630.jpg)
 
 Essentia es una plataforma web que proporciona información y recursos sobre salud. Este proyecto tiene como objetivo ofrecer una experiencia personalizada y accesible para los usuarios interesados en mejorar su bienestar.
 
