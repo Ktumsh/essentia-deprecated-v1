@@ -103,7 +103,7 @@ essentia-web-oficial/
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE.md) para más detalles.
 
 ## 📧 Contacto
 
