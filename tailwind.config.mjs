@@ -17,6 +17,9 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        "bento-shadow": "var(--bento-shadow)",
+      },
       colors: {
         "base-color": "var(--color-base)",
         "base-color-h": "var(--color-base-h)",
@@ -142,6 +145,11 @@ export default {
       },
       backgroundImage: {
         noise: "url(/extras/noise.webp)",
+        "landing-gradient": "var(--landing-gradient)",
+        "bento-gradient": "var(--bg-bento-gradient)",
+        "light-gradient": "var(--light-gradient)",
+        "dark-gradient": "var(--dark-gradient)",
+        "dark-gradient-v2": "var(--dark-gradient-v2)",
       },
       animation: {
         "shine-infinite": "shine 2s ease-in-out infinite",

@@ -1,0 +1,52 @@
+---
+import LandingSectionItem from "./LandingSectionItem.astro";
+
+interface Props {
+  sectionId: string;
+  id?: string;
+  classSection?: string;
+  classBento?: string;
+  classInner?: string;
+  sectionName: string;
+  title: string;
+  description: string;
+  img: string;
+  imgAlt: string;
+}
+
+const {
+  sectionId,
+  id,
+  classSection,
+  classBento,
+  classInner,
+  sectionName,
+  title,
+  description,
+  img,
+  imgAlt,
+} = Astro.props;
+---
+
+<section id={sectionId} class="relative flex flex-col mx-auto w-full">
+  <slot name="bubble" />
+  <div
+    class=`${classSection} lg:max-h-[1030px] bg-[url('/extras/landing-texture.webp')] bg-no-repeat bg-[length:93%] bg-[100%_100%]`
+  >
+    <div class="px-8 sm:px-10">
+      <div class="relative w-full mx-auto max-w-[1250px]">
+        <!-- SectionItem -->
+        <LandingSectionItem
+          id={id}
+          classBento={classBento}
+          classInner={classInner}
+          sectionName={sectionName}
+          title={title}
+          description={description}
+          img={img}
+          imgAlt={imgAlt}
+        />
+      </div>
+    </div>
+  </div>
+</section>

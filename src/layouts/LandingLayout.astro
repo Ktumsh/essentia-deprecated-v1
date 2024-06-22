@@ -41,7 +41,54 @@ const { title, description, preload, canonical, image } = Astro.props;
         --color-base-dark-h: rgb(203 213 225 / 87%);
         --color-base-dark-m: rgb(203 213 225 / 60%);
         --color-base-dark-d: rgb(203 213 225 / 38%);
+
+        --background-dark: #061b37;
+        --background-dark-90: rgb(6 27 55 / 90%);
+        --background-dark-80: rgb(6 27 55 / 80%);
+        --background-dark-70: rgb(6 27 55 / 70%);
+        --background-dark-60: rgb(6 27 55 / 60%);
+        --background-dark-50: rgb(6 27 55 / 50%);
+        --background-dark-40: rgb(6 27 55 / 40%);
+        --background-dark-30: rgb(6 27 55 / 30%);
+        --background-dark-20: rgb(6 27 55 / 20%);
+        --background-dark-10: rgb(6 27 55 / 10%);
+
+        --bg-bento-gradient: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.12) 12%,
+          rgba(255, 255, 255, 0.04) 50%,
+          rgba(255, 255, 255, 0.08) 83%,
+          rgba(255, 255, 255, 0.2)
+        );
+        --landing-gradient: linear-gradient(
+          68.4deg,
+          rgb(248, 182, 204) 0.5%,
+          rgb(192, 198, 230) 49%,
+          rgb(225, 246, 240) 99.8%
+        );
+        --light-gradient: linear-gradient(
+          to right,
+          rgb(242, 112, 156),
+          rgb(255, 148, 114)
+        );
+        --dark-gradient: linear-gradient(
+          111.1deg,
+          #061b37 -4.8%,
+          rgb(255, 115, 115) 82.7%,
+          rgb(255, 175, 123) 97.2%
+        );
+        --dark-gradient-v2: linear-gradient(
+          111.1deg,
+          #061b37 -100%,
+          rgb(255, 115, 115) 82.7%,
+          rgb(255, 175, 123) 97.2%
+        );
+
+        --bento-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.2),
+          inset 0 0 0 3px rgba(255, 255, 255, 0.2);
       }
+
       @font-face {
         font-family: "Space Grotesk";
         font-optical-sizing: auto;
@@ -158,7 +205,7 @@ const { title, description, preload, canonical, image } = Astro.props;
         bottom: 0;
         height: 2px;
         width: 70%;
-        background-color: rgb(33, 47, 61);
+        background-color: #212f3d;
         border-radius: 2px;
         transform: scaleX(0);
         transition:

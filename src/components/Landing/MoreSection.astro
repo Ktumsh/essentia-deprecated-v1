@@ -1,12 +1,8 @@
 ---
-import LandingCrop from "@/icons/landing-crop.astro";
-import Star from "@/icons/star.astro";
+import ListItem from "./MoreSectionListItem.astro";
 ---
 
-<section
-  id="todo_y_mas"
-  class="relative flex flex-col mx-auto w-full bg-[url('/bg-landing3.svg');] bg-cover bg-center bg-no-repeat"
->
+<section id="todo_y_mas" class="relative flex flex-col mx-auto w-full">
   <div
     class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5"
   >
@@ -26,7 +22,7 @@ import Star from "@/icons/star.astro";
         class="flex flex-nowrap flex-col sm:flex-row items-start justify-center h-full mx-auto pt-8 px-5 md:px-24 pb-20 md:pb-28 mb-20 md:mb-28 gap-6"
       >
         <div
-          class="relative shrink w-[416px] max-w-full sm:min-h-full p-6 backdrop-blur-2xl bg-black/5 border-2 border-white/30 rounded-2xl shadow-2xl shadow-black/30"
+          class="relative shrink w-[416px] max-w-full sm:min-h-full p-6 bg-bento-gradient backdrop-blur-2xl shadow-bento-shadow rounded-2xl"
         >
           <div
             class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-2xl z-10"
@@ -44,111 +40,25 @@ import Star from "@/icons/star.astro";
                   >Accede a todas estas funciones:</span
                 >
                 <ul class="grid justify-items-start gap-2">
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span
-                        >Recursos principales: <span class="text-orient-800">
-                          Vida saludable, Ejercicios y fitness, Nutrición,
-                          Bienestar emocional, Salud sexual y Salud para todas
-                          las edades</span
-                        ></span
-                      >
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span>Sección de noticias</span>
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span
-                        >Experiencia personalizada y adaptable, decide qué
-                        quieres ver, acomodada a tus necesidades</span
-                      >
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span
-                        >Inteligencia artificial especializada Essentia AI</span
-                      >
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span
-                        >Recursos adicionales como guías, recomendaciones,
-                        tutoriales y más</span
-                      >
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span>Contenido descargable</span>
-                    </div>
-                  </li>
-                  <li class="flex text-start text-base">
-                    <div class="flex-[0_0_auto] min-w-0 box-border">
-                      <span
-                        aria-hidden="true"
-                        class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
-                      >
-                        <Star width="24" height="24" />
-                      </span>
-                    </div>
-                    <div class="flex-[1_1] min-w-0 pl-4 box-border">
-                      <span>Personalización de tu perfil</span>
-                    </div>
-                  </li>
+                  <ListItem text="Recursos principales: ">
+                    <span slot="additional" class="font-bold"
+                      >Vida saludable, Ejercicios y fitness, Nutrición,
+                      Bienestar emocional, Salud sexual y Salud para todas las
+                      edades
+                    </span>
+                  </ListItem>
+                  <ListItem text="Sección de noticias" />
+                  <ListItem
+                    text="Experiencia personalizada y adaptable, decide qué quieres ver, acomodada a tus necesidades"
+                  />
+                  <ListItem
+                    text="Inteligencia artificial especializada Essentia AI"
+                  />
+                  <ListItem
+                    text="Recursos adicionales como guías, recomendaciones, tutoriales y más"
+                  />
+                  <ListItem text="Contenido descargable" />
+                  <ListItem text="Personalización de tu perfil" />
                 </ul>
               </div>
             </div>
@@ -158,36 +68,14 @@ import Star from "@/icons/star.astro";
               <a
                 type="button"
                 aria-label="Registrar usuario"
-                class="relative inline-flex items-center justify-center overflow-hidden h-10 w-full py-3 px-4 sm:px-8 font-medium text-lg rounded-full bg-[linear-gradient(to_right,rgb(242,112,156),rgb(255,148,114))] hover:brightness-90 active:scale-[.98] text-white shadow-md transition"
-                href="/signup">Comenzar</a
-              >
+                class="relative inline-flex items-center justify-center overflow-hidden h-10 w-full py-3 px-4 sm:px-8 font-medium text-lg rounded-full bg-light-gradient hover:brightness-90 active:scale-[.98] text-white shadow-md transition"
+                href="/signup"
+                >Comenzar
+              </a>
             </div>
           </div>
-        </div>
-        <div
-          class="gradient_border relative shrink w-[416px] max-w-full min-h-full p-6 rounded-2xl shadow-2xl shadow-black/30 opacity-60"
-        >
-          <article class="relative flex flex-col h-full">
-            <header class="pb-6">
-              <h3 class="text-start text-3xl font-semibold leading-10 z-20">
-                Essentia premium
-              </h3>
-            </header>
-            <div class="relative flex-grow self-stretch overflow-hidden">
-              <div>
-                <ul class="grid justify-items-start gap-2">
-                  <li class="flex text-start text-base">
-                    <div class="flex-[1_1] min-w-0 box-border">
-                      <span class="font-medium">Próximamente...</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </div>
   </div>
-  <LandingCrop class="absolute block w-full h-28 bottom-0 rotate-180" />
 </section>

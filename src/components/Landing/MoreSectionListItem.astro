@@ -1,0 +1,20 @@
+---
+// ListItem.astro
+import Star from "@/icons/star.astro";
+
+const { text } = Astro.props;
+---
+
+<li class="flex text-start text-base">
+  <div class="flex-[0_0_auto] min-w-0 box-border">
+    <span
+      aria-hidden="true"
+      class="pt-3 inline-flex box-border items-center size-4 text-bittersweet-400"
+    >
+      <Star width="24" height="24" />
+    </span>
+  </div>
+  <div class="flex-[1_1] min-w-0 pl-4 box-border">
+    <span>{text}<slot name="additional" /></span>
+  </div>
+</li>

@@ -102,8 +102,10 @@ const LandingHeader = () => {
     >
       <nav
         id="nav"
-        className={`px-5 shadow-[0_2px_4px_0_rgba(0,0,0,.15)] items-center flex justify-between bg-white z-50 transition-all duration-300 ease-in-out ${
-          isChanged ? "" : "sm:mx-5 sm:my-2 sm:rounded-xl"
+        className={`px-5 shadow-[0_2px_4px_0_rgba(0,0,0,.15)] items-center flex justify-between text-base-color z-50 transition-all duration-300 ease-in-out ${
+          isChanged
+            ? "bg-bento-gradient backdrop-blur-2xl text-base-color-h"
+            : "bg-white sm:mx-5 sm:my-2 sm:rounded-xl"
         }`}
       >
         <div
@@ -113,7 +115,7 @@ const LandingHeader = () => {
         >
           <div
             id="nav_links"
-            className={`flex text-base font-light text-base-color whitespace-nowrap transition-opacity duration-150 ${
+            className={`flex text-base font-light whitespace-nowrap transition-opacity duration-150 ${
               isChanging ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -122,7 +124,7 @@ const LandingHeader = () => {
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className={`nav_link hover:text-bittersweet-400 after:hover:bg-bittersweet-400 mr-5 ${
+                  className={`nav_link drop-shadow-[0_1px_2px_rgba(0,0,0,.2)] hover:drop-shadow-[0_1px_2px_rgba(0,_0,_0,_0)] font-medium hover:text-transparent after:hover:bg-transparent hover:bg-light-gradient bg-clip-text hover:scale-105  after:hover:bg-light-gradient mr-5 px-2 transition-transform duration-100 ${
                     activeSection === section.id ? "active" : ""
                   }`}
                   onClick={(e) => handleSmoothScroll(e, section.id)}
@@ -132,7 +134,7 @@ const LandingHeader = () => {
               ))
             ) : (
               <a
-                className="text-base-color dark:text-white/95 font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
+                className="font-grotesk font-normal active:scale-95 overflow-hidden transition-transform relative items-center rounded-full inline-flex gap-2"
                 href="/"
               >
                 <img
