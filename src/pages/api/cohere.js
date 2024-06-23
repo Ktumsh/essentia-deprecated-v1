@@ -34,27 +34,34 @@ export async function POST({ request }) {
     const stream = new ReadableStream({
       start(controller) {
         async function push() {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
+          try {
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) {
+                controller.close();
+                break;
+              }
 
-            buffer += decoder.decode(value, { stream: true });
+              buffer += decoder.decode(value, { stream: true });
 
-            let parts = buffer.split("\n");
-            buffer = parts.pop(); // Keep the last incomplete part in the buffer
+              let parts = buffer.split("\n");
+              buffer = parts.pop(); // Keep the last incomplete part in the buffer
 
-            for (const part of parts) {
-              if (part.trim().length > 0) {
-                try {
-                  const parsedResponse = JSON.parse(part);
-                  controller.enqueue(JSON.stringify(parsedResponse) + "\n");
-                } catch (e) {
-                  console.error("Failed to parse JSON part:", part, e);
+              for (const part of parts) {
+                if (part.trim().length > 0) {
+                  try {
+                    const parsedResponse = JSON.parse(part);
+                    controller.enqueue(JSON.stringify(parsedResponse) + "\n");
+                  } catch (e) {
+                    console.error("Failed to parse JSON part:", part, e);
+                  }
                 }
               }
             }
+          } catch (error) {
+            console.error("Error while reading the stream:", error);
+            controller.error(error);
           }
-          controller.close();
         }
         push();
       },
