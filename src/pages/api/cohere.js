@@ -27,11 +27,40 @@ export async function POST({ request }) {
       );
     }
 
-    const responseText = await response.text();
-    console.log("Response text from Cohere API:", responseText);
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    let buffer = "";
 
-    // Enviar la respuesta directamente al cliente
-    return new Response(responseText, {
+    const stream = new ReadableStream({
+      start(controller) {
+        async function push() {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+
+            let parts = buffer.split("\n");
+            buffer = parts.pop(); // Keep the last incomplete part in the buffer
+
+            for (const part of parts) {
+              if (part.trim().length > 0) {
+                try {
+                  const parsedResponse = JSON.parse(part);
+                  controller.enqueue(JSON.stringify(parsedResponse) + "\n");
+                } catch (e) {
+                  console.error("Failed to parse JSON part:", part, e);
+                }
+              }
+            }
+          }
+          controller.close();
+        }
+        push();
+      },
+    });
+
+    return new Response(stream, {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
