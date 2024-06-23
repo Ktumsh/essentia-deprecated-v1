@@ -1,12 +1,8 @@
-const COHERE_API_URL = "https://api.cohere.com/v1/chat";
-const COHERE_API_KEY = import.meta.env.COHERE_API_KEY;
-
 let chatHistory = [];
 const initialPrompt =
   "You belong to Essentia and your name is Essentia AI, you are a female AI expert in health and well-being and you only have to answer questions related to that topic and that is why you give your best advice to questions asked in Spanish by people residing in Chile.";
 
 export async function getCohereStream(input, onUpdate) {
-  // Agregar el prompt inicial solo la primera vez
   if (chatHistory.length === 0) {
     chatHistory.push({ role: "system", message: initialPrompt });
   }
@@ -25,11 +21,10 @@ export async function getCohereStream(input, onUpdate) {
   };
 
   try {
-    const response = await fetch(COHERE_API_URL, {
+    const response = await fetch("/api/cohere", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${COHERE_API_KEY}`,
       },
       body: JSON.stringify(data),
     });
@@ -51,24 +46,23 @@ export async function getCohereStream(input, onUpdate) {
       if (done) break;
       buffer += decoder.decode(value, { stream: true });
 
-      // Procesar los fragmentos completos de JSON
-      const parts = buffer.split("\n");
-      buffer = parts.pop(); // Guardar el fragmento incompleto
+      const parts = buffer.split("\n").filter((part) => part.trim() !== "");
 
       for (const part of parts) {
         try {
           const parsedResponse = JSON.parse(part);
           if (parsedResponse.text) {
             fullText += parsedResponse.text;
-            onUpdate(fullText);
+            onUpdate(fullText); // Actualiza el texto completo generado hasta el momento
           }
         } catch (e) {
           console.error("Failed to parse JSON part:", part, e);
         }
       }
+
+      buffer = parts.pop(); // Retener el fragmento incompleto
     }
 
-    // Agregar la entrada del usuario y la respuesta de la IA al historial de chat
     chatHistory.push({ role: "user", message: input });
     chatHistory.push({ role: "assistant", message: fullText });
 

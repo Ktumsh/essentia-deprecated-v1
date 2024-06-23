@@ -1,17 +1,13 @@
 import { defineConfig } from "astro/config";
-
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import auth from "auth-astro";
 import vercel from "@astrojs/vercel/serverless";
 import svelte from "@astrojs/svelte";
-
 import Compress from "astro-compress";
-
 import { VitePWA } from "vite-plugin-pwa";
 import { manifest, seoConfig } from "./src/utils/seoConfig";
 
-// https://astro.build/config
 export default defineConfig({
   server: {
     port: 4321,
