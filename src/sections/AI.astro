@@ -1,5 +1,5 @@
 ---
-import ArrowUp from "@/icons/arrow-up.astro";
+import HandleAI from "@/components/HandleAI.svelte";
 import { getSession } from "auth-astro/server";
 
 const session = await getSession(Astro.request);
@@ -7,70 +7,25 @@ const userImageUrl = session?.user?.image || "";
 ---
 
 <div
-  class="page-bg absolute inset-0 w-full h-[calc(100%+80px)] bg-cover bg-light-gradient dark:bg-dark-gradient"
+  class="page-bg fixed inset-0 size-full bg-cover bg-light-gradient dark:bg-dark-gradient"
 >
 </div>
-<div class="flex flex-col items-center justify-center size-full my-20">
+<div
+  class="flex flex-col items-center justify-center size-full my-20 relative text-white"
+>
   <main
-    class="w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] h-[68vh] max-w-full px-5"
+    id="pene"
+    class="w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] max-w-full px-5"
   >
-    <div class="size-full p-5 overflow-y-auto scroll-smooth">
-      <ul class="flex flex-col h-full">
-        <li
-          class="loading flex flex-col items-center justify-center h-full text-center"
-        >
-          <i
-            class="size-10 border-[0.4em] border-gray-200 dark:border-base-dark border-t-transparent dark:border-t-transparent rounded-full animate-spin"
-          ></i>
-          <h4 class="mb-2">Cargando...</h4>
-          <h5 class="text-[10px] opacity-40">
-            Esto puede tardar un poco. Paciencia.
-          </h5>
-        </li>
-      </ul>
+    <div
+      id="user-image"
+      data-user-image-url={userImageUrl}
+      aria-label="hide"
+      hidden
+    >
     </div>
+    <HandleAI client:visible />
   </main>
-  <div
-    class="relative flex flex-col items-center justify-center w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] px-5 gap-3"
-  >
-    <form id="message-form" class="flex h-14 w-full">
-      <div
-        class="flex items-center justify-center size-full shadow-md bg-white dark:bg-base-dark rounded-full"
-      >
-        <input
-          id="message-input"
-          class="flex-grow py-2 px-5 mr-2 border-none outline-none bg-transparent"
-          placeholder="Escribe tu mensaje aquí..."
-        />
-        <button
-          id="send-btn"
-          disabled
-          class="flex items-center justify-center size-9 mx-2 shadow-md disabled:opacity-60 disabled:pointer-events-none bg-bittersweet-400 dark:bg-cerise-red-600 text-white dark:text-base-dark dark:bg-base-dark rounded-full text-sm"
-        >
-          <ArrowUp width="21" height="21" />
-        </button>
-      </div>
-    </form>
-    <small
-      id="message-status"
-      class="absolute -bottom-10 m-auto w-full px-5 text-center text-[10px] text-base-color-m dark:text-base-color-dark-m"
-      >&nbsp;
-    </small>
-  </div>
-  <template id="message-template">
-    <li class="group message flex flex-col mx-1 px-1 py-2">
-      <span
-        id="user-image"
-        data-user-image-url={userImageUrl}
-        class="flex items-center justify-center size-8 rounded-full bg-base-full-dark font-xs"
-      >
-      </span>
-      <p
-        class="px-5 py-2 mt-1 rounded-full bg-transparent group-[.user]:bg-white dark:group-[.user]:bg-base-dark"
-      >
-      </p>
-    </li>
-  </template>
 </div>
 
 <style>
@@ -113,15 +68,19 @@ const userImageUrl = session?.user?.image || "";
     z-index: -1;
   }
 
-  .message {
-    &.user {
-      align-self: flex-end;
-      align-items: flex-end;
-    }
-
-    &.bot {
-      align-self: flex-start;
-    }
+  main {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
   }
 </style>
-<script is:inline type="module" src="/js/chatbot.js"></script>
+<!-- <script is:inline type="module" src="/js/chatbot.js"></script> -->
