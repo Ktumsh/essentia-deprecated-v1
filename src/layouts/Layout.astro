@@ -17,6 +17,8 @@ interface Props {
 }
 
 const { title, description, preload, canonical, image } = Astro.props;
+
+const isAIPage = Astro.url.pathname.includes("essentia-ai");
 ---
 
 <!doctype html>
@@ -40,7 +42,7 @@ const { title, description, preload, canonical, image } = Astro.props;
       >
         <Header />
         <slot />
-        <Footer />
+        {isAIPage ? null : <Footer />}
       </div>
       <ButtonUp />
     </div>

@@ -20,6 +20,7 @@
     "@nextui-org/button": "^2.0.34",
     "@nextui-org/checkbox": "^2.1.2",
     "@nextui-org/dropdown": "^2.1.26",
+    "@nextui-org/modal": "^2.0.36",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",
     "@nextui-org/tooltip": "^2.0.36",

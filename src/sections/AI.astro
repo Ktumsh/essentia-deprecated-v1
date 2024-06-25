@@ -11,11 +11,11 @@ const userImageUrl = session?.user?.image || "";
 >
 </div>
 <div
-  class="flex flex-col items-center justify-center size-full my-20 relative text-white"
+  id="chat-container"
+  class="flex flex-1 flex-col items-center justify-center size-full my-20 text-white overflow-y-auto"
 >
   <main
-    id="pene"
-    class="w-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] max-w-full px-5"
+    class="size-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] max-w-full px-5 overflow-y-auto"
   >
     <div
       id="user-image"
@@ -24,7 +24,7 @@ const userImageUrl = session?.user?.image || "";
       hidden
     >
     </div>
-    <HandleAI client:visible />
+    <HandleAI client:only="svelte" />
   </main>
 </div>
 
