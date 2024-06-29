@@ -374,33 +374,32 @@
 
 <MessageList {messages} {loading} />
 
-<MessageInput {handleSubmit} {isSending}>
-  <ChatList
-    {chatHistory}
-    {selectedSessionId}
-    {editingSessionId}
+<MessageInput {handleSubmit} {isSending}></MessageInput>
+<ChatList
+  {chatHistory}
+  {selectedSessionId}
+  {editingSessionId}
+  {openMenuId}
+  {selectChatSession}
+  {toggleOptions}
+  {startEditChatName}
+  {saveChatName}
+  {confirmDeleteChat}
+  {sidebarOpen}
+  {handleTouchStart}
+  {handleTouchMove}
+  {handleTouchEnd}
+  {toggleSidebar}
+  {createNewChat}
+>
+  <ChatOptionsMenu
+    {menuPosition}
     {openMenuId}
-    {selectChatSession}
-    {toggleOptions}
+    {shouldAnimateOut}
     {startEditChatName}
-    {saveChatName}
     {confirmDeleteChat}
-    {sidebarOpen}
-    {handleTouchStart}
-    {handleTouchMove}
-    {handleTouchEnd}
-    {toggleSidebar}
-    {createNewChat}
-  >
-    <ChatOptionsMenu
-      {menuPosition}
-      {openMenuId}
-      {shouldAnimateOut}
-      {startEditChatName}
-      {confirmDeleteChat}
-    />
-  </ChatList>
-</MessageInput>
+  />
+</ChatList>
 
 <DeleteChatModal {showModal} {deleteChat} {closeModal} />
 
