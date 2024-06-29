@@ -25,22 +25,32 @@ import Adjustments from "@/icons/adjustments.astro";
     class="relative flex items-center justify-center w-full h-10 bg-white dark:bg-base-dark rounded-xl shadow-md overflow-hidden"
   >
     <nav
-      class="flex flex-row items-center justify-between pl-2 pr-5 gap-5 w-full text-base-color-h dark:text-base-color-dark-h"
+      class="flex flex-row items-center justify-between px-2 gap-5 w-full text-base-color-h dark:text-base-color-dark-h"
     >
       <div
         class="flex flex-row items-center justify-center font-medium text-sm"
       >
         <button
           type="button"
-          class="bg-gray-200 dark:bg-base-full-dark py-1 px-4 rounded-lg"
+          class="bg-gray-200 dark:bg-base-full-dark hover:bg-gray-200 hover:dark:bg-base-full-dark py-1 px-4 rounded-lg hover:text-black dark:hover:text-base-color-dark"
           >Todo
         </button>
-        <button type="button" class="py-1 px-4 rounded-lg">Internacional</button
+        <button
+          type="button"
+          class="py-1 px-4 rounded-lg hover:bg-gray-200 hover:dark:bg-base-full-dark hover:text-black dark:hover:text-base-color-dark"
+          >Internacional</button
         >
-        <button type="button" class="py-1 px-4 rounded-lg">Nacional</button>
+        <button
+          type="button"
+          class="py-1 px-4 rounded-lg hover:bg-gray-200 hover:dark:bg-base-full-dark hover:text-black dark:hover:text-base-color-dark"
+          >Nacional</button
+        >
       </div>
       <div>
-        <button type="button" class="flex items-center justify-center">
+        <button
+          type="button"
+          class="flex items-center justify-center rounded-full p-1.5 hover:bg-gray-200 hover:dark:bg-base-full-dark hover:text-black dark:hover:text-base-color-dark"
+        >
           <Adjustments width="24" height="24" />
         </button>
       </div>
