@@ -40,7 +40,7 @@
             {/if}
           </span>
           <p
-            class="px-5 py-2 mt-1 rounded-full bg-transparent group-[.user]:text-base-color group-[.user]:dark:text-white group-[.user]:bg-white dark:group-[.user]:bg-base-dark"
+            class="px-5 py-2 mt-1 rounded-full bg-transparent text-base-color dark:text-white group-[.user]:text-base-color group-[.user]:dark:text-white group-[.user]:bg-white dark:group-[.user]:bg-base-dark"
           >
             {@html message.text}
           </p>
