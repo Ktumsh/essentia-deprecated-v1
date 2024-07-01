@@ -3,7 +3,7 @@ import AdditionalsTabs from "@/components/Additionals/Tabs";
 ---
 
 <div
-  class="page-bg fixed sm:absolute inset-0 size-full bg-cover bg-light-gradient-v2 dark:bg-dark-gradient -z-10"
+  class="page-bg fixed sm:absolute inset-0 size-full bg-cover bg-light-gradient-v2 dark:bg-dark-gradient -z-[-1]"
 >
 </div>
 <main
@@ -12,11 +12,15 @@ import AdditionalsTabs from "@/components/Additionals/Tabs";
   <AdditionalsTabs client:only="react" />
   <style>
     html.dark .page-bg {
-      mask: linear-gradient(180deg, black 80%, rgba(0, 0, 0, 0) 95%),
-        radial-gradient(15.77% 44.22% at 50% 104.95%, #030e1e 0%, #333333 100%),
+      -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          15.77% 44.22% at 50% 104.95%,
+          rgba(66, 66, 66, 0) 0%,
+          #333333 100%
+        ),
         radial-gradient(
           30.95% 86.8% at 30.69% 13.2%,
-          rgba(3, 14, 30, 0.33) 0%,
+          rgba(66, 66, 66, 0.33) 0%,
           #333333 100%
         ),
         radial-gradient(
@@ -34,11 +38,15 @@ import AdditionalsTabs from "@/components/Additionals/Tabs";
           rgba(0, 0, 0, 0) 95.31%
         ),
         linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
-      -webkit-mask: linear-gradient(180deg, black 80%, rgba(0, 0, 0, 0) 95%),
-        radial-gradient(15.77% 44.22% at 50% 104.95%, #030e1e 0%, #333333 100%),
+      mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          15.77% 44.22% at 50% 104.95%,
+          rgba(66, 66, 66, 0) 0%,
+          #333333 100%
+        ),
         radial-gradient(
           30.95% 86.8% at 30.69% 13.2%,
-          rgba(3, 14, 30, 0.33) 0%,
+          rgba(66, 66, 66, 0.33) 0%,
           #333333 100%
         ),
         radial-gradient(
