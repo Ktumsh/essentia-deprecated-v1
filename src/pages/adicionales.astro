@@ -1,4 +1,5 @@
 ---
+import Additionals from "@/sections/Additionals.astro";
 import Layout from "../layouts/Layout.astro";
 import { getSession } from "auth-astro/server";
 
@@ -11,4 +12,6 @@ if (!session) return Astro.redirect("/login");
   title="Essentia - Recursos Adicionales"
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical="https://essentia-cl.vercel.app/recursos-adicionales"
-/>
+>
+  <Additionals />
+</Layout>

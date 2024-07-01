@@ -7,7 +7,7 @@ export default {
     files: [
       "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
       "./node_modules/flowbite/**/*.js",
-      "./node_modules/@nextui-org/theme/dist/components/(avatar|dropdown|popover|menu|divider|button|ripple|spinner|checkbox).js",
+      "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
   },
   theme: {
@@ -161,6 +161,7 @@ export default {
         "landing-gradient": "var(--landing-gradient)",
         "bento-gradient": "var(--bg-bento-gradient)",
         "light-gradient": "var(--light-gradient)",
+        "light-gradient-v2": "var(--light-gradient-v2)",
         "dark-gradient": "var(--dark-gradient)",
         "dark-gradient-v2": "var(--dark-gradient-v2)",
       },
@@ -194,6 +195,24 @@ export default {
               900: "#80261c",
               950: "#460f09",
               DEFAULT: "#fa8072",
+            },
+          },
+        },
+        dark: {
+          colors: {
+            danger: {
+              50: "#fdf3f4",
+              100: "#fce7eb",
+              200: "#f8d3db",
+              300: "#f2afbc",
+              400: "#ea8299",
+              500: "#da4167",
+              600: "#c93560",
+              700: "#a92751",
+              800: "#8e2349",
+              900: "#7a2143",
+              950: "#430e21",
+              DEFAULT: "#c93560",
             },
           },
         },
