@@ -38,7 +38,7 @@ const isAIPage = Astro.url.pathname.includes("essentia-ai");
       <div
         id="main"
         role="main"
-        class="min-h-dvh flex flex-col items-center w-full"
+        class="min-h-dvh flex flex-col items-center size-full page-bg bg-cover bg-light-gradient-v2 dark:bg-none"
       >
         <Header />
         <slot />
@@ -97,9 +97,21 @@ const isAIPage = Astro.url.pathname.includes("essentia-ai");
           rgb(242, 112, 156),
           rgb(255, 148, 114)
         );
+        --light-gradient-v2: linear-gradient(
+          68.4deg,
+          rgb(248, 182, 204) 0.5%,
+          rgb(192, 198, 230) 49%,
+          rgb(225, 246, 240) 99.8%
+        );
         --dark-gradient: linear-gradient(
           111.1deg,
           #061b37 -4.8%,
+          #ff7373 82.7%,
+          #ffaf7b 97.2%
+        );
+        --dark-gradient-v2: linear-gradient(
+          111.1deg,
+          #061b37 -100%,
           rgb(255, 115, 115) 82.7%,
           rgb(255, 175, 123) 97.2%
         );

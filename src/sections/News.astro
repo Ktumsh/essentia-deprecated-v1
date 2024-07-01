@@ -1,5 +1,6 @@
 ---
 import NewsGrid from "@/components/News/NewsGrid";
+import NewsTabs from "@/components/News/Tabs";
 import Adjustments from "@/icons/adjustments.astro";
 ---
 
@@ -22,153 +23,130 @@ import Adjustments from "@/icons/adjustments.astro";
 >
   <div
     role="navigation"
-    class="relative flex items-center justify-center w-full h-10 bg-white dark:bg-base-dark rounded-medium shadow-md overflow-hidden"
+    class="relative flex items-center justify-between w-full h-10 bg-white/50 border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:bg-base-dark rounded-xl shadow-md overflow-hidden"
   >
-    <nav
-      class="flex flex-row items-center justify-between px-1 gap-5 w-full text-base-color-h dark:text-base-color-dark-h"
+    <NewsTabs client:visible />
+    <button
+      type="button"
+      class="flex items-center justify-center rounded-full p-1.5 mr-1 hover:bg-gray-200 hover:dark:bg-base-full-dark hover:brightness-90 transition-[filter]"
     >
-      <div
-        class="flex flex-row items-center justify-center h-full font-medium text-sm"
-      >
-        <button
-          type="button"
-          class="h-8 py-1 px-4 rounded-small shadow-sm bg-gray-200 dark:bg-base-full-dark hover:bg-gray-200 hover:dark:bg-base-full-dark hover:brightness-90 transition-[filter]"
-          >Todo
-        </button>
-        <button
-          type="button"
-          class="h-8 py-1 px-4 rounded-small hover:brightness-90 transition-[filter]"
-          >Internacional</button
-        >
-        <button
-          type="button"
-          class="h-8 py-1 px-4 rounded-small hover:brightness-90 transition-[filter]"
-          >Nacional</button
-        >
-      </div>
-      <div>
-        <button
-          type="button"
-          class="flex items-center justify-center rounded-full p-1.5 hover:bg-gray-200 hover:dark:bg-base-full-dark hover:brightness-90 transition-[filter]"
-        >
-          <Adjustments width="24" height="24" />
-        </button>
-      </div>
-    </nav>
+      <Adjustments width="24" height="24" />
+    </button>
   </div>
+
   <NewsGrid client:visible />
+  <style>
+    .page-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      top: -104px;
+      inset: 0;
+      -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          15.77% 44.22% at 50% 104.95%,
+          rgba(66, 66, 66, 0) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.33) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 143.89% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 52.6%,
+          rgba(0, 0, 0, 0.18) 83.33%,
+          rgba(0, 0, 0, 0) 95.31%
+        ),
+        radial-gradient(
+          51.31% 143.89% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 52.6%,
+          rgba(0, 0, 0, 0.18) 83.33%,
+          rgba(0, 0, 0, 0) 95.31%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          15.77% 44.22% at 50% 104.95%,
+          rgba(66, 66, 66, 0) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.33) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 143.89% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 52.6%,
+          rgba(0, 0, 0, 0.18) 83.33%,
+          rgba(0, 0, 0, 0) 95.31%
+        ),
+        radial-gradient(
+          51.31% 143.89% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 52.6%,
+          rgba(0, 0, 0, 0.18) 83.33%,
+          rgba(0, 0, 0, 0) 95.31%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-composite: source-in;
+      mask-composite: source-in;
+      transition: background-image 0.1s ease-out;
+      animation-name: bg_anim;
+      animation-duration: 1s;
+      z-index: -1;
+    }
+
+    @keyframes bg_anim {
+      0% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .loader {
+      display: none;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+
+    .loader::before,
+    .loader::after {
+      position: absolute;
+      border-radius: inherit;
+      content: "";
+    }
+
+    .loader::after {
+      top: 50%;
+      left: 50%;
+      width: 75%;
+      height: 75%;
+      background-color: #030e1e;
+      transform: translate(-50%, -50%);
+    }
+
+    .loader::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(0deg, #061b37 0%, #030e1e 100%);
+    }
+  </style>
 </main>
-<style>
-  .page-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: -104px;
-    inset: 0;
-    -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
-      radial-gradient(
-        15.77% 44.22% at 50% 104.95%,
-        rgba(66, 66, 66, 0) 0%,
-        #333333 100%
-      ),
-      radial-gradient(
-        30.95% 86.8% at 30.69% 13.2%,
-        rgba(66, 66, 66, 0.33) 0%,
-        #333333 100%
-      ),
-      radial-gradient(
-        51.31% 143.89% at 49.99% 24.75%,
-        #000000 0%,
-        #000000 52.6%,
-        rgba(0, 0, 0, 0.18) 83.33%,
-        rgba(0, 0, 0, 0) 95.31%
-      ),
-      radial-gradient(
-        51.31% 143.89% at 49.99% 24.75%,
-        #000000 0%,
-        #000000 52.6%,
-        rgba(0, 0, 0, 0.18) 83.33%,
-        rgba(0, 0, 0, 0) 95.31%
-      ),
-      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
-    mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
-      radial-gradient(
-        15.77% 44.22% at 50% 104.95%,
-        rgba(66, 66, 66, 0) 0%,
-        #333333 100%
-      ),
-      radial-gradient(
-        30.95% 86.8% at 30.69% 13.2%,
-        rgba(66, 66, 66, 0.33) 0%,
-        #333333 100%
-      ),
-      radial-gradient(
-        51.31% 143.89% at 49.99% 24.75%,
-        #000000 0%,
-        #000000 52.6%,
-        rgba(0, 0, 0, 0.18) 83.33%,
-        rgba(0, 0, 0, 0) 95.31%
-      ),
-      radial-gradient(
-        51.31% 143.89% at 49.99% 24.75%,
-        #000000 0%,
-        #000000 52.6%,
-        rgba(0, 0, 0, 0.18) 83.33%,
-        rgba(0, 0, 0, 0) 95.31%
-      ),
-      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-composite: source-in;
-    mask-composite: source-in;
-    transition: background-image 0.1s ease-out;
-    animation-name: bg_anim;
-    animation-duration: 1s;
-    z-index: -1;
-  }
-
-  @keyframes bg_anim {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .loader {
-    display: none;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
-  }
-
-  .loader::before,
-  .loader::after {
-    position: absolute;
-    border-radius: inherit;
-    content: "";
-  }
-
-  .loader::after {
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    height: 75%;
-    background-color: #030e1e;
-    transform: translate(-50%, -50%);
-  }
-
-  .loader::before {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(0deg, #061b37 0%, #030e1e 100%);
-  }
-</style>
