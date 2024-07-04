@@ -12,6 +12,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
   return (
     <div className="flex items-center gap-4">
       <Dropdown
+        shouldBlockScroll={false}
         classNames={{
           content:
             "p-1 bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
