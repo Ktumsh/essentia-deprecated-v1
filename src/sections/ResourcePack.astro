@@ -1,0 +1,93 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import ResourceTabs from "@/components/Resources/ResourceTabs";
+
+interface Props {
+  component: AstroComponentFactory;
+  background?: string;
+}
+
+const { component: ContentComponent, background } = Astro.props;
+---
+
+<div class="relative flex justify-center size-full">
+  <div class=`page-bg fixed inset-0 size-full bg-cover ${background} -z-10`>
+  </div>
+  <ResourceTabs client:visible />
+  <main
+    class="relative flex flex-col min-h-[calc(100dvh-80px)] w-full max-w-[1250px] py-5 px-5 shrink items-stretch grow"
+  >
+    <div class="container mx-auto">
+      <div class="flex flex-col w-full mx-auto">
+        <div
+          class="space-y-12 text-base-color dark:text-base-color-dark bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-40 border-4 border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur dark:backdrop-blur-none backdrop-saturate-150 dark:backdrop-saturate-100 shadow-md rounded-3xl"
+        >
+          <div
+            class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-3xl z-10"
+          >
+          </div>
+          <ContentComponent />
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<style>
+  html.dark .page-bg {
+    -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-composite: source-in;
+    mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.5) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    mask-composite: source-in !important;
+    z-index: -1;
+  }
+</style>

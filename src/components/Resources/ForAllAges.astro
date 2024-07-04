@@ -1,0 +1,265 @@
+---
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
+
+const videos = [
+  {
+    title: "La importancia de la salud física y mental en nuestras vidas",
+    link: "https://www.youtube.com/embed/VU1q3QtfxBA",
+  },
+  {
+    title: "Salud Integral de las y los Adolescentes",
+    link: "https://www.youtube.com/embed/RmWlqi75a1s",
+  },
+  {
+    title: "COMO CUIDAR MI SALUD | Para niños",
+    link: "https://www.youtube.com/embed/UwyKqFv6-Qc",
+  },
+  {
+    title: "Bienestar emocional y mente en forma en las personas mayores",
+    link: "https://www.youtube.com/embed/5NYLyyKOadA",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
+>
+  <div class="flex items-center justify-center gap-4 mb-6">
+    <h2 class="text-4xl text-center font-bold dark:text-white">
+      Introducción a la Salud para Todas las Edades
+    </h2>
+    <ChipBadge client:visible />
+  </div>
+  <p class="max-w-2xl text-center text-lg">
+    Cada etapa de la vida requiere cuidados y atenciones específicas para
+    mantener una buena salud.
+  </p>
+</div>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Artículos por Edad</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.healthychildren.org/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud Infantil - HealthyChildren.org</a
+      >
+      <p class="mt-2 text-base">
+        Consejos y guías para mantener la salud de los niños.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.cdc.gov/aging/index.html"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud para Adultos Mayores - CDC</a
+      >
+      <p class="mt-2 text-base">
+        Recursos y guías para cuidar de la salud de los adultos mayores.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.verywellfamily.com/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud Familiar - Verywell Family</a
+      >
+      <p class="mt-2 text-base">
+        Consejos y guías para mantener la salud de toda la familia.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Consejos de Cuidado</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mayoclinic.org/healthy-lifestyle/adult-health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud de Adultos - Mayo Clinic</a
+      >
+      <p class="mt-2 text-base">
+        Consejos para mantener una buena salud en la adultez.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/health-topics/ageing#tab=tab_1"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Envejecimiento y Salud - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Encuentra información y recursos sobre envejecimiento y salud
+        proporcionados por la OMS.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.nia.nih.gov/health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud para Adultos Mayores - NIA</a
+      >
+      <p class="mt-2 text-base">
+        Información sobre salud para adultos mayores proporcionada por el NIA.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Guías de Desarrollo</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/index.html"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Guía de Desarrollo Infantil - CDC</a
+      >
+      <p class="mt-2 text-base">
+        Guías y consejos para apoyar el desarrollo de los niños.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.aap.org/en-us/advocacy-and-policy/aap-health-initiatives/HALF-Implementation-Guide/child-early-development/Pages/default.aspx"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Desarrollo Temprano - AAP</a
+      >
+      <p class="mt-2 text-base">
+        Recursos para apoyar el desarrollo temprano de los niños.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.parenting.com/child/development/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Desarrollo Infantil - Parenting</a
+      >
+      <p class="mt-2 text-base">
+        Consejos y guías para el desarrollo infantil.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Videos Informativos</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {
+      videos.map((video) => (
+        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
+          <iframe
+            class="w-full h-full rounded-xl"
+            width="560"
+            height="315"
+            src={video.link}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Recursos para Familias</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.familydoctor.org/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recursos para Familias - FamilyDoctor.org</a
+      >
+      <p class="mt-2 text-base">
+        Recursos útiles para toda la familia para mantener la salud.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.healthychildren.org/English/Pages/default.aspx"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recursos de Salud Infantil - Healthy Children</a
+      >
+      <p class="mt-2 text-base">
+        Guías y consejos para cuidar de la salud infantil.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.parents.com/health/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud para Padres - Parents.com</a
+      >
+      <p class="mt-2 text-base">
+        Artículos y recursos sobre salud para padres y familias.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5 pb-5">
+  <h3 class="text-2xl font-semibold mb-6">Enlaces de Apoyo</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/health-topics/ageing#tab=tab_1"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Envejecimiento y Salud - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Encuentra información y recursos sobre envejecimiento y salud
+        proporcionados por la OMS.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.cdc.gov/aging/aginginfo/index.htm"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Información sobre Envejecimiento - CDC</a
+      >
+      <p class="mt-2 text-base">
+        Recursos del CDC sobre el envejecimiento saludable.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.nia.nih.gov/health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Instituto Nacional sobre el Envejecimiento - NIA</a
+      >
+      <p class="mt-2 text-base">
+        Recursos y guías proporcionadas por el NIA para el envejecimiento
+        saludable.
+      </p>
+    </div>
+  </div>
+</section>

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { RESOURCES } from "../../consts/resources";
 import { getSession } from "auth-astro/server";
+import ResourcePack from "@/sections/ResourcePack.astro";
 
 const session = await getSession(Astro.request);
 
@@ -19,7 +20,7 @@ const { resource } = Astro.params;
 const page = RESOURCES.find((page) => page.resource === resource);
 if (!page) return Astro.redirect("/404");
 
-const { title } = page;
+const { title, component: ContentComponent, background } = page;
 ---
 
 <Layout
@@ -27,5 +28,5 @@ const { title } = page;
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical=`https://essentia-cl.vercel.app/recursos/${resource}`
 >
-  <h1 class="text-white text-3xl">{title}</h1>
+  <ResourcePack component={ContentComponent} background={background} />
 </Layout>

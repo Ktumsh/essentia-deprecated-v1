@@ -1,0 +1,181 @@
+---
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
+
+const videos = [
+  {
+    title: "CLASE 1: Conceptos básicos de nutrición",
+    link: "https://www.youtube.com/embed/eHkbDctJbXo",
+  },
+  {
+    title: "Conceptos básicos de nutrición y alimentación",
+    link: "https://www.youtube.com/embed/qHimbDfTXYg",
+  },
+  {
+    title: "25 Recetas de Comidas y Cenas Saludables, Fáciles, Rápidas",
+    link: "https://www.youtube.com/embed/hv-Bx24aMpY",
+  },
+  {
+    title: "Comidas fáciles, BARATAS Y nutritivas para No salir de casa",
+    link: "https://www.youtube.com/embed/CGLjwpryk9g",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
+>
+  <div class="flex items-center justify-center gap-4 mb-6">
+    <h2 class="text-4xl text-center font-bold dark:text-white">
+      Introducción a la Nutrición
+    </h2>
+    <ChipBadge client:visible />
+  </div>
+  <p class="max-w-2xl text-center text-lg">
+    Una buena nutrición es esencial para mantener una salud óptima y prevenir
+    enfermedades.
+  </p>
+</div>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Recetas Saludables</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.eatingwell.com/recipes/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recetas Saludables - EatingWell</a
+      >
+      <p class="mt-2 text-base">
+        Encuentra recetas balanceadas y deliciosas para tu dieta.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.bbcgoodfood.com/recipes/collection/healthy-recipes"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recetas Saludables - BBC Good Food</a
+      >
+      <p class="mt-2 text-base">
+        Explora una colección de recetas saludables de BBC Good Food.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.delish.com/cooking/nutrition/g2153/healthy-dinner-recipes/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recetas Saludables para la Cena - Delish</a
+      >
+      <p class="mt-2 text-base">Ideas para cenas saludables y deliciosas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Guías de Nutrición</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.choosemyplate.gov/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >MiPlato - USDA</a
+      >
+      <p class="mt-2 text-base">
+        Aprende sobre la guía de alimentación balanceada de USDA.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Dieta Saludable - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Conoce las pautas de la OMS para una dieta saludable.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.nhs.uk/live-well/eat-well/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Comer Bien - NHS</a
+      >
+      <p class="mt-2 text-base">
+        Guías de alimentación saludable proporcionadas por el NHS.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Planificadores de Comidas</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.eatthismuch.com/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Planificador de Comidas - Eat This Much</a
+      >
+      <p class="mt-2 text-base">
+        Utiliza esta herramienta para planificar tus comidas diarias.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mymealplan.com/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >My Meal Plan</a
+      >
+      <p class="mt-2 text-base">
+        Planifica tus comidas semanales de manera fácil y eficiente.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.prepear.com/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Prepear</a
+      >
+      <p class="mt-2 text-base">
+        Organiza tus recetas y planifica tus comidas con Prepear.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-5 pb-5">
+  <h3 class="text-2xl font-semibold mb-6">Videos de Cocina</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {
+      videos.map((video) => (
+        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
+          <iframe
+            class="w-full h-full rounded-xl"
+            width="560"
+            height="315"
+            src={video.link}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>

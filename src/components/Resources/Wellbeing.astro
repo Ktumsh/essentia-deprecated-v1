@@ -1,0 +1,219 @@
+---
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
+
+const videos = [
+  {
+    title: "Bienestar Emocional",
+    link: "https://www.youtube.com/embed/7ZenQNNeWaE",
+  },
+  {
+    title: "Bienestar Físico y Emocional - Aprende a Escuchar tu Cuerpo",
+    link: "https://www.youtube.com/embed/CYqnVV6CRa8",
+  },
+  {
+    title: "El Mejor Video de Superación Personal, Motivación y Autoestima",
+    link: "https://www.youtube.com/embed/dKrBEVONVSE",
+  },
+  {
+    title:
+      "MIRA ESTE VIDEO CADA MAÑANA - El mejor discurso motivacional de la mañana",
+    link: "https://www.youtube.com/embed/W_yM7OkmHgM",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
+>
+  <div class="flex items-center justify-center gap-4 mb-6">
+    <h2 class="text-4xl text-center font-bold dark:text-white">
+      Introducción al Bienestar Emocional
+    </h2>
+    <ChipBadge client:visible />
+  </div>
+  <p class="max-w-2xl text-center text-lg">
+    Cuidar de tu salud mental es tan importante como cuidar de tu salud fisica.
+  </p>
+</div>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Artículos sobre Salud Mental</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mentalhealth.org.uk/publications"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Publicaciones de Salud Mental - Mental Health Foundation</a
+      >
+      <p class="mt-2 text-base">
+        Lee artículos y guías sobre salud mental y bienestar.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mayoclinic.org/tests-procedures/meditation/in-depth/meditation/art-20045858"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Guía de Meditación - Mayo Clinic</a
+      >
+      <p class="mt-2 text-base">
+        Descubre técnicas de meditación para mejorar tu bienestar.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Cuidado de la Salud Mental - NIMH</a
+      >
+      <p class="mt-2 text-base">
+        Información y consejos para cuidar de tu salud mental.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Técnicas de Relajación</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.healthline.com/nutrition/16-ways-relieve-stress-anxiety"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >16 Maneras de Aliviar el Estrés - Healthline</a
+      >
+      <p class="mt-2 text-base">
+        Aprende diferentes métodos para reducir el estrés y la ansiedad.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mindful.org/meditation/mindfulness-getting-started/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Iniciación al Mindfulness - Mindful</a
+      >
+      <p class="mt-2 text-base">
+        Guía para comenzar con la práctica del mindfulness.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.psychologytoday.com/us/basics/stress"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Todo sobre el Estrés - Psychology Today</a
+      >
+      <p class="mt-2 text-base">Artículos y técnicas para manejar el estrés.</p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Videos Motivacionales</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {
+      videos.map((video) => (
+        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
+          <iframe
+            class="w-full h-full rounded-xl"
+            width="560"
+            height="315"
+            src={video.link}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Podcasts de Bienestar</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.tenpercent.com/podcast"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Ten Percent Happier Podcast</a
+      >
+      <p class="mt-2 text-base">
+        Escucha podcasts que te ayudarán a mejorar tu bienestar emocional.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://open.spotify.com/show/3G7Ixy7wZz98e3yGxCbbzZ"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >The Happiness Lab - Spotify</a
+      >
+      <p class="mt-2 text-base">
+        Explora la ciencia de la felicidad con la Dra. Laurie Santos.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.headspace.com/podcasts"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Headspace Podcasts</a
+      >
+      <p class="mt-2 text-base">
+        Podcast enfocado en mindfulness y meditación.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5 pb-5">
+  <h3 class="text-2xl font-semibold mb-6">Ejercicios de Autoayuda</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://positivepsychology.com/self-care-worksheets/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Hojas de Trabajo de Autoayuda - Positive Psychology</a
+      >
+      <p class="mt-2 text-base">
+        Realiza ejercicios prácticos para mejorar tu salud mental.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.therapistaid.com/worksheets"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Hojas de Trabajo de Terapia - Therapist Aid</a
+      >
+      <p class="mt-2 text-base">
+        Hojas de trabajo para ayudarte a superar problemas emocionales.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mentalhealth.org.uk/a-to-z/s/self-help"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recursos de Autoayuda - Mental Health Foundation</a
+      >
+      <p class="mt-2 text-base">
+        Encuentra recursos para apoyarte en tu camino de autoayuda.
+      </p>
+    </div>
+  </div>
+</section>

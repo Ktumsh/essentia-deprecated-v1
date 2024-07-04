@@ -1,0 +1,237 @@
+---
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
+
+const videos = [
+  {
+    title: "Educación Sexual Integral e Identidad Sexual",
+    link: "https://www.youtube.com/embed/53TxMPxszcY",
+  },
+  {
+    title: "Hablemos de Consentimiento | Educación Sexual Integral",
+    link: "https://www.youtube.com/embed/qqDSvDd9PpU",
+  },
+  {
+    title: "ESI: Educación Sexual Integral. Los derechos en la escuela",
+    link: "https://www.youtube.com/embed/H7vF6SctjbE",
+  },
+  {
+    title: "Es mi cuerpo y yo lo cuido | Educación Sexual Integra",
+    link: "https://www.youtube.com/embed/q2O4Zvb1Dv0",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
+>
+  <div class="flex items-center justify-center gap-4 mb-6">
+    <h2 class="text-4xl text-center font-bold dark:text-white">
+      Introducción a la Salud y Educación Sexual
+    </h2>
+    <ChipBadge client:visible />
+  </div>
+  <p class="max-w-2xl text-center text-lg">
+    La educación sexual es crucial para entender y cuidar de tu salud sexual y
+    reproductiva.
+  </p>
+</div>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Artículos Educativos</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.plannedparenthood.org/learn"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Aprender - Planned Parenthood</a
+      >
+      <p class="mt-2 text-base">
+        Accede a una amplia gama de artículos sobre salud sexual.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.cdc.gov/sexualhealth/default.htm"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud Sexual - CDC</a
+      >
+      <p class="mt-2 text-base">
+        Información completa sobre salud sexual proporcionada por el CDC.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.medicalnewstoday.com/categories/sexual-health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud Sexual - Medical News Today</a
+      >
+      <p class="mt-2 text-base">
+        Artículos actualizados sobre salud sexual y reproductiva.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Guías de Prevención</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Infecciones de Transmisión Sexual - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Conoce cómo prevenir infecciones de transmisión sexual con la guía de la
+        OMS.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.cdc.gov/std/prevention/default.htm"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Prevención de ETS - CDC</a
+      >
+      <p class="mt-2 text-base">
+        Guías y consejos para prevenir enfermedades de transmisión sexual.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.nhs.uk/live-well/sexual-health/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Salud Sexual - NHS</a
+      >
+      <p class="mt-2 text-base">
+        Información sobre salud sexual proporcionada por el NHS.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Recursos para Jóvenes</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.youngmenshealthsite.org/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Young Men's Health</a
+      >
+      <p class="mt-2 text-base">
+        Recursos y artículos enfocados en la salud de los jóvenes varones.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://youngwomenshealth.org/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Young Women's Health</a
+      >
+      <p class="mt-2 text-base">
+        Recursos y artículos enfocados en la salud de las jóvenes mujeres.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.teensource.org/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >TeenSource</a
+      >
+      <p class="mt-2 text-base">
+        Información sobre salud sexual dirigida a adolescentes.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Videos Educativos</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {
+      videos.map((video) => (
+        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
+          <iframe
+            class="w-full h-full rounded-xl"
+            width="560"
+            height="315"
+            src={video.link}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Preguntas Frecuentes</h3>
+  <div
+    class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+  >
+    <a
+      href="https://www.mayoclinic.org/tests-procedures/std-testing/expert-answers/std-faq/faq-20058044"
+      class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+      >Preguntas Frecuentes sobre ETS - Mayo Clinic</a
+    >
+    <p class="mt-2 text-base">
+      Respuestas a preguntas comunes sobre enfermedades de transmisión sexual.
+    </p>
+  </div>
+</section>
+<section class="px-5 pb-5">
+  <h3 class="text-2xl font-semibold mb-6">Recursos Externos</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/teams/sexual-and-reproductive-health-and-research-(srh)"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Recursos sobre Salud Sexual y Reproductiva - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Encuentra más recursos y guías de la OMS sobre salud sexual y
+        reproductiva.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.plannedparenthood.org/planned-parenthood-great-plains"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Planned Parenthood</a
+      >
+      <p class="mt-2 text-base">
+        Organización que proporciona educación y recursos sobre salud sexual.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.sexualityeducation.com/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Sexuality Education</a
+      >
+      <p class="mt-2 text-base">Recursos educativos sobre sexualidad.</p>
+    </div>
+  </div>
+</section>

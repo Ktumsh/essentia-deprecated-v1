@@ -1,0 +1,191 @@
+---
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
+
+const videos = [
+  {
+    title: "Qué es la Salud y el Bienestar",
+    link: "https://www.youtube.com/embed/ZygbuZ4F44Q?si=GxtXzje0L06O91YP",
+  },
+  {
+    title: "Meditación para principiantes (12 minutos)",
+    link: "https://www.youtube.com/embed/3oCC4NDgYrY?si=9y-ZariBAtA_DkA-",
+  },
+  {
+    title: "Cuerpo y mente saludable - Tips de Salud",
+    link: "https://www.youtube.com/embed/_JDOGSkVMNY?si=kkeX0Lg-jQp_ULHT",
+  },
+  {
+    title: "4 ejercicios de mindfulness para tu rutina diaria",
+    link: "https://www.youtube.com/embed/ze5SQPSRKfA?si=b6uPLIV5esbhzFQf",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
+>
+  <div class="flex items-center justify-center gap-4 mb-6">
+    <h2 class="text-4xl text-center font-bold dark:text-white dark:text-white">
+      Introducción a la Salud y Bienestar
+    </h2>
+    <ChipBadge client:visible />
+  </div>
+  <p class="max-w-2xl text-center text-lg">
+    Mantener un estilo de vida saludable implica varios factores, incluyendo una
+    nutrición equilibrada, ejercicio regular, y bienestar mental.
+  </p>
+</div>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Artículos y Guías</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Dieta Saludable - OMS</a
+      >
+      <p class="mt-2 text-base">
+        Conozca las pautas de la OMS para mantener una dieta saludable.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.health.harvard.edu/staying-healthy/10-tips-for-better-heart-health"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >10 Consejos para una Mejor Salud Cardíaca - Harvard Health</a
+      >
+      <p class="mt-2 text-base">
+        Descubre consejos prácticos para mantener una buena salud
+        cardiovascular.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/healthy-diet/faq-20058443"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Preguntas Frecuentes sobre Dieta Saludable - Mayo Clinic</a
+      >
+      <p class="mt-2 text-base">
+        Resuelve tus dudas sobre cómo llevar una dieta equilibrada.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Infografías</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.olivetto.com.co/bienestar/estilo-de-vida-adecuado-asi-se-logra/"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >6 factores que te ayudarán a mantener un estilo de vida adecuado</a
+      >
+      <img
+        src="https://www.olivetto.com.co/wp-content/uploads/2021/04/estilo-de-vida-saludable-optimizada.webp"
+        alt="6 factores que te ayudarán a mantener un estilo de vida adecuado"
+        class="aspect-video object-cover mt-4 rounded-xl"
+      />
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.naturelorganic.cl/consejos-para-mejorar-bienestar-fisico-emocional"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >8 consejos de salud para mejorar tu bienestar físico y emocional</a
+      >
+      <img
+        src="https://jumpseller.s3.eu-west-1.amazonaws.com/store/naturel/assets/mujer-relajara-meditacion.png"
+        alt="8 consejos de salud para mejorar tu bienestar físico y emocional"
+        class="aspect-video object-cover mt-4 rounded-xl"
+      />
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.saludsiemprevc.org/consejos-de-bienestar"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Consejos de Bienestar Diario</a
+      >
+      <img
+        src="https://cdn-cinfasalud.cinfa.com/wp-content/uploads/2019/08/CinfaSalud-cuidado-salud-600.jpg?x68268"
+        alt="Consejos de Bienestar Diario"
+        class="aspect-video object-cover mt-4 rounded-xl"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="px-5">
+  <h3 class="text-2xl font-semibold mb-6">Videos</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {
+      videos.map((video) => (
+        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
+          <iframe
+            class="w-full h-full rounded-xl"
+            width="560"
+            height="315"
+            src={video.link}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<section class="px-5 pb-5">
+  <h3 class="text-2xl font-semibold mb-6">Podcasts</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.mindbodygreen.com/podcast"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Mindbodygreen Podcast</a
+      >
+      <p class="mt-2 text-base">
+        Escucha episodios sobre bienestar y salud mental.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://www.healthline.com/health/podcast"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >Podcast de Salud - Healthline</a
+      >
+      <p class="mt-2 text-base">
+        Podcasts sobre diversos temas de salud y bienestar.
+      </p>
+    </div>
+    <div
+      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <a
+        href="https://podcasts.apple.com/us/podcast/the-model-health-show/id595226133"
+        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
+        >The Model Health Show - Apple Podcasts</a
+      >
+      <p class="mt-2 text-base">
+        Podcast enfocado en salud, fitness y nutrición.
+      </p>
+    </div>
+  </div>
+</section>

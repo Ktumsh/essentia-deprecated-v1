@@ -164,6 +164,12 @@ export default {
         "light-gradient-v2": "var(--light-gradient-v2)",
         "dark-gradient": "var(--dark-gradient)",
         "dark-gradient-v2": "var(--dark-gradient-v2)",
+        "resource-1": "var(--bg-resource-1)",
+        "resource-2": "var(--bg-resource-2)",
+        "resource-3": "var(--bg-resource-3)",
+        "resource-4": "var(--bg-resource-4)",
+        "resource-5": "var(--bg-resource-5)",
+        "resource-6": "var(--bg-resource-6)",
       },
       animation: {
         "shine-infinite": "shine 2s ease-in-out infinite",
