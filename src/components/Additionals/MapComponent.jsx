@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@nextui-org/button";
 import { LocationIcon } from "./Icons/Location";
-import "./map.css";
 import CenterSwitch from "./CenterSwitch";
+import "./map.css";
 
 export default function MapComponent() {
   const mapRef = useRef(null);
