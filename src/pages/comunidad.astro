@@ -1,0 +1,17 @@
+---
+import Community from "@/sections/Community.astro";
+import Layout from "../layouts/Layout.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+if (!session) return Astro.redirect("/login");
+---
+
+<Layout
+  title="Essentia - Comunidad"
+  description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
+  canonical="https://essentia-cl.vercel.app/essentia-ai"
+>
+  <Community />
+</Layout>

@@ -18,9 +18,9 @@ export const LogoutIcon = (props) => (
     />
     <path
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M4.47 11.47a.75.75 0 0 0 0 1.06l2 2a.75.75 0 0 0 1.06-1.06l-.72-.72H14a.75.75 0 0 0 0-1.5H6.81l.72-.72a.75.75 0 1 0-1.06-1.06z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     />
   </svg>
 );

@@ -174,7 +174,7 @@ const pages = [
     >
       <a
         class="flex flex-row text-nowrap relative size-auto px-6 pointer-events-none"
-        href="#"
+        href="/comunidad"
       >
         <span
           class="flex items-center relative px-4 h-8 text-center pointer-events-auto rounded-full text-white bg-bittersweet-400 dark:bg-cerise-red-800 hover:brightness-90 transition-[filter] duration-200"
@@ -209,11 +209,6 @@ const pages = [
           )
         }
       </div>
-    </div>
-    <div
-      class="hidden lg:flex justify-between items-center h-full px-6 shadow-md rounded-xl text-base-color dark:text-base-color-dark-h bg-white dark:bg-base-dark"
-    >
-      <ThemeToggle client:only="react" />
     </div>
   </nav>
 </header>
@@ -465,29 +460,31 @@ const pages = [
     const $clearIcon2 = $("#clear-icon2");
     const $mobileLogomark = $("#mobile-logomark");
 
-    $searchInput2.onfocus = () => {
-      $mobileLogomark?.classList.add("opacity-0");
-      $searchIcon2?.classList.add("hidden");
-      $clearIcon2?.classList.remove("hidden");
-    };
+    if ($searchInput2) {
+      $searchInput2.onfocus = () => {
+        $mobileLogomark?.classList.add("opacity-0");
+        $searchIcon2?.classList.add("hidden");
+        $clearIcon2?.classList.remove("hidden");
+      };
 
-    $searchInput2.onblur = () => {
-      if ($searchInput2.value.length === 0) {
-        $mobileLogomark?.classList.remove("opacity-0");
-        $searchIcon2?.classList.remove("hidden");
-        $clearIcon2?.classList.add("hidden");
-      }
-    };
+      $searchInput2.onblur = () => {
+        if ($searchInput2.value.length === 0) {
+          $mobileLogomark?.classList.remove("opacity-0");
+          $searchIcon2?.classList.remove("hidden");
+          $clearIcon2?.classList.add("hidden");
+        }
+      };
 
-    const $searchButton2 = $("#search-button2") as HTMLButtonElement;
+      const $searchButton2 = $("#search-button2") as HTMLButtonElement;
 
-    $searchButton2.onclick = () => {
-      $searchInput2.value.length > 0 &&
-        (($searchInput2.value = ""),
-        $searchIcon2?.classList.remove("hidden"),
-        $clearIcon2?.classList.add("hidden"),
-        $mobileLogomark?.classList.remove("opacity-0"));
-    };
+      $searchButton2.onclick = () => {
+        $searchInput2.value.length > 0 &&
+          (($searchInput2.value = ""),
+          $searchIcon2?.classList.remove("hidden"),
+          $clearIcon2?.classList.add("hidden"),
+          $mobileLogomark?.classList.remove("opacity-0"));
+      };
+    }
   });
 </script>
 <script>

@@ -18,7 +18,11 @@ interface Props {
 
 const { title, description, preload, canonical, image } = Astro.props;
 
-const isAIPage = Astro.url.pathname.includes("essentia-ai");
+const noHeader = "comunidad";
+const noFooter = ["essentia-ai", "comunidad"];
+
+const isNoHeader = Astro.url.pathname.includes(noHeader);
+const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
 ---
 
 <!doctype html>
@@ -40,9 +44,9 @@ const isAIPage = Astro.url.pathname.includes("essentia-ai");
         role="main"
         class="min-h-dvh flex flex-col items-center size-full page-bg bg-cover bg-light-gradient-v2 dark:bg-none"
       >
-        <Header />
+        {isNoHeader ? null : <Header />}
         <slot />
-        {isAIPage ? null : <Footer />}
+        {isNoFooter ? null : <Footer />}
       </div>
       <ButtonUp />
     </div>

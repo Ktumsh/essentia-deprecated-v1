@@ -1,39 +1,59 @@
+import { Button } from "@nextui-org/button";
+import { User } from "@nextui-org/user";
+import { signOut } from "auth-astro/client";
 import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/dropdown";
-import { ThemeToggle } from "./ThemeToggle/ThemeToggle";
-import { LogoutIcon } from "./ReactComponents/Logout";
-import { signOut } from "auth-astro/client";
+import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
+import { DotsIcon } from "./Icons/Dots";
+import { LogoutIcon } from "@/components/ReactComponents/Logout";
 
-export default function AvatarDropdown({ avatarUrl, name, username }) {
+export default function ProfileDropdown({ name, username, avatar }) {
   return (
     <div className="flex items-center gap-4">
       <Dropdown
+        showArrow
         classNames={{
+          base: "berfore:bg-white before:dark:bg-base-dark",
           content:
             "p-1 bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
         }}
-        placement="bottom-end"
+        placement="top"
       >
         <DropdownTrigger>
-          <button
-            className="size-8 focus:outline-none ring-2 ring-offset-2 ring-offset-white dark:ring-offset-[rgb(6,_27,_55)] ring-gray-200 dark:ring-midnight-900/30 rounded-full overflow-hidden"
-            aria-label="Perfil de usuario"
+          <Button
+            size="lg"
+            radius="full"
+            color="danger"
+            variant="light"
+            endContent={
+              <DotsIcon className="size-5 text-base-color dark:text-base-color-dark" />
+            }
+            className="w-full h-16 justify-between text-left text-lg p-3 mb-2 font-medium"
           >
-            <img src={avatarUrl} alt="Avatar del usuario" />
-          </button>
+            <User
+              name={name}
+              description={username}
+              classNames={{
+                name: "text-base-color-h dark:text-base-color-dark font-bold",
+                description: "text-base-color-d dark:text-base-color-dark-m",
+              }}
+              avatarProps={{
+                src: avatar,
+              }}
+            />
+          </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Acciones del perfil" variant="flat">
           <DropdownItem
             key="profile"
             textValue="Profile"
-            className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
           >
-            <p className="font-medium dark:text-base-color-dark">{name}</p>
-            <p className="text-xs">{username}</p>
+            Mi perfil
           </DropdownItem>
           <DropdownItem
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
@@ -51,7 +71,6 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           </DropdownItem>
           <DropdownItem
             isReadOnly
-            title="Cambiar tema"
             endContent={
               <ThemeToggle
                 buttonClass="bg-white dark:bg-base-dark"
@@ -60,13 +79,15 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
             }
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             textValue="Help and Feedback"
-          ></DropdownItem>
+          >
+            Cambiar tema
+          </DropdownItem>
           <DropdownItem
             id="avatar_logout"
-            className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
             key="logout"
             textValue="Logout"
             color="danger"
+            className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
             startContent={<LogoutIcon className="size-4" />}
             onClick={() => signOut()}
           >
@@ -74,6 +95,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
+      <ThemeToggle buttonClass="hidden" />
     </div>
   );
 }

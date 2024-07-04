@@ -1,0 +1,11 @@
+---
+import CommunityPage from "@/components/Community/CommunityPage";
+
+import { getSession } from "auth-astro/server";
+import type { Session } from "@auth/core/types";
+const session: Session | any = await getSession(Astro.request);
+---
+
+<div class="flex justify-center max-h-dvh w-full">
+  <CommunityPage client:only="react" session={session} />
+</div>
