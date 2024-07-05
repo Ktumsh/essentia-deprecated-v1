@@ -42,7 +42,7 @@ const ResourceTabs = () => {
   ];
   return (
     <aside className="absolute top-0 left-0 flex flex-grow justify-end mt-5">
-      <div className="flex h-full w-fit bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-e-xl">
+      <div className="flex h-full w-fit bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-e-xl shadow-md">
         <div className="flex flex-col items-center justify-between size-full p-2 pb-0">
           <div className="flex items-center gap-5 w-full mb-2 px-3 py-2 rounded-xl bg-gray-200 dark:bg-base-full-dark">
             <a href="/recursos" className="h-10">
