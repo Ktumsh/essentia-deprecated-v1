@@ -16,7 +16,7 @@ export const MAINCAP_RESOURCES: MaincapResources[] = [
     description:
       "Descubre guías y actividades para equilibrar tu bienestar. ¡Empieza a sentirte mejor hoy!",
     textBtn: "Descubrir",
-    url: "",
+    url: "/recursos/bienestar-emocional",
     img: "/capsules/capsule-02.webp",
   },
   {
@@ -25,7 +25,7 @@ export const MAINCAP_RESOURCES: MaincapResources[] = [
     description:
       "Encuentra fácilmente centros de salud cerca de ti con nuestra herramienta. ¡Es rápido y sencillo!",
     textBtn: "Buscar ahora",
-    url: "/recursos-adicionales",
+    url: "/adicionales",
     img: "/capsules/capsule-03.png",
   },
   {
@@ -34,7 +34,7 @@ export const MAINCAP_RESOURCES: MaincapResources[] = [
     description:
       "Únete a nuestras conversaciones y descubre los recursos que compartimos. En Essentia, siempre hay algo nuevo por aprender y compartir. Ven y forma parte de un espacio acogedor y de apoyo.",
     textBtn: "Explorar comunidad",
-    url: "",
+    url: "/comunidad",
     img: "/capsules/capsule-04.webp",
   },
 ];

@@ -3,7 +3,7 @@ import Arrowright from "@/icons/arrow-right.astro";
 ---
 
 <article
-  class="relative h-full w-full bg-gray-100 dark:bg-base-dark rounded-xl overflow-hidden"
+  class="relative h-full w-full bg-white dark:bg-base-dark rounded-xl overflow-hidden"
 >
   <div class="relative flex flex-col h-full overflow-hidden">
     <div
@@ -15,11 +15,11 @@ import Arrowright from "@/icons/arrow-right.astro";
         alt=""
       />
       <div
-        class="absolute inset-0 size-full bg-cover bg-center bg-[linear-gradient(to_bottom,_rgba(0,_0,_0,_0.8)_0%,_transparent_100%)] dark:bg-none"
+        class="absolute inset-0 size-full bg-cover bg-center bg-gradient-to-b from-black/60 to-transparent dark:bg-none"
       >
       </div>
       <div class="flex flex-col w-full content-center p-6 pt-10 z-10">
-        <h4 class="font-medium text-lg text-white transition">
+        <h4 class="font-medium text-lg text-white drop-shadow-sm transition">
           Héchale un vistazo a las noticias interesantes del momento...
         </h4>
       </div>
@@ -27,7 +27,7 @@ import Arrowright from "@/icons/arrow-right.astro";
         class="flex items-center justify-end w-full overflow-hidden p-2 z-10"
       >
         <a
-          class="group flex flex-row items-center justify-center h-9 w-full px-3 bg-bittersweet-500/60 dark:bg-cerise-red-600/60 backdrop-blur backdrop-saturate-150 border-bittersweet-400/30 dark:border-cerise-red-600/30 border rounded-xl bottom-1 shadow-md transition hover:brightness-90"
+          class="group flex flex-row items-center justify-center h-9 w-full px-3 bg-bittersweet-400 dark:bg-cerise-red-600 rounded-xl bottom-1 shadow-md transition hover:brightness-90"
           href="/noticias"
         >
           <span class="text-white">Ir a noticias</span>
