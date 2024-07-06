@@ -6,7 +6,6 @@ export default {
   content: {
     files: [
       "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-      "./node_modules/flowbite/**/*.js",
       "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
   },
@@ -183,7 +182,6 @@ export default {
     },
   },
   plugins: [
-    require("flowbite/plugin"),
     nextui({
       themes: {
         light: {
