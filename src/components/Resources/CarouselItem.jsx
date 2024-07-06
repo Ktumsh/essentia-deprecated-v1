@@ -1,5 +1,6 @@
 import ArrowRight from "@/icons/react/ArrowRight";
 import { Button } from "@nextui-org/button";
+import { Image } from "@nextui-org/image";
 
 const RecomCarouselItem = ({
   id,
@@ -41,10 +42,13 @@ const RecomCarouselItem = ({
           </div>
         </div>
       </div>
-      <img
+      <Image
         src={image}
-        className="absolute block size-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt={title}
+        classNames={{
+          wrapper: "static",
+          img: "absolute block size-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2",
+        }}
       />
     </div>
   );

@@ -2,6 +2,7 @@
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import ResourceTabs from "@/components/Resources/ResourceTabs";
 import ChipBadge from "@/components/ReactComponents/ChipBadge";
+import Image from "@/components/ReactComponents/Image";
 
 interface Props {
   title: string;
@@ -58,10 +59,11 @@ const {
               </q>
             </div>
           </div>
-          <img
-            class="relative size-full object-cover rounded-xl brightness-95 z-0"
+          <Image
+            client:only="react"
+            className="relative size-full rounded-xl brightness-95 z-0"
             src={imageFull}
-            alt="Enlace al recurso de salud y bienestar"
+            alt={title}
           />
           <div
             class="absolute inset-0 rounded-xl bg-gradient-to-b from-base-full-dark-50 to-black/0 to-40%"

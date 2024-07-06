@@ -1,5 +1,6 @@
 ---
 import Arrowright from "@/icons/arrow-right.astro";
+import Image from "@/components/ReactComponents/Image";
 ---
 
 <article
@@ -9,10 +10,12 @@ import Arrowright from "@/icons/arrow-right.astro";
     <div
       class="flex flex-col items-center justify-between size-full overflow-hidden"
     >
-      <img
-        class="absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(_to_top,_rgba(0,_0,_0,_1)_0%,_transparent_95%)] group-hover:scale-105 transition"
+      <Image
+        client:only="react"
         src="/extras/news-concept.webp"
-        alt=""
+        alt="Noticias de Essentia"
+        removeWrapper
+        className="z-0 absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(_to_top,_rgba(0,_0,_0,_1)_0%,_transparent_95%)] group-hover:scale-105 transition"
       />
       <div
         class="absolute inset-0 size-full bg-cover bg-center bg-gradient-to-b from-black/60 to-transparent dark:bg-none"

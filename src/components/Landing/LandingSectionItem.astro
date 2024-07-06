@@ -1,4 +1,6 @@
 ---
+import Image from "@/components/ReactComponents/Image";
+
 interface Props {
   id?: string;
   classBento?: string;
@@ -73,8 +75,10 @@ const {
       <div
         class="aspect-auto size-full lg:min-h-[600px] lg:max-w-3xl rounded-[50px] overflow-hidden"
       >
-        <img
-          class="size-full object-cover"
+        <Image
+          client:only="react"
+          removeWrapper
+          className="size-full object-cover"
           loading="lazy"
           src={img}
           alt={imgAlt}
