@@ -1,40 +1,10 @@
 ---
-import ChipBadge from "@/components/ReactComponents/ChipBadge";
-
-const videos = [
-  {
-    title: "Bienestar Emocional",
-    link: "https://www.youtube.com/embed/7ZenQNNeWaE",
-  },
-  {
-    title: "Bienestar Físico y Emocional - Aprende a Escuchar tu Cuerpo",
-    link: "https://www.youtube.com/embed/CYqnVV6CRa8",
-  },
-  {
-    title: "El Mejor Video de Superación Personal, Motivación y Autoestima",
-    link: "https://www.youtube.com/embed/dKrBEVONVSE",
-  },
-  {
-    title:
-      "MIRA ESTE VIDEO CADA MAÑANA - El mejor discurso motivacional de la mañana",
-    link: "https://www.youtube.com/embed/W_yM7OkmHgM",
-  },
-];
+import RESOURCES_VIDEOS from "@/consts/resources-videos";
+const videos =
+  RESOURCES_VIDEOS.find((section) => section.section === "Wellbeing")?.videos ||
+  [];
 ---
 
-<div
-  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
->
-  <div class="flex items-center justify-center gap-4 mb-6">
-    <h2 class="text-4xl text-center font-bold dark:text-white">
-      Introducción al Bienestar Emocional
-    </h2>
-    <ChipBadge client:visible />
-  </div>
-  <p class="max-w-2xl text-center text-lg">
-    Cuidar de tu salud mental es tan importante como cuidar de tu salud fisica.
-  </p>
-</div>
 <section class="px-5">
   <h3 class="text-2xl font-semibold mb-6">Artículos sobre Salud Mental</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

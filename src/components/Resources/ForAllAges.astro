@@ -1,40 +1,10 @@
 ---
-import ChipBadge from "@/components/ReactComponents/ChipBadge";
-
-const videos = [
-  {
-    title: "La importancia de la salud física y mental en nuestras vidas",
-    link: "https://www.youtube.com/embed/VU1q3QtfxBA",
-  },
-  {
-    title: "Salud Integral de las y los Adolescentes",
-    link: "https://www.youtube.com/embed/RmWlqi75a1s",
-  },
-  {
-    title: "COMO CUIDAR MI SALUD | Para niños",
-    link: "https://www.youtube.com/embed/UwyKqFv6-Qc",
-  },
-  {
-    title: "Bienestar emocional y mente en forma en las personas mayores",
-    link: "https://www.youtube.com/embed/5NYLyyKOadA",
-  },
-];
+import RESOURCES_VIDEOS from "@/consts/resources-videos";
+const videos =
+  RESOURCES_VIDEOS.find((section) => section.section === "ForAllAges")
+    ?.videos || [];
 ---
 
-<div
-  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
->
-  <div class="flex items-center justify-center gap-4 mb-6">
-    <h2 class="text-4xl text-center font-bold dark:text-white">
-      Introducción a la Salud para Todas las Edades
-    </h2>
-    <ChipBadge client:visible />
-  </div>
-  <p class="max-w-2xl text-center text-lg">
-    Cada etapa de la vida requiere cuidados y atenciones específicas para
-    mantener una buena salud.
-  </p>
-</div>
 <section class="px-5">
   <h3 class="text-2xl font-semibold mb-6">Artículos por Edad</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

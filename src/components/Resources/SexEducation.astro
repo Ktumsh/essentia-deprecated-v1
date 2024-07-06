@@ -1,40 +1,10 @@
 ---
-import ChipBadge from "@/components/ReactComponents/ChipBadge";
-
-const videos = [
-  {
-    title: "Educación Sexual Integral e Identidad Sexual",
-    link: "https://www.youtube.com/embed/53TxMPxszcY",
-  },
-  {
-    title: "Hablemos de Consentimiento | Educación Sexual Integral",
-    link: "https://www.youtube.com/embed/qqDSvDd9PpU",
-  },
-  {
-    title: "ESI: Educación Sexual Integral. Los derechos en la escuela",
-    link: "https://www.youtube.com/embed/H7vF6SctjbE",
-  },
-  {
-    title: "Es mi cuerpo y yo lo cuido | Educación Sexual Integra",
-    link: "https://www.youtube.com/embed/q2O4Zvb1Dv0",
-  },
-];
+import RESOURCES_VIDEOS from "@/consts/resources-videos";
+const videos =
+  RESOURCES_VIDEOS.find((section) => section.section === "SexEducation")
+    ?.videos || [];
 ---
 
-<div
-  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
->
-  <div class="flex items-center justify-center gap-4 mb-6">
-    <h2 class="text-4xl text-center font-bold dark:text-white">
-      Introducción a la Salud y Educación Sexual
-    </h2>
-    <ChipBadge client:visible />
-  </div>
-  <p class="max-w-2xl text-center text-lg">
-    La educación sexual es crucial para entender y cuidar de tu salud sexual y
-    reproductiva.
-  </p>
-</div>
 <section class="px-5">
   <h3 class="text-2xl font-semibold mb-6">Artículos Educativos</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

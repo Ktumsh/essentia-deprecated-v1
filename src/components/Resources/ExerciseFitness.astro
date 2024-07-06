@@ -1,39 +1,10 @@
 ---
-import ChipBadge from "@/components/ReactComponents/ChipBadge";
-
-const videos = [
-  {
-    title: "Yoga con Adriene",
-    link: "https://www.youtube.com/embed/v7AYKMP6rOE",
-  },
-  {
-    title: "Entrenamiento de Fuerza en Casa",
-    link: "https://www.youtube.com/embed/L_xrDAtykMI",
-  },
-  {
-    title: "Cardio para Quemar Grasa",
-    link: "https://www.youtube.com/embed/2L2lnxIcNmo",
-  },
-  {
-    title: "Entrenamiento para principiantes TOTAL BODY",
-    link: "https://www.youtube.com/embed/q9b9afJ-GnA?si=pSpSRlOoLdFTxNt3",
-  },
-];
+import RESOURCES_VIDEOS from "@/consts/resources-videos";
+const videos =
+  RESOURCES_VIDEOS.find((section) => section.section === "ExerciseFitness")
+    ?.videos || [];
 ---
 
-<div
-  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
->
-  <div class="flex items-center justify-center gap-4 mb-6">
-    <h2 class="text-4xl text-center font-bold dark:text-white">
-      Introducción a Ejercicios y Fitness
-    </h2>
-    <ChipBadge client:visible />
-  </div>
-  <p class="max-w-2xl text-center text-lg">
-    Mantenerse en forma y activo es crucial para la salud y el bienestar.
-  </p>
-</div>
 <section class="px-5">
   <h3 class="text-2xl font-semibold mb-6">Rutinas de Ejercicio</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -13,7 +13,7 @@ export default function ChipBadge() {
       <Chip
         variant="shadow"
         classNames={{
-          base: "w-12 max-w-full justify-center bg-light-gradient dark:bg-dark-gradient-v2",
+          base: "w-12 max-w-full justify-center bg-light-gradient dark:bg-dark-gradient-v2 cursor-help",
           content: "flex justify-center",
         }}
       >

@@ -1,40 +1,10 @@
 ---
-import ChipBadge from "@/components/ReactComponents/ChipBadge";
-
-const videos = [
-  {
-    title: "CLASE 1: Conceptos básicos de nutrición",
-    link: "https://www.youtube.com/embed/eHkbDctJbXo",
-  },
-  {
-    title: "Conceptos básicos de nutrición y alimentación",
-    link: "https://www.youtube.com/embed/qHimbDfTXYg",
-  },
-  {
-    title: "25 Recetas de Comidas y Cenas Saludables, Fáciles, Rápidas",
-    link: "https://www.youtube.com/embed/hv-Bx24aMpY",
-  },
-  {
-    title: "Comidas fáciles, BARATAS Y nutritivas para No salir de casa",
-    link: "https://www.youtube.com/embed/CGLjwpryk9g",
-  },
-];
+import RESOURCES_VIDEOS from "@/consts/resources-videos";
+const videos =
+  RESOURCES_VIDEOS.find((section) => section.section === "Nutrition")?.videos ||
+  [];
 ---
 
-<div
-  class="flex flex-col items-center justify-center w-full py-10 !mt-0 border-b-4 border-gray-100/50 dark:border-base-full-dark-50"
->
-  <div class="flex items-center justify-center gap-4 mb-6">
-    <h2 class="text-4xl text-center font-bold dark:text-white">
-      Introducción a la Nutrición
-    </h2>
-    <ChipBadge client:visible />
-  </div>
-  <p class="max-w-2xl text-center text-lg">
-    Una buena nutrición es esencial para mantener una salud óptima y prevenir
-    enfermedades.
-  </p>
-</div>
 <section class="px-5">
   <h3 class="text-2xl font-semibold mb-6">Recetas Saludables</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,7 +46,7 @@ const videos = [
 </section>
 
 <section class="px-5">
-  <h3 class="text-2xl font-semibold mb-6">Guías de Nutrición</h3>
+  <h3 class="text-2xl font-semibold mb-6">Guías de Nutrición y Alimentación</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div
       class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"

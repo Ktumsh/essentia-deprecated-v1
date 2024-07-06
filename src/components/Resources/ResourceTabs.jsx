@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BackIcon } from "@/icons/react/Back";
 import ExcerciseIcon from "@/icons/react/Exercise";
 import ForAllAgesIcon from "@/icons/react/ForAllAges";
@@ -8,6 +9,12 @@ import WellbeingIcon from "@/icons/react/Wellbeing";
 import { Button } from "@nextui-org/button";
 
 const ResourceTabs = () => {
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   const asideLinks = [
     {
       name: "Salud y bienestar",
@@ -20,8 +27,8 @@ const ResourceTabs = () => {
       icon: ExcerciseIcon,
     },
     {
-      name: "Nutrición",
-      link: "/recursos/nutricion",
+      name: "Nutrición y alimentación",
+      link: "/recursos/nutricion-y-alimentacion",
       icon: NutritionIcon,
     },
     {
@@ -42,15 +49,15 @@ const ResourceTabs = () => {
   ];
   return (
     <aside className="absolute top-0 left-0 flex flex-grow justify-end mt-5">
-      <div className="flex h-full w-fit bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-e-xl shadow-md">
+      <div className="flex h-full w-fit bg-white dark:bg-base-dark border border-gray-200 dark:border-base-dark rounded-e-xl shadow-md">
         <div className="flex flex-col items-center justify-between size-full p-2 pb-0">
           <div className="flex items-center gap-5 w-full mb-2 px-3 py-2 rounded-xl bg-gray-200 dark:bg-base-full-dark">
             <a href="/recursos" className="h-10">
-              <Button variant="flat" color="danger" isIconOnly>
-                <BackIcon />
+              <Button variant="flat" color="danger" isIconOnly size="md">
+                <BackIcon className="size-7" />
               </Button>
             </a>
-            <h3 className="text-xl font-bold uppercase">Recursos</h3>
+            <h3 className="font-medium uppercase">Recursos</h3>
           </div>
           <div className="flex flex-col w-full">
             <ul>
@@ -64,11 +71,23 @@ const ResourceTabs = () => {
                       radius="lg"
                       variant="light"
                       startContent={
-                        <link.icon className="size-7 text-base-color-h dark:text-base-color-dark group-hover:text-base-color dark:group-hover:text-white" />
+                        <link.icon
+                          className={`size-5 transition-colors ${
+                            currentPath === link.link
+                              ? "text-bittersweet-400 dark:text-cerise-red-400 group-hover:text-bittersweet-500 dark:group-hover:text-cerise-red-500"
+                              : "text-base-color-h dark:text-base-color-dark group-hover:text-base-color dark:group-hover:text-white"
+                          }`}
+                        />
                       }
                       className="h-[50px] justify-start text-left p-3 mb-2 hover:bg-gray-200 dark:hover:bg-base-full-dark"
                     >
-                      <span className="text-lg font-medium mr-4 text-base-color-h dark:text-base-color-dark group-hover:text-base-color dark:group-hover:text-white transition-colors">
+                      <span
+                        className={`text-sm mr-4 transition-colors ${
+                          currentPath === link.link
+                            ? "text-bittersweet-400 dark:text-cerise-red-400 group-hover:text-bittersweet-500 dark:group-hover:text-cerise-red-500"
+                            : "text-base-color-h dark:text-base-color-dark group-hover:text-base-color dark:group-hover:text-white"
+                        }`}
+                      >
                         {link.name}
                       </span>
                     </Button>
