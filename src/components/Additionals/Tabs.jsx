@@ -7,7 +7,6 @@ import Phones from "./Phones";
 export default function AdditionalsTabs() {
   const [selected, setSelected] = useState("guias");
 
-  // Restaurar el estado desde localStorage cuando el componente se monta
   useEffect(() => {
     const savedTab = localStorage.getItem("selectedTab");
     if (savedTab) {
@@ -15,7 +14,6 @@ export default function AdditionalsTabs() {
     }
   }, []);
 
-  // Guardar el estado en localStorage cuando cambia
   const handleSelectionChange = (key) => {
     setSelected(key);
     localStorage.setItem("selectedTab", key);
