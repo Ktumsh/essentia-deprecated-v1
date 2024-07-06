@@ -1,6 +1,6 @@
 ---
 import NewsCard from "@/components/Resources/NewsCard.astro";
-import RecomCarousel from "@/components/Resources/RecomCarousel.astro";
+import Carousel from "@/components/Resources/Carousel";
 import Resources from "@/components/Resources/Resources.astro";
 import Greeting from "@/components/Resources/Greeting.svelte";
 import Search from "@/icons/search.astro";
@@ -80,14 +80,14 @@ const nameFromUser = getFirstName(session?.user?.name);
   </div>
   <div class="flex flex-row flex-1 relative w-full gap-5 mb-5">
     <section
-      class="flex flex-col flex-1 w-full bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
+      class="flex flex-col flex-1 w-full bg-white/50 bg-bento-gradient dark:bg-none border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:bg-base-dark rounded-xl shadow-md p-4"
     >
       <h3 class="text-2xl font-bold mb-4">Recomendaciones</h3>
-      <RecomCarousel />
+      <Carousel client:only="react" />
     </section>
     <aside class="hidden lg:flex">
       <section
-        class="flex flex-col mb-5 h-full w-80 bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
+        class="flex flex-col mb-5 h-full w-80 bg-white/50 bg-bento-gradient dark:bg-none border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:bg-base-dark rounded-xl shadow-md p-4"
       >
         <NewsCard />
       </section>
@@ -95,7 +95,7 @@ const nameFromUser = getFirstName(session?.user?.name);
   </div>
   <div class="flex flex-col flex-1 relative w-full select-none">
     <section
-      class="flex flex-col flex-1 mb-5 w-full bg-white dark:bg-base-dark text-base-color-h dark:text-base-color-dark rounded-xl shadow-md p-4"
+      class="flex flex-col flex-1 mb-5 w-full bg-white/50 bg-bento-gradient dark:bg-none border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:bg-base-dark rounded-xl shadow-md p-4"
     >
       <div
         class="flex justify-center items-center h-10 px-4 mb-4 text-white bg-light-gradient dark:bg-dark-gradient shadow-md rounded-xl"

@@ -20,7 +20,13 @@ const { resource } = Astro.params;
 const page = RESOURCES.find((page) => page.resource === resource);
 if (!page) return Astro.redirect("/404");
 
-const { title, component: ContentComponent, background } = page;
+const {
+  title,
+  quote,
+  imageFull,
+  component: ContentComponent,
+  background,
+} = page;
 ---
 
 <Layout
@@ -28,5 +34,11 @@ const { title, component: ContentComponent, background } = page;
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical=`https://essentia-cl.vercel.app/recursos/${resource}`
 >
-  <ResourcePack component={ContentComponent} background={background} />
+  <ResourcePack
+    title={title}
+    quote={quote}
+    imageFull={imageFull}
+    component={ContentComponent}
+    background={background}
+  />
 </Layout>

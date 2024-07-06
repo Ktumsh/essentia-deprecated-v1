@@ -2,175 +2,33 @@
 import ResoursesItem from "./ResourcesItem.astro";
 import { RESOURCES } from "@/consts/resources";
 
-const itemId = RESOURCES.map(({ resource }) => {
-  return { href: `/recursos/${resource}` };
-});
+const itemId = RESOURCES.map(({ title, intro, image, resource, span }) => ({
+  title,
+  intro,
+  image,
+  href: `/recursos/${resource}`,
+  span,
+}));
 ---
 
 <div class="flex size-full">
   <div class="w-full gap-2 grid grid-cols-12 grid-rows-2">
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4"
-      title="Salud y Bienestar"
-      img="/extras/salud.webp"
-      alt="Enlace al recurso de salud y bienestar"
-      href={itemId[0].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        Encuentra una amplia variedad de consejos sobre
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >hábitos saludables</strong
+    {
+      itemId.map((item) => (
+        <ResoursesItem
+          class={`col-span-12 sm:col-span-6 ${item.span}`}
+          title={item.title}
+          img={item.image}
+          alt={`Enlace al recurso de ${item.title}`}
+          href={item.href}
         >
-        hasta métodos para
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >potenciar tu salud mental y emocional</strong
-        >, encontrarás recursos variados para impulsar tu bienestar en todos los
-        aspectos de la vida...
-      </span>
-    </ResoursesItem>
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-5"
-      title="Ejercicios y Fitness"
-      img="/extras/ejercicio.webp"
-      alt="Enlace al recurso de ejercicios y fitness"
-      href={itemId[1].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        Aprende a abordar nuevos deportes,
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >trabajar en tu propio físico</strong
-        >
-        y llevar una vida más activa, adaptada a tus necesidades. Mejorarás tu rendimiento
-        en las actividades diarias y
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >te sentirás más enérgico</strong
-        >...
-      </span>
-    </ResoursesItem>
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3"
-      title="Nutrición"
-      img="/extras/nutricion.webp"
-      alt="Enlace al recurso de nutrición"
-      href={itemId[2].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        Te brindamos soluciones para una
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >alimentación equilibrada</strong
-        >
-        que te permitirán alcanzar tus objetivos, promoviendo un estilo de vida más
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >saludable y sostenible</strong
-        >
-        a largo plazo...
-      </span>
-    </ResoursesItem>
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-3"
-      title="Bienestar Emocional"
-      img="/extras/bienestar.webp"
-      alt="Enlace al recurso de bienestar emocional"
-      href={itemId[3].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        En esta sección encontrarás consejos, métodos para
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >manejar el estrés</strong
-        > y
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >mejorar la salud mental</strong
-        >, promoviendo así la armonía emocional en tu día a día...
-      </span>
-    </ResoursesItem>
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-4"
-      title="Salud y Educación Sexual"
-      img="/extras/sexualidad.webp"
-      alt="Enlace al recurso de salud y educación sexual"
-      href={itemId[4].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        Proveemos información y recursos educativos sobre sexualidad, incluyendo
-        métodos anticonceptivos y
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >consejos de cuidado</strong
-        >, para fomentar el entendimiento y
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >cuidado de la diversidad y salud sexual</strong
-        >...
-      </span>
-    </ResoursesItem>
-    <ResoursesItem
-      class="col-span-12 sm:col-span-6 md:col-span-5"
-      title="Salud para Todas las Edades"
-      img="/extras/edades.webp"
-      alt="Enlace al recurso de salud para todas las edades"
-      href={itemId[5].href}
-    >
-      <span
-        slot="description"
-        class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
-      >
-        Desde la infancia hasta la vejez, nuestra sección
-        <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium"
-          >Salud para Todas las Edades</strong
-        > ofrece información relevante y específica para cada etapa de la vida. Encuentra
-        consejos útiles y recursos para cuidar la salud en todas las etapas del desarrollo...
-      </span>
-    </ResoursesItem>
+          <span
+            slot="description"
+            class="absolute top-5 left-5 max-w-[calc(100%-40px)] text-base sm:text-sm lg:text-base text-base-color dark:text-white font-normal dark:font-extralight opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-500"
+            set:html={item.intro}
+          />
+        </ResoursesItem>
+      ))
+    }
   </div>
 </div>
-<script>
-  import { $, $$ } from "@/lib/dom-selector";
-
-  document.addEventListener("astro:page-load", () => {
-    const resourceCard = $$("#resource_card") as NodeListOf<HTMLElement>;
-    const modal = $("#focus_modal") as HTMLElement;
-    resourceCard.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        modal.classList.remove(
-          "opacity-0",
-          "invisible",
-          "backdrop-blur-0",
-          "saturate-100"
-        );
-        modal.classList.add(
-          "opacity-100",
-          "visible",
-          "backdrop-blur-md",
-          "saturate-50"
-        );
-      });
-      card.addEventListener("mouseleave", () => {
-        modal.classList.remove(
-          "opacity-100",
-          "visible",
-          "backdrop-blur-md",
-          "saturate-50"
-        );
-        modal.classList.add(
-          "opacity-0",
-          "invisible",
-          "backdrop-blur-0",
-          "saturate-100"
-        );
-      });
-    });
-  });
-</script>

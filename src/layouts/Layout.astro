@@ -242,6 +242,30 @@ const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
           background-clip: content-box;
         }
 
+        html.dark ::-webkit-scrollbar {
+          width: 10px;
+          border-radius: 10px;
+          background-color: #030e1e;
+        }
+
+        html.dark ::-webkit-scrollbar-thumb {
+          background: rgb(201 53 96 / 70%);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+
+        html.dark ::-webkit-scrollbar-thumb:active {
+          background: rgb(201, 53, 96);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+
         @supports not selector(::-webkit-scrollbar) {
           * {
             scrollbar-color: transparent;
@@ -250,9 +274,5 @@ const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
         }
       }
     </style>
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
-    ></script>
   </body>
 </html>

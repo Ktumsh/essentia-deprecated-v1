@@ -1,13 +1,23 @@
 ---
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import ResourceTabs from "@/components/Resources/ResourceTabs";
+import ChipBadge from "@/components/ReactComponents/ChipBadge";
 
 interface Props {
-  component: AstroComponentFactory;
+  title: string;
+  quote: string;
+  imageFull: string;
   background?: string;
+  component: AstroComponentFactory;
 }
 
-const { component: ContentComponent, background } = Astro.props;
+const {
+  title,
+  quote,
+  imageFull,
+  background,
+  component: ContentComponent,
+} = Astro.props;
 ---
 
 <div class="relative flex justify-center size-full">
@@ -17,10 +27,49 @@ const { component: ContentComponent, background } = Astro.props;
   <main
     class="relative flex flex-col min-h-[calc(100dvh-80px)] w-full max-w-[1250px] py-5 px-5 shrink items-stretch grow"
   >
+    <div class="absolute p-5 top-5 right-5 z-10">
+      <ChipBadge client:visible />
+    </div>
     <div class="container mx-auto">
       <div class="flex flex-col w-full mx-auto">
         <div
-          class="space-y-12 text-base-color dark:text-base-color-dark bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-40 border-4 border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md rounded-3xl"
+          class="group relative flex flex-col justify-center w-full h-80 mb-5 text-base-color bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 border border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md rounded-xl overflow-hidden"
+        >
+          <div
+            class="flex flex-col items-start justify-start absolute w-full shrink-0 top-1 px-5 pt-3 z-10 group-hover:opacity-0 transition-opacity duration-500"
+          >
+            <span class="tetx-xs font-bold uppercase text-white/60"
+              >introducción a</span
+            >
+            <h2 class="text-4xl font-bold text-white">
+              {title}
+            </h2>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center size-full opacity-0 group-hover:backdrop-blur-lg group-hover:opacity-100 transition duration-500 z-10"
+          >
+            <div
+              class="relative flex items-center justify-center max-w-2xl z-10 before:bg-black/40 before:absolute before:inset-0 before:blur-xl before:rounded-full before:-z-[1] group-hover:scale-110 transition duration-500"
+            >
+              <q
+                class="text-center text-2xl text-white font-medium drop-shadow-sm"
+              >
+                {quote}
+              </q>
+            </div>
+          </div>
+          <img
+            class="relative size-full object-cover rounded-xl brightness-95 z-0"
+            src={imageFull}
+            alt="Enlace al recurso de salud y bienestar"
+          />
+          <div
+            class="absolute inset-0 rounded-xl bg-gradient-to-b from-base-full-dark-50 to-black/0 to-40%"
+          >
+          </div>
+        </div>
+        <div
+          class="space-y-12 text-base-color dark:text-base-color-dark bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 border border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md rounded-xl"
         >
           <div
             class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 rounded-3xl z-10"
