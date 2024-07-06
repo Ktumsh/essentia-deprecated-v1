@@ -5,28 +5,36 @@ import Logo from "@/components/Footer/Logo.astro";
 import SocialLinks from "@/components/Footer/SocialLinks.astro";
 
 const resources = [
-  { href: "", text: "Vida saludable" },
-  { href: "", text: "Ejercicios y Fitness" },
-  { href: "", text: "Nutrición" },
-  { href: "", text: "Bienestar emocional" },
-  { href: "", text: "Salud sexual" },
-  { href: "", text: "Salud para todas las edades" },
+  { href: "/recursos/salud-y-bienestar", text: "Salud y Bienestar" },
+  { href: "/recursos/ejercicios-y-fitness", text: "Ejercicios y Fitness" },
+  {
+    href: "/recursos/nutricion-y-alimentacion",
+    text: "Nutrición y Alimentación",
+  },
+  { href: "/recursos/bienestar-emocional", text: "Bienestar Emocional" },
+  {
+    href: "/recursos/salud-y-educacion-sexual",
+    text: "Salud y Educación Sexual",
+  },
+  {
+    href: "/recursos/salud-para-todas-las-edades",
+    text: "Salud para Todas las Edades",
+  },
 ];
 
 const additionalresources = [
-  { href: "", text: "Guías" },
-  { href: "", text: "Enlaces" },
-  { href: "", text: "Recomendaciones" },
-  { href: "", text: "Centros de salud" },
-  { href: "", text: "Fonos de emergencia" },
+  { href: "/adicionales", text: "Guías" },
+  { href: "/adicionales", text: "Enlaces" },
+  { href: "/adicionales", text: "Recomendaciones" },
+  { href: "/adicionales", text: "Centros de salud" },
+  { href: "/adicionales", text: "Fonos de emergencia" },
 ];
 
 const comunidad = [
-  { href: "", text: "Blog" },
-  { href: "", text: "Grupos de apoyo" },
-  { href: "", text: "Historias inspiradoras" },
-  { href: "", text: "Recursos comunitarios" },
-  { href: "", text: "Eventos y talleres" },
+  { href: "/comunidad", text: "Blog" },
+  { href: "/comunidad", text: "Grupos de apoyo" },
+  { href: "/comunidad", text: "Historias inspiradoras" },
+  { href: "/comunidad", text: "Recursos comunitarios" },
 ];
 
 const more = [
@@ -39,7 +47,7 @@ const more = [
 
 <div
   id="footer"
-  class="w-full static bg-bittersweet-400 dark:bg-base-dark text-white font-light"
+  class="w-full static bg-white dark:bg-base-dark text-base-color dark:text-white font-light"
 >
   <footer class="flex flex-col max-w-[1250px] py-10 px-5 mx-auto">
     <div
