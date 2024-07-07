@@ -48,21 +48,22 @@ const ResourceTabs = () => {
     },
   ];
   return (
-    <aside className="absolute top-0 left-0 flex flex-grow justify-end mt-5">
-      <div className="flex h-full w-fit bg-white dark:bg-base-dark border border-gray-200 dark:border-base-dark rounded-e-xl shadow-md">
-        <div className="flex flex-col items-center justify-between size-full p-2 pb-0">
-          <div className="flex items-center gap-5 w-full mb-2 px-3 py-2 rounded-xl bg-gray-200 dark:bg-base-full-dark">
+    <aside className="w-fit">
+      <div className="relative flex w-fit h-full bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 backdrop-blur backdrop-saturate-150">
+        <div className="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 lg:rounded-xl -z-10"></div>
+        <div className="flex flex-col items-center lg:justify-between w-full p-2 pb-0">
+          <div className="flex items-center gap-5 lg:w-full mb-2 lg:px-3 lg:py-2 rounded-xl lg:bg-white lg:dark:bg-base-dark">
             <a href="/recursos" className="h-10">
               <Button variant="flat" color="danger" isIconOnly size="md">
                 <BackIcon className="size-7" />
               </Button>
             </a>
-            <h3 className="font-medium uppercase">Recursos</h3>
+            <h3 className="hidden lg:block font-medium uppercase">Recursos</h3>
           </div>
           <div className="flex flex-col w-full">
             <ul>
               {asideLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} className="w-fit lg:w-full">
                   <a href={link.link}>
                     <Button
                       disableRipple
@@ -79,10 +80,10 @@ const ResourceTabs = () => {
                           }`}
                         />
                       }
-                      className="h-[50px] justify-start text-left p-3 mb-2 hover:bg-gray-200 dark:hover:bg-base-full-dark"
+                      className="w-fit lg:w-full min-w-fit lg:min-w-24 h-[50px] justify-start text-left p-3 mb-2 data-[hover=true]:bg-white dark:hover:bg-base-dark !duration-150"
                     >
                       <span
-                        className={`text-sm mr-4 transition-colors ${
+                        className={`hidden lg:block text-sm mr-4 transition-colors ${
                           currentPath === link.link
                             ? "text-bittersweet-400 dark:text-cerise-red-400 group-hover:text-bittersweet-500 dark:group-hover:text-cerise-red-500"
                             : "text-base-color-h dark:text-base-color-dark group-hover:text-base-color dark:group-hover:text-white"
