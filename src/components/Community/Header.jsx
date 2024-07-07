@@ -66,25 +66,41 @@ const Header = ({ setActiveSection, session }) => {
   ];
 
   return (
-    <header className="relative flex flex-grow justify-end">
-      <div className="flex h-full w-[310px]">
-        <div className="flex flex-col items-center justify-between size-full p-2">
-          <div className="flex flex-col w-full">
-            <div className="w-fit h-full p-3 rounded-full">
-              <div className="inline-flex dark:hidden">
+    <header className="relative flex flex-grow sm:w-2/12 md:w-1/4 lg:w-auto justify-end">
+      <div className="flex size-full justify-end lg:w-[310px]">
+        <div className="flex flex-col items-center justify-between lg:p-2">
+          <div className="flex flex-col items-center lg:items-stretch">
+            <div className="hidden lg:block w-fit h-full p-3 rounded-full">
+              <a href="comunidad" className="inline-flex dark:hidden">
                 <img
                   width={192}
                   src="/essentia-community-logo-light.png"
                   alt="Essentia Community Logo"
                 />
-              </div>
-              <div className="dark:inline-flex hidden">
+              </a>
+              <a href="comunidad" className="dark:inline-flex hidden">
                 <img
                   width={192}
                   src="/essentia-community-logo-dark.png"
                   alt="Essentia Community Logo"
                 />
-              </div>
+              </a>
+            </div>
+            <div className="lg:hidden w-fit h-full p-3 rounded-full">
+              <a href="comunidad" className="inline-flex dark:hidden">
+                <img
+                  width={28}
+                  src="/e-logomark-on-light.webp"
+                  alt="Essentia Community Logo"
+                />
+              </a>
+              <a href="comunidad" className="dark:inline-flex hidden">
+                <img
+                  width={28}
+                  src="/e-logomark-on-dark.webp"
+                  alt="Essentia Community Logo"
+                />
+              </a>
             </div>
             <ul>
               {headerLinks.map((link, index) => (
@@ -98,7 +114,7 @@ const Header = ({ setActiveSection, session }) => {
                     startContent={
                       active === link.for ? (
                         <link.iconFill
-                          className={`size-7 mr-2 ${
+                          className={`size-7 lg:mr-2 ${
                             active === link.for
                               ? "font-bold text-black dark:text-white"
                               : "font-medium text-base-color dark:text-base-color-dark"
@@ -106,7 +122,7 @@ const Header = ({ setActiveSection, session }) => {
                         />
                       ) : (
                         <link.icon
-                          className={`size-7 mr-2 ${
+                          className={`size-7 lg:mr-2 ${
                             active === link.for
                               ? "font-bold text-black dark:text-white"
                               : "font-medium text-base-color dark:text-base-color-dark"
@@ -114,10 +130,10 @@ const Header = ({ setActiveSection, session }) => {
                         />
                       )
                     }
-                    className="w-fit h-[50px] justify-start text-left p-3 mb-2"
+                    className="min-w-fit lg:min-w-24 w-fit h-[50px] justify-start text-left p-3 mb-2"
                   >
                     <span
-                      className={`text-lg mr-4 ${
+                      className={`hidden lg:block text-lg mr-4 ${
                         active === link.for
                           ? "font-bold text-black dark:text-white"
                           : "font-medium text-base-color dark:text-base-color-dark"
@@ -130,19 +146,19 @@ const Header = ({ setActiveSection, session }) => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col w-full">
-            <a href="/recursos">
+          <div className="flex flex-col items-center lg:items-stretch w-full">
+            <a className="w-fit" href="/recursos">
               <Button
                 size="lg"
                 radius="full"
                 color="danger"
                 variant="light"
                 startContent={
-                  <GoBackIcon className="size-6 mr-2 text-white dark:text-cerise-red-300" />
+                  <GoBackIcon className="size-6 lg:mr-2 text-white dark:text-cerise-red-300" />
                 }
-                className="w-fit h-[50px] p-3 mb-2"
+                className="min-w-fit lg:min-w-24 w-fit h-[50px] p-3 mb-2"
               >
-                <span className="mr-4 justify-start text-left text-white dark:text-cerise-red-300">
+                <span className="hidden lg:block mr-4 justify-start text-left text-white dark:text-cerise-red-300">
                   Volver a Essentia
                 </span>
               </Button>

@@ -36,7 +36,7 @@ const Aside = () => {
   ];
 
   return (
-    <aside className="sticky top-0 right-0 flex-grow p-2 w-full max-w-[350px] max-h-dvh mr-16 text-base-color dark:text-base-color-dark">
+    <aside className="hidden lg:block sticky top-0 right-0 flex-grow p-2 w-full max-w-[350px] max-h-dvh mr-16 text-base-color dark:text-base-color-dark">
       <form className="relative w-full mb-3">
         <div className="flex items-center bg-white dark:bg-base-dark rounded-full">
           <div className="flex w-11 text-base-color-m dark:text-base-color-dark-m pointer-events-none">

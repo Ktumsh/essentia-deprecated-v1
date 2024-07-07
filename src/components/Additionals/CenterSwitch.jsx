@@ -36,9 +36,9 @@ export default function CenterSwitch({
             label:
               "text-xs sm:text-base text-base-color dark:text-base-color-dark",
             wrapper:
-              "group-data-[selected=true]:bg-success bg-primary shadow-small mr-0 sm:mr-2",
-            thumb: "bg-white dark:bg-base-dark",
-            thumbIcon: "text-base-color-h dark:text-base-color-dark-h",
+              "group-data-[selected=true]:bg-white bg-white dark:group-data-[selected=true]:bg-base-full-dark dark:bg-base-full-dark shadow-small mr-0 sm:mr-2",
+            thumb: "bg-bittersweet-400 dark:bg-cerise-red-600",
+            thumbIcon: "text-white",
           }}
         >
           <span className="hidden sm:block">

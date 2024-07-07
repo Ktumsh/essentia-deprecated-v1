@@ -29,8 +29,8 @@ const CommunityPage = ({ session }) => {
       <Header setActiveSection={setActiveSection} session={session} />
       <main className="relative flex flex-grow flex-shrink items-start w-full max-w-[1310px] min-h-dvh overflow-y-auto">
         <div className="relative flex flex-grow flex-shrink items-stretch justify-between w-full max-w-[1050px]">
-          <div className="flex items-stretch justify-between min-h-full w-full">
-            <div className="w-full min-w-[600px] max-w-[600px] min-h-dvh flex-grow mx-0 p-6 border-x-1 border-white dark:border-base-dark text-base-color dark:text-base-color-dark">
+          <div className="flex items-stretch justify-center lg:justify-between min-h-full">
+            <div className="w-full xl:min-w-[600px] max-w-[600px] min-h-dvh flex-grow mx-0 py-6 border-x-1 border-white dark:border-base-dark text-base-color dark:text-base-color-dark">
               {renderSection()}
             </div>
             <Aside />

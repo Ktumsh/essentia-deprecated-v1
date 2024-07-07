@@ -162,8 +162,8 @@ const InspiringStories = () => {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-6">Historias Inspiradoras</h2>
-      <div className="bg-white/50 bg-bento-gradient dark:bg-none dark:bg-transparent border border-gray-100/50 dark:border-base-dark backdrop-blur dark:backdrop-blur-none backdrop-saturate-150 dark:backdrop-saturate-100 shadow-md dark:shadow-none text-base-color dark:text-base-color-dark rounded-xl">
+      <h2 className="text-2xl font-bold px-4 mb-6">Historias Inspiradoras</h2>
+      <div className="bg-white/50 bg-bento-gradient dark:bg-none dark:bg-transparent border-y-1 border-gray-100/50 dark:border-base-dark backdrop-blur dark:backdrop-blur-none backdrop-saturate-150 dark:backdrop-saturate-100 shadow-md dark:shadow-none text-base-color dark:text-base-color-dark">
         <div className="grid grid-cols-1">
           {stories.map((story, index) => (
             <div

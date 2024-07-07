@@ -30,14 +30,15 @@ export default function ProfileDropdown({ name, username, avatar }) {
             color="danger"
             variant="light"
             endContent={
-              <DotsIcon className="size-5 text-base-color dark:text-base-color-dark" />
+              <DotsIcon className="hidden lg:block size-5 text-base-color dark:text-base-color-dark" />
             }
-            className="w-full h-16 justify-between text-left text-lg p-3 mb-2 font-medium"
+            className="min-w-fit lg:min-w-24 w-full h-16 justify-between text-left text-lg p-3 mb-2 font-medium"
           >
             <User
               name={name}
               description={username}
               classNames={{
+                wrapper: "hidden lg:inline-flex",
                 name: "text-base-color-h dark:text-base-color-dark font-bold",
                 description: "text-base-color-d dark:text-base-color-dark-m",
               }}
