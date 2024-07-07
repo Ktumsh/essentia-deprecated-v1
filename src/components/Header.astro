@@ -105,7 +105,10 @@ const pages = [
             type="text"
             class="group/item relative w-full outline-none pl-4 pr-10 text-sm border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-gray-200 dark:bg-base-full-dark focus:ring-0 rounded-full"
           />
-          <div id="mobile-logomark" class="transition-opacity">
+          <div
+            id="mobile-logomark"
+            class="transition-opacity pointer-events-none"
+          >
             <img
               class="absolute left-2 top-1/2 -translate-y-1/2 size-6 flex dark:hidden origin-center"
               src="/m-logomark-light.png"
@@ -286,40 +289,14 @@ const pages = [
         />
         <hr class="h-5 border-none" />
         <div class="subMenu group">
-          <button
-            type="button"
+          <a
+            href="/comunidad"
             class="relative flex items-center w-full py-3 font-medium"
             aria-label="Comunidad"
           >
             <Community class="mr-3" width="24" height="24" />
             Comunidad
-            <div
-              class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-2 bg-[url('/chevron.png')] bg-[size:100%_100%] transition-transform group-[.open]:rotate-180"
-            >
-            </div>
-          </button>
-          <div
-            class="opacity-0 group-[.open]:opacity-100 h-0 group-[.open]:h-[176px] overflow-hidden transition-all"
-          >
-            <div class="flex flex-col pl-9">
-              <a
-                class="text-sm font-medium py-3 text-ellipsis whitespace-nowrap overflow-hidden"
-                href="">Blog</a
-              >
-              <a
-                class="text-sm font-medium py-3 text-ellipsis whitespace-nowrap overflow-hidden"
-                href="">Grupos de apoyo</a
-              >
-              <a
-                class="text-sm font-medium py-3 text-ellipsis whitespace-nowrap overflow-hidden"
-                href="">Historias inspiradoras</a
-              >
-              <a
-                class="text-sm font-medium py-3 text-ellipsis whitespace-nowrap overflow-hidden"
-                href="">Recursos comunitarios</a
-              >
-            </div>
-          </div>
+          </a>
         </div>
       </div>
       <footer
@@ -512,60 +489,61 @@ const pages = [
     document.body.classList.toggle("lg:overflow-auto");
   }
 
-  document.addEventListener("astro:page-load", () => {
-    const nav = $("nav") as HTMLElement | null;
-    const menuButton = $("#menuButton") as HTMLElement | null;
-    const menuMobileContent = $("#menuMobileContent") as HTMLElement | null;
-    const navContent = $(".navContent") as HTMLElement | null;
+  window.matchMedia("max-width: 1024px") &&
+    document.addEventListener("astro:page-load", () => {
+      const nav = $("nav") as HTMLElement | null;
+      const menuButton = $("#menuButton") as HTMLElement | null;
+      const menuMobileContent = $("#menuMobileContent") as HTMLElement | null;
+      const navContent = $(".navContent") as HTMLElement | null;
 
-    let startX = 0;
-    let startY = 0;
-    const touchMargin = 50;
+      let startX = 0;
+      let startY = 0;
+      const touchMargin = 50;
 
-    function handleTouchStart(e: TouchEvent) {
-      const touch = e.touches[0];
-      startX = touch.clientX;
-      startY = touch.clientY;
-    }
+      function handleTouchStart(e: TouchEvent) {
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+      }
 
-    function handleTouchEnd(e: TouchEvent) {
-      const touch = e.changedTouches[0];
-      const deltaX = touch.clientX - startX;
-      const deltaY = touch.clientY - startY;
+      function handleTouchEnd(e: TouchEvent) {
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
 
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-        if (
-          startX > window.innerWidth - touchMargin &&
-          deltaX < 0 &&
-          !menuMobileContent?.classList.contains("open")
-        ) {
-          menuButton?.dispatchEvent(new Event("click"));
-        } else if (
-          deltaX > 0 &&
-          menuMobileContent?.classList.contains("open")
-        ) {
-          menuButton?.dispatchEvent(new Event("click"));
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+          if (
+            startX > window.innerWidth - touchMargin &&
+            deltaX < 0 &&
+            !menuMobileContent?.classList.contains("open")
+          ) {
+            menuButton?.dispatchEvent(new Event("click"));
+          } else if (
+            deltaX > 0 &&
+            menuMobileContent?.classList.contains("open")
+          ) {
+            menuButton?.dispatchEvent(new Event("click"));
+          }
         }
       }
-    }
 
-    document.addEventListener("touchstart", handleTouchStart, {
-      passive: true,
+      document.addEventListener("touchstart", handleTouchStart, {
+        passive: true,
+      });
+      document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+      menuButton?.addEventListener("hamburgerButtonClicked", () =>
+        toggleMenu(nav, menuMobileContent, navContent)
+      );
+
+      if (menuMobileContent?.classList.contains("open")) {
+        toggleMenu(nav, menuMobileContent, navContent);
+      }
+
+      const subMenu = $(".subMenu") as HTMLElement | null;
+
+      subMenu?.addEventListener("click", () => {
+        subMenu?.classList.toggle("open");
+      });
     });
-    document.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    menuButton?.addEventListener("hamburgerButtonClicked", () =>
-      toggleMenu(nav, menuMobileContent, navContent)
-    );
-
-    if (menuMobileContent?.classList.contains("open")) {
-      toggleMenu(nav, menuMobileContent, navContent);
-    }
-
-    const subMenu = $(".subMenu") as HTMLElement | null;
-
-    subMenu?.addEventListener("click", () => {
-      subMenu?.classList.toggle("open");
-    });
-  });
 </script>
