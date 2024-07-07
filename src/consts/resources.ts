@@ -51,7 +51,7 @@ export const RESOURCES: Resources[] = [
     intro: `En esta sección encontrarás consejos, métodos para <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium">manejar el estrés</strong> y <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium">mejorar la salud mental</strong>, promoviendo así la armonía emocional en tu día a día...`,
     quote:
       "La paz interior comienza en el momento en que eliges no permitir que otra persona o evento controle tus emociones.",
-    image: "/extras/bienestar.webp",
+    image: "",
     imageFull: "/extras/bienestar-1920x1280.webp",
     background: "bg-resource-4",
     resource: "bienestar-emocional",
