@@ -48,7 +48,7 @@ const ResourceTabs = () => {
     },
   ];
   return (
-    <aside className="w-fit">
+    <aside className="w-auto">
       <div className="relative flex w-fit h-full bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 backdrop-blur backdrop-saturate-150">
         <div className="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 lg:rounded-xl -z-10"></div>
         <div className="flex flex-col items-center lg:justify-between w-full p-2 pb-0">
@@ -80,7 +80,7 @@ const ResourceTabs = () => {
                           }`}
                         />
                       }
-                      className="w-fit lg:w-full min-w-fit lg:min-w-24 h-[50px] justify-start text-left p-3 mb-2 data-[hover=true]:bg-white dark:hover:bg-base-dark !duration-150"
+                      className="w-fit lg:w-full min-w-fit lg:min-w-24 h-auto lg:h-[50px] justify-start text-left p-3 mb-2 data-[hover=true]:bg-white dark:hover:bg-base-dark !duration-150"
                     >
                       <span
                         className={`hidden lg:block text-sm mr-4 transition-colors ${

@@ -76,7 +76,7 @@ export const RESOURCES: Resources[] = [
     title: "Salud para Todas las Edades",
     intro: `Desde la infancia hasta la vejez, nuestra sección <strong class="text-cerise-red-800 dark:text-cerise-red-300 font-medium">Salud para Todas las Edades</strong> ofrece información relevante y específica para cada etapa de la vida. Encuentra consejos útiles y recursos para cuidar la salud en todas las etapas del desarrollo...`,
     quote:
-      "La salud es un regalo, y mantenerla es una de las mayores bendiciones que podemos dar a nosotros mismos en cada etapa de la vida.",
+      "La salud es un regalo, y mantenerla es una de las mayores recompensas que podemos dar a nosotros mismos en cada etapa de la vida.",
     image: "/extras/edades-600x400.webp",
     imageFull: "/extras/edades-1920x1280.webp",
     background: "bg-resource-6",
