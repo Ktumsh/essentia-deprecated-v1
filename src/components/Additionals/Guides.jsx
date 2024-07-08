@@ -88,7 +88,7 @@ export default function Guides() {
                     )}
                   </Tooltip>
                 </div>
-                <p className="h-[72px] text-base-color-h dark:text-base-color-dark-h">
+                <p className="text-base-color-h dark:text-base-color-dark-h">
                   {guide.description}
                 </p>
               </div>

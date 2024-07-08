@@ -304,7 +304,7 @@ export default function MapComponent() {
           ref={searchRef}
           type="text"
           placeholder="Buscar por nombre o ubicación"
-          className="w-56 sm:w-96 h-[38px] px-4 bg-white placeholder:text-base-color-m text-sm text-black p-2 mt-[10px] ms-[10px] rounded-full outline-none ring-0 focus:ring-base-dark-50 focus:shadow-[0_1px_10px_rgba(0,_0,_0,_0.3)] border-0 shadow-[0_1px_4px_rgba(0,_0,_0,_0.3)] transition"
+          className="w-56 sm:w-96 h-[38px] px-4 bg-white placeholder:text-xs lg:placeholder:text-sm placeholder:text-base-color-m text-sm text-black p-2 mt-[10px] ms-[10px] rounded-full outline-none ring-0 focus:ring-base-dark-50 focus:shadow-[0_1px_10px_rgba(0,_0,_0,_0.3)] border-0 shadow-[0_1px_4px_rgba(0,_0,_0,_0.3)] transition"
         />
         <div className="flex items-center w-full gap-5">
           <h2 className="text-base sm:text-2xl font-bold text-base-color-h dark:text-base-color-dark">

@@ -62,7 +62,7 @@ export default function Phones() {
                   </h2>
                 </div>
                 <div>
-                  <p className="text-start text-base-color-h dark:text-base-color-dark-h group-hover:text-black dark:group-hover:text-white transition-colors">
+                  <p className="text-sm lg:text-base text-start text-base-color-h dark:text-base-color-dark-h group-hover:text-black dark:group-hover:text-white transition-colors">
                     {phone.description}
                   </p>
                 </div>

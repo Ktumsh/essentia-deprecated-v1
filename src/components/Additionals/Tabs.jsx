@@ -27,7 +27,7 @@ export default function AdditionalsTabs() {
         onSelectionChange={handleSelectionChange}
         classNames={{
           tabList:
-            "relative w-full bg-white/50 dark:bg-base-full-dark-50 border border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md rounded-xl",
+            "relative w-full bg-white/50 dark:bg-base-full-dark-50 border border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md lg:rounded-xl",
           tab: "max-w-fit",
           cursor: "bg-white dark:bg-cerise-red-600/50 shadow-small rounded-lg",
           tabContent:
