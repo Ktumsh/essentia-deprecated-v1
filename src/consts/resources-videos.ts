@@ -6,23 +6,31 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
     videos: [
       {
         id: 1,
-        title: "Qué es la Salud y el Bienestar",
-        link: "https://www.youtube.com/embed/ZygbuZ4F44Q?si=GxtXzje0L06O91YP",
+        title: "Bienestar personal",
+        link: "KsTMBN99BUQ",
+        description:
+          "El video de Vida Consciente aborda el concepto de bienestar personal, que es el equilibrio entre mente, cuerpo y espíritu. Explica que un estado positivo del cerebro mejora la creatividad, energía, inteligencia y productividad. Para mejorar el bienestar, recomienda dormir bien, comer saludablemente, hacer ejercicio, mantener una mentalidad positiva y practicar la meditación. Dormir ayuda a mejorar el estado de ánimo, comer bien aporta energía y fortalece el sistema inmunológico, el ejercicio reduce el estrés y mejora la calidad del sueño, y una actitud positiva y la meditación promueven una vida más relajada y consciente.",
       },
       {
         id: 2,
         title: "Meditación para principiantes (12 minutos)",
-        link: "https://www.youtube.com/embed/3oCC4NDgYrY?si=9y-ZariBAtA_DkA-",
+        link: "3oCC4NDgYrY",
+        description:
+          "El video de CuriosaMente ofrece una guía de meditación enfocada en calmar la mente y mejorar el estado emocional. La sesión incluye instrucciones para encontrar una posición cómoda, concentrarse en la respiración y observar los pensamientos sin aferrarse a ellos. Se utiliza la metáfora de la mente como un estanque, donde los pensamientos son ondas. La práctica se centra en elegir un solo estímulo, como la respiración o una imagen, y regresar a él cada vez que surjan distracciones. Al final, se anima a repetir el ejercicio regularmente para obtener más beneficios.",
       },
       {
         id: 3,
         title: "Cuerpo y mente saludable - Tips de Salud",
-        link: "https://www.youtube.com/embed/_JDOGSkVMNY?si=kkeX0Lg-jQp_ULHT",
+        link: "_JDOGSkVMNY",
+        description:
+          "El video de Campus Digital VGA proporciona consejos para mantener un cuerpo y mente saludables. Recomienda comer adecuadamente antes de estudiar, destacando frutas y almendras como alimentos beneficiosos para el cerebro. Subraya la importancia de dormir al menos 8 horas para un buen rendimiento académico y mental. Sugiere practicar 20 minutos de ejercicio diario para mejorar el bienestar mental y reducir el estrés. También aconseja evitar el estrés organizando bien el tiempo y eliminar malos hábitos como el consumo de alcohol y tabaco. El video concluye con una invitación a utilizar los recursos de bienestar universitario disponibles.",
       },
       {
         id: 4,
         title: "4 ejercicios de mindfulness para tu rutina diaria",
-        link: "https://www.youtube.com/embed/ze5SQPSRKfA?si=b6uPLIV5esbhzFQf",
+        link: "ze5SQPSRKfA",
+        description:
+          "El video de Intimind presenta ejercicios para integrar la atención plena en la vida diaria. Se sugiere estirarse como un gato durante un descanso a mediodía, prestando atención a las sensaciones musculares. También recomienda practicar la escucha atenta durante una conversación diaria, evitando interrumpir. Propone hacer garabatos libres durante los descansos para centrar la atención y descubrir nuevas ideas. Finalmente, aconseja realizar auto-chequeos regulares del estado del cuerpo y la mente. Estos ejercicios ayudan a reducir la ansiedad y el estrés, promoviendo una mayor conciencia y presencia en el día a día.",
       },
     ],
   },
@@ -32,22 +40,22 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
       {
         id: 1,
         title: "Yoga con Adriene",
-        link: "https://www.youtube.com/embed/v7AYKMP6rOE",
+        link: "v7AYKMP6rOE",
       },
       {
         id: 2,
         title: "Entrenamiento de Fuerza en Casa",
-        link: "https://www.youtube.com/embed/L_xrDAtykMI",
+        link: "L_xrDAtykMI",
       },
       {
         id: 3,
         title: "Cardio para Quemar Grasa",
-        link: "https://www.youtube.com/embed/2L2lnxIcNmo",
+        link: "2L2lnxIcNmo",
       },
       {
         id: 4,
         title: "Entrenamiento para principiantes TOTAL BODY",
-        link: "https://www.youtube.com/embed/q9b9afJ-GnA?si=pSpSRlOoLdFTxNt3",
+        link: "q9b9afJ-GnA",
       },
     ],
   },
@@ -57,22 +65,22 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
       {
         id: 1,
         title: "CLASE 1: Conceptos básicos de nutrición",
-        link: "https://www.youtube.com/embed/eHkbDctJbXo",
+        link: "eHkbDctJbXo",
       },
       {
         id: 2,
         title: "Conceptos básicos de nutrición y alimentación",
-        link: "https://www.youtube.com/embed/qHimbDfTXYg",
+        link: "qHimbDfTXYg",
       },
       {
         id: 3,
         title: "25 Recetas de Comidas y Cenas Saludables, Fáciles, Rápidas",
-        link: "https://www.youtube.com/embed/hv-Bx24aMpY",
+        link: "hv-Bx24aMpY",
       },
       {
         id: 4,
         title: "Comidas fáciles, BARATAS Y nutritivas para No salir de casa",
-        link: "https://www.youtube.com/embed/CGLjwpryk9g",
+        link: "CGLjwpryk9g",
       },
     ],
   },
@@ -82,23 +90,23 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
       {
         id: 1,
         title: "Bienestar Emocional",
-        link: "https://www.youtube.com/embed/7ZenQNNeWaE",
+        link: "7ZenQNNeWaE",
       },
       {
         id: 2,
         title: "Bienestar Físico y Emocional - Aprende a Escuchar tu Cuerpo",
-        link: "https://www.youtube.com/embed/CYqnVV6CRa8",
+        link: "CYqnVV6CRa8",
       },
       {
         id: 3,
         title: "El Mejor Video de Superación Personal, Motivación y Autoestima",
-        link: "https://www.youtube.com/embed/dKrBEVONVSE",
+        link: "dKrBEVONVSE",
       },
       {
         id: 4,
         title:
           "MIRA ESTE VIDEO CADA MAÑANA - El mejor discurso motivacional de la mañana",
-        link: "https://www.youtube.com/embed/W_yM7OkmHgM",
+        link: "W_yM7OkmHgM",
       },
     ],
   },
@@ -108,22 +116,22 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
       {
         id: 1,
         title: "Educación Sexual Integral e Identidad Sexual",
-        link: "https://www.youtube.com/embed/53TxMPxszcY",
+        link: "53TxMPxszcY",
       },
       {
         id: 2,
         title: "Hablemos de Consentimiento | Educación Sexual Integral",
-        link: "https://www.youtube.com/embed/qqDSvDd9PpU",
+        link: "qqDSvDd9PpU",
       },
       {
         id: 3,
         title: "ESI: Educación Sexual Integral. Los derechos en la escuela",
-        link: "https://www.youtube.com/embed/H7vF6SctjbE",
+        link: "H7vF6SctjbE",
       },
       {
         id: 4,
         title: "Es mi cuerpo y yo lo cuido | Educación Sexual Integra",
-        link: "https://www.youtube.com/embed/q2O4Zvb1Dv0",
+        link: "q2O4Zvb1Dv0",
       },
     ],
   },
@@ -133,22 +141,22 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
       {
         id: 1,
         title: "La importancia de la salud física y mental en nuestras vidas",
-        link: "https://www.youtube.com/embed/VU1q3QtfxBA",
+        link: "VU1q3QtfxBA",
       },
       {
         id: 2,
         title: "Salud Integral de las y los Adolescentes",
-        link: "https://www.youtube.com/embed/RmWlqi75a1s",
+        link: "RmWlqi75a1s",
       },
       {
         id: 3,
         title: "COMO CUIDAR MI SALUD | Para niños",
-        link: "https://www.youtube.com/embed/UwyKqFv6-Qc",
+        link: "UwyKqFv6-Qc",
       },
       {
         id: 4,
         title: "Bienestar emocional y mente en forma en las personas mayores",
-        link: "https://www.youtube.com/embed/5NYLyyKOadA",
+        link: "5NYLyyKOadA",
       },
     ],
   },

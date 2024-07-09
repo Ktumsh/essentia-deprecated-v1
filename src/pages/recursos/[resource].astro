@@ -23,6 +23,9 @@ if (!page) return Astro.redirect("/404");
 const {
   title,
   quote,
+  videoTitle,
+  videoLink,
+  videoImage,
   imageFull,
   component: ContentComponent,
   background,
@@ -37,6 +40,9 @@ const {
   <ResourcePack
     title={title}
     quote={quote}
+    videoTitle={videoTitle}
+    videoLink={videoLink}
+    videoImage={videoImage}
     imageFull={imageFull}
     component={ContentComponent}
     background={background}

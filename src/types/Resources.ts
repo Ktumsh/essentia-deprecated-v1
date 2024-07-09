@@ -3,8 +3,11 @@ import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 export interface Resources {
   id: number;
   title: string;
-  quote: string;
   intro: string;
+  quote: string;
+  videoTitle: string;
+  videoLink: string;
+  videoImage: string;
   description?: string;
   image: string;
   imageFull: string;

@@ -1,6 +1,7 @@
 ---
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import ResourceTabs from "@/components/Resources/ResourceTabs";
+import LiteYouTube from "@/components/LiteYouTube.astro";
 import ChipBadge from "@/components/ReactComponents/ChipBadge";
 import Image from "@/components/ReactComponents/Image";
 import SearchHighlight from "@/components/Resources/SearchHighlight.astro";
@@ -8,6 +9,9 @@ import SearchHighlight from "@/components/Resources/SearchHighlight.astro";
 interface Props {
   title: string;
   quote: string;
+  videoTitle: string;
+  videoLink: string;
+  videoImage: string;
   imageFull: string;
   background?: string;
   component: AstroComponentFactory;
@@ -16,6 +20,9 @@ interface Props {
 const {
   title,
   quote,
+  videoTitle,
+  videoLink,
+  videoImage,
   imageFull,
   background,
   component: ContentComponent,
@@ -78,12 +85,24 @@ const {
         </div>
         <div
           id="content"
-          class="relative space-y-12 text-base-color dark:text-base-color-dark bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 border border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 shadow-md lg:rounded-xl"
+          class="relative text-base-color dark:text-base-color-dark"
         >
-          <div
-            class="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 lg:rounded-xl -z-10"
-          >
-          </div>
+          <section class="px-5 lg:px-0 py-6">
+            <div class="w-full">
+              <div class="w-full flex items-center justify-center mb-6">
+                <h3
+                  class="drop-shadow-md text-white text-2xl font-semibold px-10 py-2 bg-light-gradient dark:bg-dark-gradient-v2 rounded-full shadow-md border-2 border-white dark:border-base-dark"
+                >
+                  {videoTitle}
+                </h3>
+              </div>
+              <LiteYouTube
+                videoId={videoLink}
+                title={videoTitle}
+                backgroundImage={videoImage}
+              />
+            </div>
+          </section>
           <SearchHighlight />
           <ContentComponent />
         </div>
