@@ -44,7 +44,7 @@ const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
         role="main"
         class="min-h-dvh flex flex-col items-center size-full page-bg bg-cover bg-light-gradient-v2 dark:bg-none"
       >
-        {isNoHeader ? null : <Header client:visible />}
+        {isNoHeader ? null : <Header />}
         <slot />
         {isNoFooter ? null : <Footer />}
       </div>
