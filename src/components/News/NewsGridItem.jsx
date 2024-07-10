@@ -1,3 +1,4 @@
+import { Image } from "@nextui-org/image";
 import { ClockIcon } from "./Clock";
 import { EyeIcon } from "./Eye";
 import "./fadein.css";
@@ -52,10 +53,11 @@ const NewsGridItem = ({
         target="_blank"
         className="before:absolute before:inset-0 before:z-20"
       ></a>
-      <img
+      <Image
+        removeWrapper
         className="absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(rgba(0,_0,_0,_1)_0%,_transparent_90%)] group-hover:scale-105 transition"
         src={image}
-        alt=""
+        alt={title}
       />
       <div className="absolute inset-0 size-full bg-cover bg-center bg-[linear-gradient(to_top,_rgba(0,_0,_0,_0.95)_0%,_transparent_100%)] dark:bg-none"></div>
       <div className="flex flex-col w-full content-center p-6 lg:p-10">

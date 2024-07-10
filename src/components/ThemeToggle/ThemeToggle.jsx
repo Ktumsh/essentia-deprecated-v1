@@ -24,7 +24,7 @@ export function ThemeToggle({
 
   return (
     <Tooltip
-      className="dark:bg-white bg-base-full-dark text-xs dark:text-base-color-h text-base-color-dark-h"
+      className="bg-gradient-to-br dark:from-white dark:to-gray-300 from-base-dark to-base-full-dark text-xs dark:text-base-color-h text-base-color-dark-h"
       content={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
       delay={500}
       closeDelay={0}

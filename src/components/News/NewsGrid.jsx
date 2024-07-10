@@ -47,7 +47,7 @@ const NewsGrid = () => {
 
   const loader = (
     <div className="flex items-center justify-center h-16 mb-8 mx-auto">
-      <span className="flex flex-col items-center justify-center text-base-color-dark-m dark:text-base-color-dark-m">
+      <span className="flex flex-col items-center justify-center text-base-color-m dark:text-base-color-dark-m">
         <SpinnerIcon className="size-18" />
       </span>
     </div>
