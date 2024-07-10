@@ -4,7 +4,7 @@ import Image from "@/components/ReactComponents/Image";
 ---
 
 <article
-  class="relative h-full w-full bg-white dark:bg-base-dark rounded-xl overflow-hidden"
+  class="relative h-full w-full bg-white/50 bg-bento-gradient dark:bg-none border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:backdrop-saturate-100 dark:bg-transparent rounded-xl shadow-md overflow-hidden"
 >
   <div class="relative flex flex-col h-full overflow-hidden">
     <div
@@ -15,14 +15,13 @@ import Image from "@/components/ReactComponents/Image";
         src="/extras/news-concept.webp"
         alt="Noticias de Essentia"
         removeWrapper
-        className="z-0 absolute inset-0 size-full object-cover dark:[mask-image:linear-gradient(_to_top,_rgba(0,_0,_0,_1)_0%,_transparent_95%)] group-hover:scale-105 transition"
+        className="z-0 absolute inset-0 size-full object-cover [mask-image:linear-gradient(to_top,_rgba(0,_0,_0,_1)_30%,_transparent_100%)] rounded-xl group-hover:scale-105 transition"
       />
-      <div
-        class="absolute inset-0 size-full bg-cover bg-center bg-gradient-to-b from-black/60 to-transparent dark:bg-none"
-      >
-      </div>
-      <div class="flex flex-col w-full content-center p-6 pt-10 z-10">
-        <h4 class="font-medium text-lg text-white drop-shadow-sm transition">
+      <div class="absolute inset-0 size-full bg-cover bg-center"></div>
+      <div class="flex flex-col w-full content-center p-5 z-10">
+        <h4
+          class="font-medium text-base text-base-color-h dark:text-base-color-dark drop-shadow-sm"
+        >
           Héchale un vistazo a las noticias interesantes del momento...
         </h4>
       </div>
@@ -30,7 +29,7 @@ import Image from "@/components/ReactComponents/Image";
         class="flex items-center justify-end w-full overflow-hidden p-2 z-10"
       >
         <a
-          class="group flex flex-row items-center justify-center h-9 w-full px-3 bg-bittersweet-400 dark:bg-cerise-red-600 rounded-xl bottom-1 shadow-md transition hover:brightness-90"
+          class="group flex flex-row items-center justify-center h-9 w-full px-3 bg-bittersweet-400 dark:bg-cerise-red-600 rounded-xl bottom-1 shadow-small transition hover:brightness-90"
           href="/noticias"
         >
           <span class="text-white">Ir a noticias</span>

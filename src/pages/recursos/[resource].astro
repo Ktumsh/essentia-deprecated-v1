@@ -3,16 +3,15 @@ import Layout from "../../layouts/Layout.astro";
 import { RESOURCES } from "../../consts/resources";
 import { getSession } from "auth-astro/server";
 import ResourcePack from "@/sections/ResourcePack.astro";
+import type { Preload } from "@/types/Preload";
 
 const session = await getSession(Astro.request);
 
 if (!session) return Astro.redirect("/login");
 
-export const prerender = false;
-
 export async function getStaticPaths() {
   return RESOURCES.map(({ resource }) => ({
-    resources: { resource: resource },
+    params: { resource: resource },
   }));
 }
 
@@ -30,12 +29,24 @@ const {
   component: ContentComponent,
   background,
 } = page;
+
+const preloadResourceBackground: Preload[] = [
+  {
+    as: "image",
+    href: page.imageFull,
+    type: "image/webp",
+    rel: "preload",
+  },
+];
+
+export const prerender = false;
 ---
 
 <Layout
   title={`${title} - Essentia`}
   description="Tu recurso de información esencial y confiable para una vida más saludable y equilibrada"
   canonical=`https://essentia-cl.vercel.app/recursos/${resource}`
+  preload={preloadResourceBackground}
 >
   <ResourcePack
     title={title}

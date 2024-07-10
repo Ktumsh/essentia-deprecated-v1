@@ -30,49 +30,6 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta charset="UTF-8" />
 <meta name="description" content={description} />
 
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansThin.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansLight.woff.ttf"
-  as="font"
-  type="font/woff"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansRegular.woff.ttf"
-  as="font"
-  type="font/woff"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansMedium.woff.ttf"
-  as="font"
-  type="font/woff"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansBold.woff.ttf"
-  as="font"
-  type="font/woff"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="https://essentia-cl.vercel.app/fonts/motiva-sans/MotivaSansExtraBold.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
-
 {
   preload?.map(({ href, as, type, rel = "preload", crossorigin }) => (
     <link rel={rel} href={href} as={as} type={type} crossorigin={crossorigin} />

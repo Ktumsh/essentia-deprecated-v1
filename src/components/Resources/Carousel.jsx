@@ -41,7 +41,7 @@ const Carousel = () => {
       onMouseEnter={stopAutoChange}
       onMouseLeave={startAutoChange}
     >
-      <div className="relative h-56 overflow-hidden rounded-xl md:h-96">
+      <div className="relative h-56 overflow-hidden lg:rounded-xl shadow-md border border-gray-100/50 dark:border-none md:h-96">
         {itemList.map((item, index) => (
           <RecomCarouselItem
             key={index}
