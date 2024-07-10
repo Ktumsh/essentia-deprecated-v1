@@ -24,6 +24,7 @@
     "@nextui-org/dropdown": "^2.1.26",
     "@nextui-org/image": "^2.0.29",
     "@nextui-org/modal": "^2.0.36",
+    "@nextui-org/scroll-shadow": "^2.1.17",
     "@nextui-org/switch": "^2.0.31",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/tabs": "^2.0.32",

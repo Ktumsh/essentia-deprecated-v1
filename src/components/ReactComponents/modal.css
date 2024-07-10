@@ -1,0 +1,49 @@
+html.dark {
+  .custom-scroll::-webkit-scrollbar {
+    width: 3px !important; /* Ancho del scrollbar */
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    @apply bg-white dark:bg-base-dark;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 3px !important; /* Ancho del scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  @apply bg-white dark:bg-base-dark;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.on-scroll {
+  view-timeline-name: --reveal;
+  animation-name: reveal;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 5% cover 30%;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    scale: 0.8;
+    translate: 0 100px;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    translate: 0 0;
+  }
+}

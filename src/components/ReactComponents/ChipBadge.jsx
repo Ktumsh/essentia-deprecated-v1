@@ -5,7 +5,7 @@ import { StarIcon } from "@/components/Additionals/Icons/Star";
 export default function ChipBadge() {
   return (
     <Tooltip
-      className="bg-white dark:bg-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h"
+      className="bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h"
       content="Contenido recomendado"
       delay={500}
       closeDelay={0}

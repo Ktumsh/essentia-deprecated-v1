@@ -1,15 +1,16 @@
 ---
 interface Props {
+  class?: string;
   videoId: string;
   title?: string;
   backgroundImage?: string;
 }
 
-const { videoId, title, backgroundImage } = Astro.props;
+const { class: className, videoId, title, backgroundImage } = Astro.props;
 ---
 
 <lite-youtube
-  class="rounded-lg"
+  class=`rounded-lg ${className}`
   videoid={videoId}
   tabindex="0"
   aria-label="button"
@@ -69,10 +70,10 @@ const { videoId, title, backgroundImage } = Astro.props;
 
         this.addEventListener("keydown", this.handleKeyPress.bind(this));
 
-        this.needsYTApi =
-          this.hasAttribute("js-api") ||
-          navigator.vendor.includes("Apple") ||
-          navigator.userAgent.includes("Mobi");
+        const isApple = /Apple/i.test(navigator.userAgent);
+        const isMobile = /Mobi/i.test(navigator.userAgent);
+
+        this.needsYTApi = this.hasAttribute("js-api") || isApple || isMobile;
       }
 
       static addPrefetch(kind, url, as) {

@@ -168,4 +168,28 @@ const {
     mask-composite: source-in !important;
     z-index: -1;
   }
+
+  .on-scroll {
+    view-timeline-name: --reveal;
+    animation-name: reveal;
+    animation-fill-mode: both;
+    animation-timeline: --reveal;
+    animation-range: entry 5% cover 30%;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      scale: 0.8;
+      translate: 0 100px;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
 </style>
