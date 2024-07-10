@@ -169,6 +169,56 @@ const {
     z-index: -1;
   }
 
+  @media (max-width: 768px) {
+    html.dark .page-bg {
+      -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.5) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-composite: source-in;
+      mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.5) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      mask-composite: source-in !important;
+      z-index: -1;
+    }
+  }
+
   .on-scroll {
     view-timeline-name: --reveal;
     animation-name: reveal;

@@ -39,7 +39,7 @@ export default function ModalComponent({
           className="group h-64 rounded-xl text-base-color-h dark:text-base-color-dark bg-white/50 dark:bg-none dark:bg-base-full-dark-50 backdrop-blur backdrop-saturate-150 border border-gray-100/50 dark:border-base-full-dark-80 !transition overflow-clip on-scroll"
         >
           <CardHeader className="absolute z-10 top-1 flex-col !items-start opacity-0 group-hover:opacity-100 group-hover:px-6 transition-all">
-            <ShowIcon className="size-6 text-white/60 group-hover:text-white transition" />
+            <ShowIcon className="size-6 drop-shadow-md text-white/60 group-hover:text-white transition" />
           </CardHeader>
           <Image
             removeWrapper
