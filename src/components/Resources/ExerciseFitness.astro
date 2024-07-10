@@ -1,112 +1,126 @@
 ---
 import RESOURCES_VIDEOS from "@/consts/resources-videos";
+import { FITNESS_MODAL_DATA } from "@/consts/fitness-modal-data";
+import LiteYouTube from "@/components/LiteYouTube.astro";
+import ModalComponent from "@/components/ReactComponents/Modal";
 const videos =
   RESOURCES_VIDEOS.find((section) => section.section === "ExerciseFitness")
     ?.videos || [];
 ---
 
-<section class="px-5">
-  <h3 class="text-2xl font-semibold mb-6">Rutinas de Ejercicio</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div
-      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+<section class="px-5 py-6">
+  <div class="w-full px-3 mb-8">
+    <h3
+      class="drop-shadow-md text-base-color dark:text-white text-2xl font-semibold"
     >
-      <a
-        href="https://www.acefitness.org/education-and-resources/lifestyle/exercise-library/"
-        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-        >Biblioteca de Ejercicios - ACE Fitness</a
-      >
-      <p class="mt-2 text-base">
-        Explora una amplia variedad de ejercicios para todos los niveles.
-      </p>
-    </div>
-    <div
-      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-    >
-      <a
-        href="https://www.self.com/gallery/bodyweight-exercises-you-can-do-at-home"
-        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-        >Ejercicios de Peso Corporal para Hacer en Casa</a
-      >
-      <p class="mt-2 text-base">
-        Descubre ejercicios que puedes hacer en casa sin equipo.
-      </p>
-    </div>
-    <div
-      class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-    >
-      <a
-        href="https://www.verywellfit.com/best-exercises-a3567510"
-        class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-        >Mejores Ejercicios para Todo el Cuerpo - Verywell Fit</a
-      >
-      <p class="mt-2 text-base">
-        Conoce los mejores ejercicios para entrenar todo el cuerpo.
-      </p>
-    </div>
+      <span
+        class="px-2 bg-orient-700 dark:bg-cerise-red-400 text-white dark:text-black"
+        >Rutinas</span
+      > de Ejercicios
+    </h3>
   </div>
-</section>
-
-<section class="px-5">
-  <h3 class="text-2xl font-semibold mb-6">Tutoriales en Video</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
     {
-      videos.map((video) => (
-        <div class="aspect-video bg-white dark:bg-base-full-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition">
-          <iframe
-            class="w-full h-full rounded-xl"
-            width="560"
-            height="315"
-            src={video.link}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          />
-        </div>
+      FITNESS_MODAL_DATA.map((modal) => (
+        <ModalComponent
+          tooltip="Ver rutina"
+          modalSize="5xl"
+          modalTitle={modal.modalTitle}
+          modalImage={modal.modalImage}
+          modalBody={modal.modalBody}
+          astroComponentId={`astro-component-${modal.id}`}
+          client:only="react"
+        />
       ))
     }
   </div>
+</section>
 
-  <section class="px-5 pb-5">
-    <h3 class="text-2xl font-semibold mb-6">Planes de Entrenamiento</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div
-        class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-      >
-        <a
-          href="https://www.nike.com/ntc-app"
-          class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-          >Aplicación Nike Training Club</a
-        >
-        <p class="mt-2 text-base">
-          Accede a planes de entrenamiento personalizados a través de la
-          aplicación.
-        </p>
+<!-- Contenedores ocultos para los componentes de Astro -->
+<div id="astro-components" style="display: none;">
+  {
+    FITNESS_MODAL_DATA.map((modal, index) => (
+      <div id={`astro-component-${modal.id}`} id={`astro-${modal.id}`}>
+        <LiteYouTube
+          videoId={videos[index]?.link}
+          title={videos[index]?.title}
+        />
       </div>
-      <div
-        class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-      >
-        <a
-          href="https://www.myfitnesspal.com/"
-          class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-          >MyFitnessPal</a
-        >
-        <p class="mt-2 text-base">
-          Seguimiento de ejercicios y dieta con planes personalizados.
-        </p>
-      </div>
-      <div
-        class="bg-white dark:bg-base-full-dark p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-      >
-        <a
-          href="https://www.fitbit.com/global/us/home"
-          class="text-bittersweet-400 dark:text-cerise-red-600 hover:brightness-90 font-bold text-xl"
-          >Fitbit</a
-        >
-        <p class="mt-2 text-base">
-          Monitoreo de actividad física y planes de entrenamiento.
-        </p>
-      </div>
-    </div>
-  </section>
+    ))
+  }
+</div>
+
+<section class="px-5 py-6">
+  <div class="w-full px-3 mb-8">
+    <h3
+      class="drop-shadow-md text-base-color dark:text-white text-2xl font-semibold"
+    >
+      <span
+        class="px-2 bg-orient-700 dark:bg-cerise-red-400 text-white dark:text-black"
+        >Música</span
+      > para tu Entrenamiento 😎
+    </h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0SZWVrotKn1?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX76Wlfdnj7AP?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdDh4h59PJIQ?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4osfY3zybD2?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX45grRWk2ghU?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+    <iframe
+      class="on-scroll rounded-3xl shadow-medium border-2 border-white/30 box-content"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX32NsLKyzScr?utm_source=generator"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    >
+    </iframe>
+  </div>
 </section>

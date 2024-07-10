@@ -39,23 +39,53 @@ const RESOURCES_VIDEOS: ResourcesVideos[] = [
     videos: [
       {
         id: 1,
-        title: "Yoga con Adriene",
-        link: "v7AYKMP6rOE",
+        title: "Cardio INTENSO 15 minutos | Quemar grasa de forma rápida",
+        link: "J-r5PVQenoo",
       },
       {
         id: 2,
-        title: "Entrenamiento de Fuerza en Casa",
-        link: "L_xrDAtykMI",
+        title:
+          "Mejores Ejercicios en Casa para PRINCIPIANTES || CUERPO COMPLETO (7 Minutos)",
+        link: "u1KxxgdPJEM",
       },
       {
         id: 3,
-        title: "Cardio para Quemar Grasa",
-        link: "2L2lnxIcNmo",
+        title:
+          "Rutina HIIT para adelgazar 15 minutos en Casa - HIIT Quema Grasa",
+        link: "QQkpHI9qv0A",
       },
       {
         id: 4,
-        title: "Entrenamiento para principiantes TOTAL BODY",
-        link: "q9b9afJ-GnA",
+        title: "Rutina intensa para abdomen perfecto | CORE PLUS",
+        link: "c_XOTJJXfVQ",
+      },
+      {
+        id: 5,
+        title: "Desbloquea tu movilidad en 5 minutos (ESTIRAMIENTO DIARIO)",
+        link: "DdpO0m15nto",
+      },
+      {
+        id: 6,
+        title: "Ejercicios para glúteos y piernas en casa - Rutina 15 minutos",
+        link: "Lccxvj8RmAc",
+      },
+      {
+        id: 7,
+        title:
+          "Rutina de Espalda En Casa (12 MIN) Ejercicios Para Espalda Sin Pesas",
+        link: "NyRSsVb9ydg",
+      },
+      {
+        id: 8,
+        title:
+          "Rutina de Pecho en Casa RÁPIDA (15 Minutos) Pectorales EN CASA Sin Equipo",
+        link: "Uh976n5NB_Q",
+      },
+      {
+        id: 9,
+        title:
+          "15 Min. para GANAR FLEXIBILIDAD | RUTINA DIARIA de ESTIRAMIENTOS y MOVILIDAD",
+        link: "j397EgMX8dA",
       },
     ],
   },

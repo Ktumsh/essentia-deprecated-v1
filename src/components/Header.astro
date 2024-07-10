@@ -69,10 +69,11 @@ const pages = [
 
 <header
   id="header"
-  class="sticky sm:static flex justify-center top-0 left-0 right-0 gap-3 w-full z-[997] sm:z-50 shadow-md lg:shadow-none transform transition-transform duration-300 ease-in-out"
+  class="sticky lg:static flex justify-center top-0 left-0 right-0 gap-3 w-full z-[997] sm:z-50 shadow-md lg:shadow-none transform transition-transform duration-300 ease-in-out"
 >
   <nav
-    class="relative flex items-center justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark dark:lg:bg-transparent"
+    id="nav"
+    class="relative flex items-center justify-between lg:justify-normal lg:gap-3 w-full lg:w-[1250px] min-h-16 lg:min-h-20 py-2 px-5 z-10 bg-white lg:bg-transparent dark:bg-base-dark-80 dark:lg:bg-transparent backdrop-blur-lg lg:backdrop-blur-none backdrop-saturate-150 lg:backdrop-saturate-100 transition-colors duration-300"
   >
     <div class="flex align-center w-full sm:w-auto">
       <a
@@ -103,7 +104,7 @@ const pages = [
           <input
             id="search-input2"
             type="text"
-            class="group/item relative w-full outline-none pl-4 pr-10 text-sm border-none text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-gray-200 dark:bg-base-full-dark focus:ring-0 rounded-full"
+            class="group/item relative w-full outline-none pl-4 pr-10 text-sm text-base-color-h dark:text-base-color-dark-h placeholder-base-color-m dark:placeholder-base-color-dark-m bg-white dark:bg-base-dark focus:ring-0 rounded-full border-2 border-gray-200 dark:border-base-full-dark focus:shadow-md transition-shadow"
           />
           <div
             id="mobile-logomark"
@@ -120,7 +121,7 @@ const pages = [
               alt="Logo de Essentia"
             />
             <span
-              class="absolute left-9 top-1/2 -translate-y-1/2 not-sr-only text-sm font-grotesk font-extrabold text-white dark:text-base-dark"
+              class="absolute left-9 top-1/2 -translate-y-1/2 not-sr-only text-sm font-grotesk font-extrabold text-gray-200 dark:text-base-full-dark"
               >Essentia®️</span
             >
           </div>
@@ -403,17 +404,21 @@ const pages = [
   document.addEventListener("astro:page-load", () => {
     let lastScrollTop = 0;
     const $header = $("#header");
-
+    const $nav = $("#nav");
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
       $header?.classList.toggle("-translate-y-full", scrollTop > lastScrollTop);
-      $header?.classList.toggle("translate-y-0", scrollTop <= lastScrollTop);
+      $nav?.classList.toggle("bg-white/50", scrollTop <= lastScrollTop);
+
+      if (scrollTop === 0) {
+        $nav?.classList.remove("bg-white/50");
+      }
 
       lastScrollTop = Math.max(scrollTop, 0);
     };
 
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     const checkMediaQuery = (e: MediaQueryList) => {
       e.matches

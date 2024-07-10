@@ -28,6 +28,7 @@ const videos =
             modalTitle={modal.modalTitle}
             modalImage={modal.modalImage}
             modalBody={modal.modalBody}
+            astroComponentId=""
             client:visible
           />
         );
@@ -46,48 +47,62 @@ const videos =
       > Recomendados
     </h3>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
     {
       videos.map((video, index) => (
         <>
           {index % 2 !== 0 && (
-            <div class="flex flex-col gap-4 py-3">
+            <div class="flex flex-col gap-4 pt-5 lg:pt-3 pb-0 lg:pb-3 px-3 lg:px-0">
               <div class="flex flex-col items-end gap-1">
                 <span class="text-base-color-m dark:text-base-color-dark-h text-xs font-bold uppercase">
                   reseña
                 </span>
-                <a href={video.link} class="text-lg text-white font-medium">
+                <div
+                  class="w-fit text-lg text-white font-medium"
+                >
                   <span class="bg-orient-700 dark:bg-cerise-red-600/50 backdrop-blur backdrop-saturate-150 py-1 px-3 rounded-br-full rounded-l-full text-ellipsis line-clamp-1">
                     {video.title}
                   </span>
-                </a>
+                </div>
               </div>
-              <p class="px-3 text-base-color dark:text-white font-light">
+              <p class="hidden lg:block px-3 text-base-color dark:text-white font-light">
                 {video.description}
               </p>
             </div>
+            <LiteYouTube
+              class="on-scroll"
+              videoId={video.link}
+              title={video.title}
+            />
           )}
-          <LiteYouTube
-            class="on-scroll"
-            videoId={video.link}
-            title={video.title}
-          />
           {index % 2 === 0 && (
-            <div class="flex flex-col gap-4 py-3">
+            <LiteYouTube
+              class="hidden lg:block on-scroll"
+              videoId={video.link}
+              title={video.title}
+            />
+            <div class="flex flex-col gap-4 pt-5 lg:pt-3 pb-0 lg:pb-3 px-3 lg:px-0">
               <div class="flex flex-col gap-1">
                 <span class="text-base-color-m dark:text-base-color-dark-h text-xs font-bold uppercase">
                   reseña
                 </span>
-                <a href={video.link} class="text-lg text-white font-medium">
+                <div
+                  class="w-fit text-lg text-white font-medium"
+                >
                   <span class="bg-orient-700 dark:bg-cerise-red-600/50 backdrop-blur backdrop-saturate-150 py-1 px-3 rounded-bl-full rounded-r-full text-ellipsis line-clamp-1">
                     {video.title}
                   </span>
-                </a>
+                </div>
               </div>
-              <p class="px-3 text-base-color dark:text-white font-light">
+              <p class="hidden lg:block px-3 text-base-color dark:text-white font-light">
                 {video.description}
               </p>
             </div>
+            <LiteYouTube
+              class="lg:hidden on-scroll"
+              videoId={video.link}
+              title={video.title}
+            />
           )}
         </>
       ))

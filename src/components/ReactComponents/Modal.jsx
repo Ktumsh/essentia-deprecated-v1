@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Modal,
   ModalContent,
@@ -15,14 +14,38 @@ import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import "./modal.css";
 import ShowIcon from "@/icons/react/Eye";
 import HeartIcon from "@/icons/react/Heart";
+import { useRef, useEffect } from "react";
 
 export default function ModalComponent({
   tooltip,
+  modalSize = "2xl",
   modalTitle,
   modalImage,
   modalBody,
+  astroComponentId,
 }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  const astroComponentRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && astroComponentId) {
+      const astroComponent = document.getElementById(astroComponentId);
+      if (astroComponent && astroComponentRef.current) {
+        const clonedNode = astroComponent.cloneNode(true);
+        astroComponentRef.current.innerHTML = "";
+        astroComponentRef.current.appendChild(clonedNode);
+        astroComponent.style.display = "none";
+      }
+    }
+  }, [isOpen, astroComponentId]);
+
+  useEffect(() => {
+    if (!isOpen && astroComponentId) {
+      const astroComponent = document.getElementById(astroComponentId);
+      if (astroComponent) astroComponent.style.display = "block";
+    }
+  }, [isOpen, astroComponentId]);
 
   return (
     <>
@@ -57,18 +80,20 @@ export default function ModalComponent({
       <Modal
         placement="center"
         scrollBehavior="inside"
-        size="2xl"
+        size={modalSize}
         backdrop="blur"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         radius="lg"
         classNames={{
-          wrapper: "overflow-hidden",
+          wrapper: "overflow-hidden z-[999]",
           body: "py-6",
-          base: "border-[#292f46] bg-white dark:bg-base-dark text-[#a8b0d3]",
+          base: "bg-white dark:bg-base-dark max-h-[calc(100%_-_10rem)] lg:max-h-[calc(100%_-_7.5rem)]",
           header: "border-b-1 border-gray-200 dark:border-base-color-m",
           footer: "border-t-1 border-gray-200 dark:border-base-color-m",
-          closeButton: "hover:bg-white/5 active:bg-white/10",
+          closeButton:
+            "hover:bg-black/5 active:bg-black/10 dark:hover:bg-white/5 dark:active:bg-white/10 transition-colors duration-150",
+          backdrop: "z-[998]",
         }}
       >
         <ModalContent>
@@ -78,10 +103,10 @@ export default function ModalComponent({
                 <q>{modalTitle}</q>
               </ModalHeader>
               <ScrollShadow className="custom-scroll" size={80}>
-                <ModalBody
-                  dangerouslySetInnerHTML={{ __html: modalBody }}
-                  className="text-base-color-h dark:text-base-color-dark-h"
-                />
+                <ModalBody className="text-base-color-h dark:text-base-color-dark-h">
+                  <div dangerouslySetInnerHTML={{ __html: modalBody }} />
+                  <div ref={astroComponentRef}></div>
+                </ModalBody>
               </ScrollShadow>
               <ModalFooter className="text-base-color dark:text-base-color-dark">
                 <Button
