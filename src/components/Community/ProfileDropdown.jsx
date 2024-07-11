@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/dropdown";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import { DotsIcon } from "./Icons/Dots";
-import { LogoutIcon } from "@/components/ReactComponents/Logout";
+import { LogoutIcon } from "@/icons/react/Logout";
 
 export default function ProfileDropdown({ name, username, avatar }) {
   return (

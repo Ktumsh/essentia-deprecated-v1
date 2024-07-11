@@ -4,8 +4,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/dropdown";
-import { ThemeToggle } from "./ThemeToggle/ThemeToggle";
-import { LogoutIcon } from "./ReactComponents/Logout";
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
+import { LogoutIcon } from "@/icons/react/Logout";
 import { signOut } from "auth-astro/client";
 
 export default function AvatarDropdown({ avatarUrl, name, username }) {

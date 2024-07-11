@@ -1,8 +1,8 @@
 ---
-import NewsCard from "@/components/Resources/NewsCard.astro";
-import Carousel from "@/components/Resources/Carousel";
-import Resources from "@/components/Resources/Resources.astro";
-import Greeting from "@/components/Resources/Greeting.svelte";
+import NewCard from "@/components/Main/NewCard.astro";
+import Carousel from "@/components/Main/Carousel";
+import Resources from "@/components/Main/Resources.astro";
+import Greeting from "@/components/Main/Greeting.svelte";
 import Search from "@/icons/search.astro";
 import Clear from "@/icons/clear.astro";
 
@@ -93,7 +93,7 @@ const nameFromUser = getFirstName(session?.user?.name);
           class="h-[20px] mb-2 ml-3 text-base-color-h dark:text-base-color-dark"
         >
         </h3>
-        <NewsCard />
+        <NewCard />
       </section>
     </aside>
   </div>

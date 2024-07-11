@@ -208,6 +208,38 @@ const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
         src: url(/fonts/motiva-sans/MotivaSansExtraBold.ttf);
       }
 
+      @font-face {
+        font-family: "Space Mono";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/space-mono/SpaceMono-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Space Mono";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(/fonts/space-mono/SpaceMono-Bold.ttf);
+      }
+
+      @font-face {
+        font-family: "Space Grotesk";
+        font-optical-sizing: auto;
+        font-weight: 300 700;
+        font-style: normal;
+        src: url(/fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.ttf);
+      }
+
+      @font-face {
+        font-family: "DM Sans";
+        font-optical-sizing: auto;
+        font-weight: 300 700;
+        font-style: normal;
+        src: url(/fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf);
+      }
+
       html {
         font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
       }

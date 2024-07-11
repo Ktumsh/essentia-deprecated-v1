@@ -1,6 +1,6 @@
 <script>
   import Dots from "@/icons/svelte/dots.svelte";
-  import Tooltip from "@/components/Tooltip.svelte";
+  import Tooltip from "./Tooltip.svelte";
   import Sidebar from "@/icons/svelte/sidebar.svelte";
   import NewChat from "@/icons/svelte/new-chat.svelte";
 

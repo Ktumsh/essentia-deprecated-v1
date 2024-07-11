@@ -7,14 +7,14 @@ import {
   useDisclosure,
 } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { Tooltip } from "@nextui-org/tooltip";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
-import "./modal.css";
 import ShowIcon from "@/icons/react/Eye";
 import HeartIcon from "@/icons/react/Heart";
 import { useRef, useEffect } from "react";
+import "./modal.css";
 
 export default function ModalComponent({
   tooltip,

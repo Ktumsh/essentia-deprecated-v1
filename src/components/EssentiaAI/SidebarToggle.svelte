@@ -1,7 +1,7 @@
 <script>
   import Sidebar from "@/icons/svelte/sidebar.svelte";
   import NewChat from "@/icons/svelte/new-chat.svelte";
-  import Tooltip from "@/components/Tooltip.svelte";
+  import Tooltip from "./Tooltip.svelte";
 
   export let toggleSidebar;
   export let createNewChat;

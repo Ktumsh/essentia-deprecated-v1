@@ -2,6 +2,7 @@
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle.jsx";
 import { MOBILE_MENU_CONTENT_ID } from "@/consts/mobile-menu";
 import HamburgerButton from "./HamburgerButton.astro";
+import AvatarDropdown from "@/components/UI/AvatarDropdown";
 
 import Settings from "@/icons/settings.astro";
 import Help from "@/icons/help.astro";
@@ -14,7 +15,6 @@ import Search from "@/icons/search.astro";
 
 import { getSession } from "auth-astro/server";
 import type { Session } from "auth-astro";
-import AvatarDropdown from "./AvatarDropdown";
 
 const session: Session | any = await getSession(Astro.request);
 
