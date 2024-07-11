@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const { nextui } = require("@nextui-org/theme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: "class",
@@ -128,32 +129,10 @@ export default {
         },
       },
       fontFamily: {
-        grotesk: [
-          "Space Grotesk",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Oxygen",
-          "Ubuntu",
-          "Cantarell",
-          "Open Sans",
-          "Helvetica Neue",
-        ],
-        motivasans: [
-          "Motiva Sans",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Oxygen",
-          "Ubuntu",
-          "Cantarell",
-          "Open Sans",
-          "Helvetica Neue",
-        ],
+        grotesk: ["Space Grotesk", ...fontFamily.sans],
+        motivasans: ["Motiva Sans", ...fontFamily.sans],
+        spacemono: ["Space Mono", ...fontFamily.mono],
+        dmsans: ["DM Sans", ...fontFamily.sans],
       },
       backgroundImage: {
         noise: "url(/extras/noise.webp)",
