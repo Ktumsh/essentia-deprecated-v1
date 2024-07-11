@@ -1,4 +1,4 @@
-export const ClockIcon = (props) => (
+const ClockIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="32"
@@ -17,3 +17,5 @@ export const ClockIcon = (props) => (
     <path d="M12 7v5l3 3"></path>
   </svg>
 );
+
+export default ClockIcon;

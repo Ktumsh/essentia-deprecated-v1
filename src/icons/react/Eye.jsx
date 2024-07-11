@@ -1,4 +1,4 @@
-const ShowIcon = (props) => (
+const EyeIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="32"
@@ -13,4 +13,4 @@ const ShowIcon = (props) => (
   </svg>
 );
 
-export default ShowIcon;
+export default EyeIcon;

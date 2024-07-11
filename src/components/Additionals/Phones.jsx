@@ -1,5 +1,5 @@
 import { Card, CardFooter } from "@nextui-org/card";
-import { PhoneIcon } from "./Icons/Phone";
+import { PhoneIcon } from "@/icons/react/Phone";
 
 export default function Phones() {
   const phones = [

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NewsGridItem from "./NewsGridItem";
 import { NEWS } from "@/consts/data-news";
-import { SpinnerIcon } from "./Spinner";
+import { SpinnerIcon } from "@/icons/react/Spinner";
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {

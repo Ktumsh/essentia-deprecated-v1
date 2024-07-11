@@ -2,8 +2,8 @@ import { Card } from "@nextui-org/card";
 import { Button } from "@nextui-org/button";
 import { Chip } from "@nextui-org/chip";
 import { Tooltip } from "@nextui-org/tooltip";
-import { DownloadIcon } from "./Icons/DownloadIcon";
-import { StarIcon } from "./Icons/Star";
+import { DownloadIcon } from "@/icons/react/DownloadIcon";
+import { StarIcon } from "@/icons/react/Star";
 
 export default function Guides() {
   const guides = [

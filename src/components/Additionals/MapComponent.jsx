@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { LocationIcon } from "./Icons/Location";
+import { LocationIcon } from "@/icons/react/Location";
 import CenterSwitch from "./CenterSwitch";
 import "./map.css";
 

@@ -1,6 +1,6 @@
 import { Image } from "@nextui-org/image";
-import { ClockIcon } from "./Clock";
-import { EyeIcon } from "./Eye";
+import ClockIcon from "@/icons/react/Clock";
+import EyeIcon from "@/icons/react/Eye";
 import "./fadein.css";
 
 const NewsGridItem = ({

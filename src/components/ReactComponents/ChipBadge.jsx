@@ -1,6 +1,6 @@
 import { Chip } from "@nextui-org/chip";
 import { Tooltip } from "@nextui-org/tooltip";
-import { StarIcon } from "@/components/Additionals/Icons/Star";
+import { StarIcon } from "@/icons/react/Star";
 
 export default function ChipBadge() {
   return (

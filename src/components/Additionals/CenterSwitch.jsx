@@ -1,7 +1,7 @@
 import { Switch } from "@nextui-org/switch";
 import { Tooltip } from "@nextui-org/tooltip";
-import { HospitalIcon } from "./Icons/Hospital";
-import { PharmacyIcon } from "./Icons/Pharmacy";
+import { HospitalIcon } from "@/icons/react/Hospital";
+import { PharmacyIcon } from "@/icons/react/Pharmacy";
 
 export default function CenterSwitch({
   isSelected,
