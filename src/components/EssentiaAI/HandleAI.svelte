@@ -71,15 +71,10 @@
         currentBotMessage = "";
         addTypingIndicator();
 
-        console.log("Sending request to getCohereStream");
-
         await getCohereStream(text, (update) => {
-          console.log("Received update from getCohereStream", update);
           currentBotMessage = update;
           updateTypingMessage(formatTextToHTML(currentBotMessage), "bot");
         });
-
-        console.log("Finalizing bot message");
 
         finalizeBotMessage();
         typing = false;

@@ -61,8 +61,10 @@
 
     window.addEventListener("scroll", throttledScrollHandler);
 
-    $button.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if ($button) {
+      $button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
   });
 </script>

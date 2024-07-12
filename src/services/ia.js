@@ -66,14 +66,31 @@ export async function getCohereStream(input, onUpdate) {
     chatHistory.push({ role: "user", message: input });
     chatHistory.push({ role: "chatbot", message: fullText });
 
-    // Limit the size of chat history to improve performance
-    if (chatHistory.length > 50) {
-      chatHistory = chatHistory.slice(-50);
-    }
-
     return { text: fullText };
   } catch (error) {
     console.error("Failed to fetch AI response:", error);
     throw error;
+  }
+}
+
+async function getCohereStreamWithRetry(input, onUpdate) {
+  let reconnectionAttempts = 0;
+  try {
+    await getCohereStream(input, onUpdate);
+  } catch (error) {
+    while (reconnectionAttempts < 3) {
+      reconnectionAttempts++;
+      console.log(`Reconnecting... Attempt ${reconnectionAttempts}`);
+      try {
+        await getCohereStream(input, onUpdate);
+        return; // Exit if successful
+      } catch (retryError) {
+        console.error(
+          `Reconnection attempt ${reconnectionAttempts} failed.`,
+          retryError
+        );
+      }
+    }
+    throw new Error("Failed to reconnect after 3 attempts.");
   }
 }
