@@ -3,6 +3,7 @@ const COHERE_API_KEY = import.meta.env.COHERE_API_KEY;
 
 export async function POST({ request }) {
   if (!COHERE_API_KEY) {
+    console.error("API key not provided");
     return new Response("API key not provided", { status: 500 });
   }
 
@@ -21,7 +22,7 @@ export async function POST({ request }) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.log("Error text from Cohere API:", errorText);
+      console.error("Error text from Cohere API:", errorText);
       throw new Error(
         `API error: ${response.status} ${response.statusText} - ${errorText}`
       );
