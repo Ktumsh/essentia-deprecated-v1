@@ -62,9 +62,14 @@ export async function getCohereStream(input, onUpdate) {
       }
     }
 
-    //Add the user's input to the chat history
+    // Add the user's input to the chat history
     chatHistory.push({ role: "user", message: input });
     chatHistory.push({ role: "chatbot", message: fullText });
+
+    // Limit the size of chat history to improve performance
+    if (chatHistory.length > 50) {
+      chatHistory = chatHistory.slice(-50);
+    }
 
     return { text: fullText };
   } catch (error) {
