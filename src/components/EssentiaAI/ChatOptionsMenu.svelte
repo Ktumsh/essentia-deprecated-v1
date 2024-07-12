@@ -12,7 +12,7 @@
 
 {#if openMenuId}
   <div
-    class="origin-top-right sm:origin-top-left p-1 text-sm text-nowrap shadow-medium text-base-color-h dark:text-base-color-dark-h bg-white dark:bg-base-full-dark rounded-xl -translate-x-36 sm:translate-x-4 translate-y-40 sm:translate-y-0"
+    class="origin-top-right sm:origin-top-left p-1 text-sm text-nowrap shadow-medium text-base-color-h dark:text-base-color-dark-h bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl -translate-x-36 sm:translate-x-4 translate-y-40 sm:translate-y-0"
     style="top: {menuPosition.top}px; left: {menuPosition.left}px; position: absolute;"
     in:scale={{ duration: 250 }}
     out:scale={{ duration: 250 }}

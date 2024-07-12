@@ -13,6 +13,7 @@
   export let startEditChatName;
   export let saveChatName;
   export let confirmDeleteChat;
+  export let confirmDeleteAllChats;
   export let sidebarOpen;
   export let handleTouchStart;
   export let handleTouchMove;
@@ -23,9 +24,10 @@
 
 <div
   id="chat-menu"
+  data-state={sidebarOpen ? "open" : "closed"}
   class="{sidebarOpen
     ? 'open'
-    : 'closed'} transform transition-transform fixed left-0 top-0 sm:top-20 flex flex-col w-full min-w-64 sm:max-w-64 h-full sm:h-[calc(100%-80px)] items-start p-3 border border-gray-100/50 dark:border-base-full-dark-50 bg-white dark:bg-base-dark backdrop-blur backdrop-saturate-150 sm:rounded-r-xl shadow-medium font-motivasans text-base-color dark:text-base-color-dark z-[1000] sm:z-0"
+    : 'closed'} peer transform transition-transform absolute left-0 inset-y-0 lg:top-20 flex flex-col w-[300px] h-full lg:h-[calc(100%-80px)] items-start p-3 border-l-0 border border-gray-200 dark:border-white/10 bg-white dark:bg-base-dark backdrop-blur backdrop-saturate-150 sm:rounded-tr-xl font-motivasans text-base-color dark:text-base-color-dark z-[1000]"
   on:touchstart={handleTouchStart}
   on:touchmove={handleTouchMove}
   on:touchend={handleTouchEnd}
@@ -54,13 +56,13 @@
     </Tooltip>
   </div>
 
-  <div class="relative inner-scrollbar w-full h-full overflow-y-scroll">
+  <div class="relative inner-scrollbar w-full h-full overflow-y-auto">
     {#if chatHistory.length > 0}
       {#each chatHistory as session}
         <div
-          class="chat-item group relative w-full p-2 gap-1 text-base-color-h dark:text-base-color-dark-h hover:text-base-color dark:hover:text-white hover:bg-gray-200 dark:hover:bg-base-full-dark rounded-xl overflow-hidden {session.sessionId ===
+          class="chat-item group relative w-full gap-1text-base-color-h dark:text-base-color-dark-h hover:text-base-color dark:hover:text-white hover:bg-gray-200 dark:hover:bg-base-full-dark rounded-xl overflow-hidden {session.sessionId ===
           selectedSessionId
-            ? 'active'
+            ? 'active bg-gray-200 dark:bg-base-full-dark'
             : ''}"
         >
           {#if editingSessionId === session.sessionId}
@@ -74,7 +76,7 @@
           {:else}
             <button
               on:click={() => selectChatSession(session.sessionId)}
-              class="flex flex-col w-full text-sm"
+              class="flex flex-col w-full text-sm p-2"
             >
               <div class="w-full text-ellipsis text-start line-clamp-2">
                 {session.name}
@@ -85,7 +87,7 @@
                 {session.dateTime}
               </span>
               <div
-                class="absolute bottom-0 top-0 to-transparent right-0 bg-gradient-to-l from-white dark:from-base-dark group-hover:from-gray-200 dark:group-hover:from-base-full-dark w-12 from-0% group-hover:from-60% group-hover:w-12 group-[.selected]:from-60% group-[.selected]:from-gray-200 dark:group-[.selected]:from-base-full-dark group-[.active]:from-60% group-[.active]:from-gray-200 dark:group-[.active]:from-base-full-dark"
+                class="absolute bottom-0 top-0 to-transparent right-0 bg-gradient-to-l from-white dark:from-base-dark group-hover:from-gray-200 dark:group-hover:from-base-full-dark w-12 from-0% group-hover:from-60% group-hover:w-12 group-[.selected]:from-60% group-[.active]:from-60% group-[.active]:from-gray-200 dark:group-[.active]:from-base-full-dark"
               ></div>
             </button>
           {/if}
@@ -107,37 +109,44 @@
       {/each}
     {:else}
       <div class="h-full flex items-center justify-center px-2">
-        <p class="text-base-color-h dark:text-base-color-dark-h text-center">
-          Comienza una conversación para que tu historial aparezca aquí...
+        <p
+          class="text-base-color-d dark:text-base-color-dark-d text-center text-sm"
+        >
+          Sin historial de chat
         </p>
       </div>
     {/if}
+  </div>
+  <div class="flex items-center justify-end w-full h-10 mt-4">
+    <button
+      on:click={confirmDeleteAllChats}
+      disabled={chatHistory.length === 0}
+      class="h-10 rounded-xl px-3 font-medium text-sm text-base-color-h dark:text-base-color-dark-h disabled:pointer-events-none disabled:opacity-50"
+    >
+      Limpiar historial
+    </button>
   </div>
   <slot></slot>
 </div>
 
 <style>
   .inner-scrollbar::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+  }
+
+  .inner-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   .inner-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
   }
 
   .inner-scrollbar-container {
-    padding-right: 6px;
-  }
-
-  .chat-item.selected,
-  .chat-item.active {
-    @apply bg-gray-200 dark:bg-base-full-dark;
-  }
-
-  #chat-menu {
-    @apply transition-transform duration-400;
+    padding-right: 3px;
   }
 
   #chat-menu.closed {

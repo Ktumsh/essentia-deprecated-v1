@@ -11,44 +11,111 @@ const userImageUrl = session?.user?.image || "";
 >
 </div>
 <div
-  id="chat-container"
-  class="flex flex-1 flex-col items-center justify-center size-full mt-20 sm:mt-0 mb-10 text-white overflow-y-auto"
+  id="user-image"
+  data-user-image-url={userImageUrl}
+  aria-label="hide"
+  hidden
 >
-  <main
-    class="size-full sm:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] max-w-full px-5 overflow-y-auto"
-  >
-    <div
-      id="user-image"
-      data-user-image-url={userImageUrl}
-      aria-label="hide"
-      hidden
-    >
-    </div>
-    <HandleAI client:only="svelte" />
-  </main>
 </div>
+<HandleAI client:only="svelte" />
 
 <style>
   .page-bg {
     -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
       radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.5) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
         51.31% 143.89% at 49.99% 24.75%,
         #000000 0%,
-        #000000 52.6%,
+        #000000 0%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 0%,
         rgba(0, 0, 0, 0.18) 83.33%,
         rgba(0, 0, 0, 0) 95.31%
       ),
       linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
-    mask: radial-gradient(
-      51.31% 143.89% at 49.99% 24.75%,
-      #000000 0%,
-      #000000 52.6%,
-      rgba(0, 0, 0, 0.18) 83.33%,
-      rgba(0, 0, 0, 0) 95.31%
-    );
     -webkit-mask-composite: source-in;
-    mask-composite: source-in;
+    mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.5) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 0%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 0%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    mask-composite: source-in !important;
     z-index: -1;
+  }
+
+  @media (max-width: 1024px) {
+    .page-bg {
+      -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.5) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-composite: source-in;
+      mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+        radial-gradient(
+          30.95% 86.8% at 30.69% 13.2%,
+          rgba(66, 66, 66, 0.5) 0%,
+          #333333 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        radial-gradient(
+          51.31% 100% at 49.99% 24.75%,
+          #000000 0%,
+          #000000 0%,
+          rgba(0, 0, 0, 0.18) 97%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+      mask-composite: source-in !important;
+      z-index: -1;
+    }
   }
 
   main {

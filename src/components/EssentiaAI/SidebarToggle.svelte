@@ -10,7 +10,7 @@
 
 {#if !sidebarOpen}
   <div
-    class="flex flex-row items-center justify-center fixed top-20 left-[1px] p-3 rounded-r-xl bg-white dark:bg-base-dark shadow-medium origin-left slide-animation-in"
+    class="flex flex-row items-center justify-center fixed top-20 left-[1px] p-3 rounded-r-xl bg-white dark:bg-base-dark border-l-0 border border-gray-200 dark:border-white/10 origin-left slide-animation-in z-10"
   >
     <Tooltip
       text="Abrir barra lateral"

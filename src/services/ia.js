@@ -3,7 +3,6 @@ const initialPrompt =
   "You belong to Essentia and your name is Essentia AI, you are a female AI expert in health and well-being and you only have to answer questions related to that topic and that is why you give your best advice to questions asked in Spanish by people residing in Chile.";
 
 export async function getCohereStream(input, onUpdate) {
-  // Agregar el prompt inicial solo la primera vez
   if (chatHistory.length === 0) {
     chatHistory.push({ role: "system", message: initialPrompt });
   }
@@ -47,9 +46,8 @@ export async function getCohereStream(input, onUpdate) {
       if (done) break;
       buffer += decoder.decode(value, { stream: true });
 
-      // Procesar los fragmentos completos de JSON
       const parts = buffer.split("\n");
-      buffer = parts.pop(); // Guardar el fragmento incompleto
+      buffer = parts.pop();
 
       for (const part of parts) {
         try {
@@ -64,9 +62,9 @@ export async function getCohereStream(input, onUpdate) {
       }
     }
 
-    // Agregar la entrada del usuario y la respuesta de la IA al historial de chat
+    //Add the user's input to the chat history
     chatHistory.push({ role: "user", message: input });
-    chatHistory.push({ role: "assistant", message: fullText });
+    chatHistory.push({ role: "chatbot", message: fullText });
 
     return { text: fullText };
   } catch (error) {

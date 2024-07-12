@@ -1,5 +1,4 @@
 <script>
-  import { scale, fade } from "svelte/transition";
   export let text = "";
   export let position = "";
   export let origin = "";

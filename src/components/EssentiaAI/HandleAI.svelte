@@ -14,7 +14,7 @@
 
   let messages = [];
   let userImageUrl = "";
-  let loading = true;
+  let intro = true;
   let typing = false;
   let isSending = false;
   let currentBotMessage = "";
@@ -27,9 +27,12 @@
   let preventClose = false;
   let editingSessionId = null;
   let showModal = false;
+  let action;
   let chatToDelete = null;
-  let sidebarOpen = false;
+  let sidebarOpen = true;
   let startX;
+  let messageContainer;
+  let showScrollButton = false;
   const threshold = 80;
 
   function handleTouchStart(event) {
@@ -62,6 +65,7 @@
       addMessage(text, "user", userImageUrl);
       inputEl.value = "";
       try {
+        intro = false;
         isSending = true;
         typing = true;
         currentBotMessage = "";
@@ -187,6 +191,7 @@
     );
     if (selectedSession) {
       messages = selectedSession.messages;
+      intro = false;
     }
   }
 
@@ -246,7 +251,22 @@
 
   const confirmDeleteChat = (sessionId) => {
     chatToDelete = sessionId;
+    action = "single";
     showModal = true;
+  };
+
+  const confirmDeleteAllChats = () => {
+    action = "all";
+    showModal = true;
+  };
+
+  const executeDelete = () => {
+    if (action === "single") {
+      deleteChat();
+    } else if (action === "all") {
+      deleteAllChats();
+    }
+    closeModal();
   };
 
   const deleteChat = () => {
@@ -256,6 +276,12 @@
     localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
     showModal = false;
     chatToDelete = null;
+  };
+
+  const deleteAllChats = () => {
+    chatHistory = []; // Vaciar el array de chats
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory)); // Actualizar el localStorage
+    showModal = false; // Cerrar el modal si está abierto
   };
 
   const closeModal = () => {
@@ -283,6 +309,20 @@
 
   const toggleSidebar = () => {
     sidebarOpen = !sidebarOpen;
+    const body = document.querySelector("body");
+    if (sidebarOpen) {
+      body.classList.add("overflow-hidden");
+    } else {
+      body.classList.remove("overflow-hidden");
+    }
+    const overlay = document.querySelector("#overlayModal");
+    if (sidebarOpen) {
+      overlay.classList.remove("invisible");
+      overlay.classList.remove("opacity-0");
+    } else {
+      overlay.classList.add("invisible");
+      overlay.classList.add("opacity-0");
+    }
   };
 
   const createNewChat = () => {
@@ -290,23 +330,16 @@
       sessionId: generateId(),
       name: "Nuevo chat",
       dateTime: new Date().toLocaleString("es-ES"),
-      messages: [
-        {
-          id: generateId(),
-          text: formatTextToHTML(
-            "Hola! Cuéntame, ¿en qué puedo ayudarte hoy? 😊"
-          ),
-          sender: "bot",
-          imageUrl: "",
-        },
-      ],
+      messages: [],
     };
+    intro = true;
     chatHistory = [newChat, ...chatHistory];
     localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
     selectChatSession(newChat.sessionId);
     messages = newChat.messages;
     selectedSessionId = newChat.sessionId;
     currentSessionName = "";
+    showScrollButton = false;
   };
 
   function generateChatNameFromFirstMessage(messages) {
@@ -349,20 +382,40 @@
     return formattedParagraphs.join("<br>");
   }
 
+  function handleScroll() {
+    if (messageContainer) {
+      showScrollButton =
+        messageContainer.scrollTop <
+        messageContainer.scrollHeight - messageContainer.clientHeight;
+    }
+  }
+
+  function scrollToBottom() {
+    if (messageContainer) {
+      messageContainer.scroll({
+        top: messageContainer.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }
+
   onMount(() => {
+    if (messageContainer) {
+      messageContainer.addEventListener("scroll", handleScroll);
+    }
+    handleScroll();
+    const overlay = document.querySelector("#overlayModal");
+    overlay.addEventListener("click", () => {
+      sidebarOpen = false;
+      overlay.classList.add("invisible");
+      overlay.classList.add("opacity-0");
+    });
     document.addEventListener("mousedown", handleClickOutside);
     loadChatHistory();
     const imgEl = document.querySelector("#user-image");
     if (imgEl) {
       userImageUrl = imgEl.getAttribute("data-user-image-url");
     }
-    setTimeout(() => {
-      loading = false;
-      addMessage(
-        formatTextToHTML("Hola! Cuéntame, ¿en qué puedo ayudarte hoy? 😊"),
-        "bot"
-      );
-    }, 1000);
   });
 
   onDestroy(() => {
@@ -370,38 +423,50 @@
   });
 </script>
 
-<SidebarToggle {toggleSidebar} {createNewChat} {sidebarOpen} />
-
-<MessageList {messages} {loading} />
-
-<MessageInput {handleSubmit} {isSending}></MessageInput>
-<ChatList
-  {chatHistory}
-  {selectedSessionId}
-  {editingSessionId}
-  {openMenuId}
-  {selectChatSession}
-  {toggleOptions}
-  {startEditChatName}
-  {saveChatName}
-  {confirmDeleteChat}
-  {sidebarOpen}
-  {handleTouchStart}
-  {handleTouchMove}
-  {handleTouchEnd}
-  {toggleSidebar}
-  {createNewChat}
+<div
+  id="chat-container"
+  class="flex w-full h-full lg:h-[calc(100dvh-80px)] mt-20 sm:mt-0 text-white overflow-hidden"
 >
-  <ChatOptionsMenu
-    {menuPosition}
-    {openMenuId}
-    {shouldAnimateOut}
-    {startEditChatName}
-    {confirmDeleteChat}
-  />
-</ChatList>
+  <SidebarToggle {toggleSidebar} {createNewChat} {sidebarOpen} />
 
-<DeleteChatModal {showModal} {deleteChat} {closeModal} />
+  <ChatList
+    {chatHistory}
+    {selectedSessionId}
+    {editingSessionId}
+    {openMenuId}
+    {selectChatSession}
+    {toggleOptions}
+    {startEditChatName}
+    {saveChatName}
+    {confirmDeleteChat}
+    {confirmDeleteAllChats}
+    {sidebarOpen}
+    {handleTouchStart}
+    {handleTouchMove}
+    {handleTouchEnd}
+    {toggleSidebar}
+    {createNewChat}
+  >
+    <ChatOptionsMenu
+      {menuPosition}
+      {openMenuId}
+      {shouldAnimateOut}
+      {startEditChatName}
+      {confirmDeleteChat}
+    />
+  </ChatList>
+  <div
+    bind:this={messageContainer}
+    class="group w-full overflow-auto pl-0 peer-[[data-state=open]]:lg:pl-[250px] peer-[[data-state=open]]:xl:pl-[300px] transition-[padding]"
+  >
+    <MessageList {messages} {intro} />
+
+    <MessageInput {handleSubmit} {isSending} {scrollToBottom} {showScrollButton}
+    ></MessageInput>
+  </div>
+</div>
+
+<DeleteChatModal {showModal} {executeDelete} {closeModal} {action} />
 
 <style>
   button:disabled {
