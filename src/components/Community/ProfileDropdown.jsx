@@ -52,19 +52,19 @@ export default function ProfileDropdown({ name, username, avatar }) {
           <DropdownItem
             key="profile"
             textValue="Profile"
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
           >
             Mi perfil
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
             key="configurations"
             textValue="Configurations"
           >
             Configuración
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
             key="help_and_feedback"
             textValue="Help and Feedback"
           >
@@ -74,7 +74,7 @@ export default function ProfileDropdown({ name, username, avatar }) {
             isReadOnly
             endContent={
               <ThemeToggle
-                buttonClass="bg-white dark:bg-base-dark"
+                buttonClass="bg-gray-200 dark:bg-base-dark"
                 spanClass="dark:bg-base-full-dark"
               />
             }
@@ -88,7 +88,7 @@ export default function ProfileDropdown({ name, username, avatar }) {
             key="logout"
             textValue="Logout"
             color="danger"
-            className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
+            className="rounded-xl text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600 !duration-150"
             startContent={<LogoutIcon className="size-4" />}
             onClick={() => signOut()}
           >

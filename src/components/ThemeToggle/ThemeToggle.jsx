@@ -32,7 +32,7 @@ export function ThemeToggle({
       <button
         aria-label="Cambiar modo"
         type="button"
-        className={`group btn__mode relative inline-flex flex-shrink-0 items-center justify-start w-14 h-8 px-1 text-base-color-h dark:text-gray-400 bg-gray-200 rounded-full overflow-hidden cursor-pointer ${
+        className={`group btn__mode relative inline-flex flex-shrink-0 items-center justify-start w-14 h-8 px-1 text-base-color-h dark:text-gray-400 bg-gray-200 rounded-full overflow-hidden cursor-pointer${
           theme === "dark" ? "darkmode" : ""
         } ${buttonClass}`}
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

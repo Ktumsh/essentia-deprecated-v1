@@ -54,7 +54,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
             isReadOnly
             endContent={
               <ThemeToggle
-                buttonClass="bg-white dark:bg-base-dark"
+                buttonClass="bg-gray-200 dark:bg-base-dark"
                 spanClass="dark:bg-base-full-dark"
               />
             }
@@ -65,7 +65,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           </DropdownItem>
           <DropdownItem
             id="avatar_logout"
-            className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"
+            className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600 !duration-150"
             key="logout"
             textValue="Logout"
             color="danger"
