@@ -16,7 +16,7 @@
   <div
     in:scale={{ duration: 150, start: 0.6 }}
     out:scale={{ duration: 150, start: 0.6 }}
-    class="modal grid gap-4 p-6 w-full max-w-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-base-color dark:text-base-color-dark bg-white dark:bg-base-dark border border-gray-200 dark:border-white/10 rounded-lg z-[9999]"
+    class="modal grid gap-4 p-6 w-full max-w-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-base-color dark:text-base-color-dark bg-white dark:bg-base-dark border border-gray-200 dark:border-white/10 rounded-xl z-[9999]"
   >
     <div class="flex flex-col space-y-2 text-center sm:text-left">
       <h2 class="text-lg font-semibold">¿Estás absolutamente seguro?</h2>

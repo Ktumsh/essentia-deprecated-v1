@@ -15,7 +15,7 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
         shouldBlockScroll={false}
         classNames={{
           content:
-            "p-1 bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
+            "p-1 bg-gradient-to-br from-white to-gray-100 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
         }}
         placement="bottom-end"
       >
@@ -31,20 +31,20 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           <DropdownItem
             key="profile"
             textValue="Profile"
-            className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="h-14 gap-2 rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
           >
             <p className="font-medium dark:text-base-color-dark">{name}</p>
             <p className="text-xs">{username}</p>
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
             key="configurations"
             textValue="Configurations"
           >
             Configuración
           </DropdownItem>
           <DropdownItem
-            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
+            className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark !duration-150"
             key="help_and_feedback"
             textValue="Help and Feedback"
           >
@@ -52,7 +52,6 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
           </DropdownItem>
           <DropdownItem
             isReadOnly
-            title="Cambiar tema"
             endContent={
               <ThemeToggle
                 buttonClass="bg-white dark:bg-base-dark"
@@ -61,7 +60,9 @@ export default function AvatarDropdown({ avatarUrl, name, username }) {
             }
             className="rounded-xl data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-base-dark text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-base-color-h dark:data-[hover=true]:text-base-color-dark"
             textValue="Help and Feedback"
-          ></DropdownItem>
+          >
+            Cambiar tema
+          </DropdownItem>
           <DropdownItem
             id="avatar_logout"
             className="rounded-xl  text-base-color-h dark:text-base-color-dark-m data-[hover=true]:text-bittersweet-400 dark:data-[hover=true]:text-cerise-red-600"

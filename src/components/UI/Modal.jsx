@@ -50,7 +50,7 @@ export default function ModalComponent({
   return (
     <>
       <Tooltip
-        className="bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h duration-250"
+        className="bg-gradient-to-br from-white to-gray-100 dark:from-base-dark dark:to-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h duration-250"
         content={tooltip}
         closeDelay={0}
         placement="top-end"

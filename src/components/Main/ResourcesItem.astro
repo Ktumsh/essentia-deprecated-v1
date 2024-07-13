@@ -18,7 +18,9 @@ const { class: className, title, img, alt, href } = Astro.props;
     ${className}
     group flex flex-col relative
     text-foreground outline-none
-    hover:shadow-lg hover:shadow-black/30
+    shadow-md
+    hover:shadow-lg
+    border border-gray-200 dark:border-none
     rounded-xl transition-all hover:z-50
     motion-reduce:transition-none h-[250px] duration-500`}
 >
@@ -47,7 +49,7 @@ const { class: className, title, img, alt, href } = Astro.props;
   >
   </div>
   <div
-    class="flex items-center justify-end absolute bottom-0 h-auto w-full p-3 text-inherit subpixel-antialiased rounded-b-xl bg-white/30 dark:bg-base-full-dark-40 border-t-1 border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 group-hover:pt-52 group-hover:bg-white/50 dark:group-hover:bg-base-full-dark-40 group-hover:rounded-xl transition-all duration-500"
+    class="flex items-center justify-end absolute bottom-0 h-auto w-full p-3 text-inherit subpixel-antialiased rounded-b-xl bg-white/30 dark:bg-base-full-dark-40 border-t-1 border-gray-100/50 dark:border-base-full-dark-50 backdrop-blur backdrop-saturate-150 group-hover:pt-52 group-hover:bg-white/50 dark:group-hover:bg-base-full-dark-40 group-hover:rounded-xl transition-all duration-500 z-10"
   >
     <slot name="description" />
     <a
@@ -70,7 +72,9 @@ const { class: className, title, img, alt, href } = Astro.props;
             d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
             fill="currentColor"
             fill-rule="evenodd"
-            clip-rule="evenodd"></path>
+            clip-rule="evenodd"
+          >
+          </path>
         </svg>
       </div>
     </a>

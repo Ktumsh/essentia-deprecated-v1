@@ -1,3 +1,7 @@
+---
+import ArrowUp from "@/icons/arrow-up.astro";
+---
+
 <div
   id="button-up"
   class="fixed bottom-2 right-2 opacity-0 transition-opacity z-[998]"
@@ -5,26 +9,15 @@
   <button
     id="scroll-to-top"
     aria-label="Volver al inicio de la página"
-    class="group flex size-12 cursor-default items-center justify-center rounded-xl shadow-lg dark:shadow-none shadow-black/20 border border-black/10 dark:border-white/10 bg-white/60 dark:bg-base-dark-60 hover:dark:bg-base-full-dark-70 text-base-color text-opacity-80 dark:text-base-color-dark-h backdrop-blur hover:scale-105 hover:border-bittersweet-400 motion-safe:transition overflow-hidden"
+    class="group flex items-center justify-center h-9 w-9 rounded-md shadow-md hover:shadow-lg text-base-color dark:text-base-color-dark hover:text-bittersweet-400 bg-white dark:bg-base-dark dark:hover:bg-base-full-dark border border-gray-200 dark:border-white/10 hover:border-bittersweet-400 hover:scale-105 motion-safe:transition transition"
   >
     <div
       class="dark:bg-noise dark:bg-repeat dark:bg-[length:100px] pointer-events-none absolute inset-0 z-10 dark:opacity-[0.06]"
     >
     </div>
-    <svg
-      aria-label="Subir al inicio de la página"
-      stroke-width="2"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      fill="none"
-      class="h-6 w-6 -rotate-45 group-hover:-rotate-90 group-hover:text-bittersweet-400 group-hover:dark:text-base-color-dark motion-safe:transition"
-      width="20px"
-    >
-      <path
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
-        stroke-linejoin="round"
-        stroke-linecap="round"></path>
-    </svg>
+    <ArrowUp
+      class="size-4 rotate-45 group-hover:rotate-0 transition-transform"
+    />
   </button>
 </div>
 

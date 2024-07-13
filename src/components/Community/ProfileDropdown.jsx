@@ -19,7 +19,7 @@ export default function ProfileDropdown({ name, username, avatar }) {
         classNames={{
           base: "berfore:bg-white before:dark:bg-base-dark",
           content:
-            "p-1 bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
+            "p-1 bg-gradient-to-br from-white to-gray-100 dark:from-base-dark dark:to-base-full-dark border border-gray-200 dark:border-base-dark rounded-xl",
         }}
         placement="top"
       >

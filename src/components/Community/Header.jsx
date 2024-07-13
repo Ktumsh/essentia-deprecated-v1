@@ -154,11 +154,11 @@ const Header = ({ setActiveSection, session }) => {
                 color="danger"
                 variant="light"
                 startContent={
-                  <GoBackIcon className="size-6 lg:mr-2 text-white dark:text-cerise-red-300" />
+                  <GoBackIcon className="size-6 lg:mr-2 text-bittersweet-400 dark:text-cerise-red-300" />
                 }
                 className="min-w-fit lg:min-w-24 w-fit h-[50px] p-3 mb-2"
               >
-                <span className="hidden lg:block mr-4 justify-start text-left text-white dark:text-cerise-red-300">
+                <span className="hidden lg:block mr-4 justify-start text-left text-bittersweet-400 dark:text-cerise-red-300">
                   Volver a Essentia
                 </span>
               </Button>

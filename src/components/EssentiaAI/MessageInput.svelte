@@ -12,7 +12,7 @@
   class="w-full fixed inset-x-0 bottom-0 peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px] transition-[padding]"
 >
   <button
-    class="group/button flex items-center justify-center h-9 w-9 absolute top-0 right-4 sm:right-8 rounded-md shadow-sm text-base-color dark:text-base-color-dark hover:text-bittersweet-400 dark:hover:text-cerise-red-600 bg-white dark:bg-base-dark border border-gray-200 dark:border-white/10 hover:border-bittersweet-400 dark:hover:border-cerise-red-600 transition z-10"
+    class="group/button flex items-center justify-center h-9 w-9 absolute top-0 right-4 sm:right-8 rounded-md shadow-md hover:shadow-lg text-base-color dark:text-base-color-dark hover:text-bittersweet-400 bg-white dark:bg-base-dark dark:hover:bg-base-full-dark border border-gray-200 dark:border-white/10 hover:border-bittersweet-400 hover:scale-105 motion-safe:transition transition z-10"
     style="opacity: {showScrollButton ? 1 : 0}"
     on:click={scrollToBottom}
   >
@@ -23,7 +23,7 @@
   </button>
   <div class="mx-auto max-w-2xl sm:px-4 lg:pr-4 lg:pl-2">
     <div
-      class="bg-white dark:bg-base-dark space-y-4 border-t px-4 py-2 shadow-md sm:rounded-t-xl sm:border border-gray-200 dark:border-white/10 md:py-4"
+      class="bg-white dark:bg-base-dark space-y-4 border-t px-4 py-2 shadow-lg sm:rounded-t-xl sm:border border-gray-200 dark:border-white/10 md:py-4"
     >
       <form
         on:submit|preventDefault={handleSubmit}

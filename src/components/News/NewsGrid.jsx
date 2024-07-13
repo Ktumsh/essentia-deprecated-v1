@@ -87,11 +87,11 @@ const NewsGrid = () => {
           {loadingMore ? (
             loader
           ) : (
-            <div className="flex justify-center items-center mx-auto w-full h-16 mb-8 text-base-color dark:text-base-color-dark">
+            <div className="flex justify-center items-center mx-auto w-full h-16 mb-8 text-white text-sm">
               <button
                 type="button"
                 onClick={loadMore}
-                className="w-fit h-8 px-5 bg-bittersweet-500/50 dark:bg-cerise-red-600/50 border-2 border-bittersweet-400 dark:border-cerise-red-600 rounded-full hover:brightness-90 transition"
+                className="w-fit h-8 px-5 bg-bittersweet-400 dark:bg-cerise-red-600 rounded-full hover:brightness-90 transition"
               >
                 Cargar más
               </button>

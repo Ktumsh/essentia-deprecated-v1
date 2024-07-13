@@ -23,6 +23,10 @@ const capitalize = (word: string) => {
 const nameFromUser = getFirstName(session?.user?.name);
 ---
 
+<div
+  class="page-bg fixed inset-0 size-full bg-cover bg-light-gradient-v2 dark:bg-none"
+>
+</div>
 <main
   class="flex flex-col min-h-dvh w-full max-w-[1250px] py-5 lg:px-5 shrink items-stretch grow"
 >
@@ -78,7 +82,7 @@ const nameFromUser = getFirstName(session?.user?.name);
       </div>
     </div>
   </div>
-  <div class="flex flex-row flex-1 relative w-full gap-3 mb-7">
+  <div class="flex flex-row flex-1 relative w-full gap-2 mb-7">
     <section class="flex flex-col flex-1 w-full">
       <h3
         class="text-sm uppercase font-bold mb-2 ml-3 text-base-color-h dark:text-base-color-dark"
@@ -98,11 +102,9 @@ const nameFromUser = getFirstName(session?.user?.name);
     </aside>
   </div>
   <div class="flex flex-col flex-1 relative w-full select-none">
-    <section
-      class="flex flex-col flex-1 mb-5 w-full bg-white/50 bg-bento-gradient dark:bg-none border border-gray-100/50 dark:border-none backdrop-blur backdrop-saturate-150 dark:bg-base-dark lg:rounded-xl shadow-md p-4"
-    >
+    <section class="flex flex-col flex-1 mb-5 w-full">
       <div
-        class="flex justify-center items-center h-10 px-4 mb-4 text-white bg-light-gradient dark:bg-dark-gradient shadow-md rounded-xl"
+        class="flex justify-center items-center h-10 px-4 mb-2 text-white bg-light-gradient dark:bg-dark-gradient shadow-md rounded-xl"
       >
         <h3 class="text-2xl font-bold">Recursos Principales</h3>
       </div>
@@ -145,3 +147,62 @@ const nameFromUser = getFirstName(session?.user?.name);
   class="z-40 invisible backdrop-blur-0 saturate-100 bg-overlay/30 w-screen h-dvh fixed inset-0 opacity-0 transition-all ease-linear"
 >
 </div>
+<style>
+  .page-bg {
+    -webkit-mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-composite: source-in;
+    mask: linear-gradient(180deg, black 58%, rgba(0, 0, 0, 0) 95%),
+      radial-gradient(
+        15.77% 44.22% at 50% 104.95%,
+        rgba(66, 66, 66, 0) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        30.95% 86.8% at 30.69% 13.2%,
+        rgba(66, 66, 66, 0.33) 0%,
+        #333333 100%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      radial-gradient(
+        51.31% 143.89% at 49.99% 24.75%,
+        #000000 0%,
+        #000000 52.6%,
+        rgba(0, 0, 0, 0.18) 83.33%,
+        rgba(0, 0, 0, 0) 95.31%
+      ),
+      linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);
+    mask-composite: source-in !important;
+    z-index: -1;
+  }
+</style>

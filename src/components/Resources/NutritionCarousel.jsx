@@ -38,7 +38,7 @@ const NutritionCarousel = ({ data, startIndex, totalItems }) => {
 
   return (
     <div id="nutrition-carousel" className="relative w-full">
-      <div className="relative overflow-hidden h-[400px]">
+      <div className="relative overflow-hidden h-[410px]">
         <div className="relative w-full h-full flex transition-transform duration-500 ease-in-out">
           {groupedItems.map((group, index) => {
             const isCurrent = index === currentIndex;
@@ -72,7 +72,7 @@ const NutritionCarousel = ({ data, startIndex, totalItems }) => {
           })}
         </div>
       </div>
-      <div className="hidden lg:flex absolute z-30 -translate-x-1/2 space-x-3 rtl:space-x-reverse -bottom-8 left-1/2">
+      <div className="hidden lg:flex absolute z-30 -translate-x-1/2 space-x-3 rtl:space-x-reverse -bottom-7 left-1/2">
         {groupedItems.map((_, index) => (
           <button
             key={index}
@@ -89,21 +89,21 @@ const NutritionCarousel = ({ data, startIndex, totalItems }) => {
           />
         ))}
       </div>
-      <div className="absolute translate-y-1/2 top-8 start-0 sm:start-3 z-30 flex items-center justify-center h-full px-2 sm:px-4">
+      <div className="absolute translate-y-1/2 top-7 start-0 sm:start-3 z-30 flex items-center justify-center h-full px-2 sm:px-4 pointer-events-none">
         <Button
           variant="flat"
           radius="full"
-          className="inline-flex items-center justify-center px-0 min-w-0 max-w-[48px] max-h-[48px] w-12 h-12 rounded-lg bg-black/10 hover:bg-black/20 active:bg-black/30"
+          className="inline-flex items-center justify-center px-0 min-w-0 max-w-[48px] max-h-[48px] w-12 h-12 rounded-lg bg-black/10 hover:bg-black/20 active:bg-black/30 pointer-events-auto"
           onClick={prevSlide}
         >
           <CarouselArrowIcon className="size-6 text-white" />
         </Button>
       </div>
-      <div className="absolute translate-y-1/2 top-8 end-0 sm:end-3 z-30 flex items-center justify-center h-full px-2 sm:px-4">
+      <div className="absolute translate-y-1/2 top-7 end-0 sm:end-3 z-30 flex items-center justify-center h-full px-2 sm:px-4 pointer-events-none">
         <Button
           variant="flat"
           radius="full"
-          className="inline-flex items-center justify-center px-0 min-w-0 max-w-[48px] max-h-[48px] w-12 h-12 rounded-lg bg-black/10 hover:bg-black/20 active:bg-black/30"
+          className="inline-flex items-center justify-center px-0 min-w-0 max-w-[48px] max-h-[48px] w-12 h-12 rounded-lg bg-black/10 hover:bg-black/20 active:bg-black/30 pointer-events-auto"
           onClick={nextSlide}
         >
           <CarouselArrowIcon className="size-6 text-white rotate-180" />

@@ -22,7 +22,7 @@ export default function ModalV2Component({
   return (
     <>
       <Tooltip
-        className="bg-gradient-to-br from-white to-default-200 dark:from-base-dark dark:to-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h duration-250"
+        className="bg-gradient-to-br from-white to-gray-100 dark:from-base-dark dark:to-base-full-dark text-xs text-base-color-h dark:text-base-color-dark-h duration-250"
         content="Ver receta"
         closeDelay={0}
         placement="top-end"
@@ -33,7 +33,7 @@ export default function ModalV2Component({
           isPressable
           disableRipple
           onPress={onOpen}
-          className="group h-96 p-[10px] text-base-color-h dark:text-base-color-dark border-none bg-[#ece3d4] dark:bg-base-full-dark !transition overflow-clip on-scroll shadow-md hover:scale-95 data-[pressed=true]:scale-[0.92]"
+          className="group h-96 p-[10px] text-base-color-h dark:text-base-color-dark bg-[#ece3d4] dark:bg-base-full-dark border border-[#e6d5bc] dark:border-none !transition overflow-clip on-scroll rounded shadow-lg hover:shadow-md hover:scale-[0.97] data-[pressed=true]:scale-[0.97]"
         >
           <div className="h-full mx-[1%] p-[10px] bg-[#e6d5bc] dark:bg-base-dark border border-[#c7a26b] dark:border-white/5">
             <CardHeader className="absolute z-10 top-5 flex-col !items-start opacity-0 group-hover:opacity-100 px-0 group-hover:px-6 transition-all">
@@ -67,7 +67,7 @@ export default function ModalV2Component({
         classNames={{
           wrapper: "overflow-hidden z-[999]",
           body: "text-[#4a381c] dark:text-base-color-dark bg-[#e6d5bc] dark:bg-base-dark border border-[#c7a26b] dark:border-white/10 py-0 pb-6 font-spacemono scrollbar-hide",
-          base: "bg-[#ece3d4] dark:bg-base-full-dark p-6 sm:p-8 pt-8 sm:pt-12 pb-4 sm:pb-8",
+          base: "bg-[#ece3d4] dark:bg-base-full-dark border-2 border-[#e6d5bc] dark:border-none rounded p-6 sm:p-8 pt-8 sm:pt-12 pb-4 sm:pb-8",
           footer:
             "bg-[#e6d5bc] dark:bg-base-dark border border-t-0 border-[#c7a26b]",
           closeButton:

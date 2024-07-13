@@ -52,7 +52,7 @@ const ResourceTabs = () => {
       <div className="relative flex w-fit h-full bg-white/50 bg-bento-gradient dark:bg-none dark:bg-base-full-dark-50 backdrop-blur backdrop-saturate-150">
         <div className="bg-noise bg-repeat bg-[length:100px] pointer-events-none absolute inset-0 opacity-5 lg:rounded-xl -z-10"></div>
         <div className="flex flex-col items-center lg:justify-between w-full p-2 pb-0">
-          <div className="flex items-center gap-5 lg:w-full mb-2 lg:px-3 lg:py-2 rounded-xl lg:bg-white lg:dark:bg-base-dark">
+          <div className="flex items-center gap-5 lg:w-full mb-2 lg:px-3 lg:py-2 rounded-xl lg:bg-white lg:dark:bg-base-dark lg:border lg:border-gray-200 lg:dark:border-base-full-dark">
             <a href="/recursos" className="h-10">
               <Button variant="flat" color="danger" isIconOnly size="md">
                 <BackIcon className="size-7" />

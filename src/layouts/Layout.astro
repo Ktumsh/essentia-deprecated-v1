@@ -20,7 +20,7 @@ const { title, description, preload, canonical, image } = Astro.props;
 
 const noHeader = "comunidad";
 const noFooter = ["essentia-ai", "comunidad"];
-const isAI = Astro.url.pathname.includes("essentia-ai");
+const aiPage = Astro.url.pathname.includes("essentia-ai");
 
 const isNoHeader = Astro.url.pathname.includes(noHeader);
 const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
@@ -38,18 +38,18 @@ const isNoFooter = noFooter.some((path) => Astro.url.pathname.includes(path));
     />
     <ViewTransitions />
   </head>
-  <body class="size-auto bg-gray-50 dark:bg-base-full-dark isolate">
+  <body class="size-auto bg-zinc-50 dark:bg-base-full-dark isolate">
     <div id="root">
       <div
         id="main"
         role="main"
-        class=`min-h-dvh flex flex-col items-center size-full page-bg bg-cover dark:bg-none ${isAI ? "" : "bg-light-gradient-v2"}`
+        class=`min-h-dvh flex flex-col items-center size-full`
       >
         {isNoHeader ? null : <Header />}
         <slot />
         {isNoFooter ? null : <Footer />}
       </div>
-      {isAI ? null : <ButtonUp />}
+      {aiPage ? null : <ButtonUp />}
     </div>
     <div
       id="overlayModal"

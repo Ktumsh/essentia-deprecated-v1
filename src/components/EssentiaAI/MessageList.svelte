@@ -68,7 +68,7 @@
           </li>
           <div
             role="none"
-            class="shrink-0 border-b border-gray-200 dark:border-white/10 h-px w-full my-4 last:hidden"
+            class="shrink-0 border-b border-white/80 dark:border-white/10 h-px w-full my-4 last:hidden"
           ></div>
         {/each}
       </ul>

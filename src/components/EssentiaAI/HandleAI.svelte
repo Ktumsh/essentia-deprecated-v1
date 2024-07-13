@@ -29,7 +29,7 @@
   let showModal = false;
   let action;
   let chatToDelete = null;
-  let sidebarOpen = true;
+  let sidebarOpen;
   let startX;
   let messageContainer;
   let showScrollButton = false;
@@ -46,16 +46,41 @@
 
     if (diffX > threshold && !sidebarOpen) {
       sidebarOpen = true;
+      updateBodyClass();
     }
 
     if (diffX < -threshold && sidebarOpen) {
       sidebarOpen = false;
+      updateBodyClass();
     }
   }
 
   function handleTouchEnd() {
     startX = null;
   }
+
+  function updateBodyClass() {
+    const body = document.querySelector("body");
+    if (sidebarOpen) {
+      body.classList.add("overflow-hidden");
+    } else {
+      body.classList.remove("overflow-hidden");
+    }
+
+    const overlay = document.querySelector("#overlayModal");
+    if (sidebarOpen) {
+      overlay.classList.remove("invisible");
+      overlay.classList.remove("opacity-0");
+    } else {
+      overlay.classList.add("invisible");
+      overlay.classList.add("opacity-0");
+    }
+  }
+
+  const toggleSidebar = () => {
+    sidebarOpen = !sidebarOpen;
+    updateBodyClass();
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -193,6 +218,13 @@
       messages = selectedSession.messages;
       intro = false;
     }
+
+    setTimeout(() => {
+      if (messageContainer) {
+        showScrollButton =
+          messageContainer.scrollHeight > messageContainer.clientHeight;
+      }
+    }, 0);
   }
 
   const toggleOptions = (sessionId, event) => {
@@ -307,24 +339,6 @@
     preventClose = false;
   };
 
-  const toggleSidebar = () => {
-    sidebarOpen = !sidebarOpen;
-    const body = document.querySelector("body");
-    if (sidebarOpen) {
-      body.classList.add("overflow-hidden");
-    } else {
-      body.classList.remove("overflow-hidden");
-    }
-    const overlay = document.querySelector("#overlayModal");
-    if (sidebarOpen) {
-      overlay.classList.remove("invisible");
-      overlay.classList.remove("opacity-0");
-    } else {
-      overlay.classList.add("invisible");
-      overlay.classList.add("opacity-0");
-    }
-  };
-
   const createNewChat = () => {
     const newChat = {
       sessionId: generateId(),
@@ -400,18 +414,22 @@
   }
 
   onMount(() => {
+    sidebarOpen = window.innerWidth >= 1024;
+    updateBodyClass();
+
+    const overlay = document.querySelector("#overlayModal");
+    overlay.addEventListener("click", () => {
+      sidebarOpen = false;
+      updateBodyClass();
+    });
+
     if (messageContainer) {
       messageContainer.addEventListener("scroll", handleScroll);
     }
     handleScroll();
-    const overlay = document.querySelector("#overlayModal");
-    overlay.addEventListener("click", () => {
-      sidebarOpen = false;
-      overlay.classList.add("invisible");
-      overlay.classList.add("opacity-0");
-    });
     document.addEventListener("mousedown", handleClickOutside);
     loadChatHistory();
+
     const imgEl = document.querySelector("#user-image");
     if (imgEl) {
       userImageUrl = imgEl.getAttribute("data-user-image-url");
@@ -436,9 +454,7 @@
     {openMenuId}
     {selectChatSession}
     {toggleOptions}
-    {startEditChatName}
     {saveChatName}
-    {confirmDeleteChat}
     {confirmDeleteAllChats}
     {sidebarOpen}
     {handleTouchStart}
